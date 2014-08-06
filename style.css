@@ -1,0 +1,63 @@
+/* Styles go here */
+html, body,
+div, ul, form,
+span, p, a{
+  margin:0; padding:0;
+}
+ul {
+  list-style-type:none;
+}
+
+html, body {
+  height:100%;
+}
+
+
+.jumbotron {
+  padding:200px 0;
+  background:none;
+}
+.jumbotron .container {
+  width:100%;
+}
+.headtitle {
+  padding:10px 50px;
+  color:#222;
+  font-weight:bold;
+  border-bottom:20px solid #333;
+  box-shadow:0px 5px 0px 3px #ED5A0B, 0px 5px 0px 5px #333;
+}
+.headtitle small {
+  font-size:.5em;
+}
+#frontlist {
+  float:right;
+  margin:0 30% 0 0;
+}
+
+#frontlist li {
+  width:30px;
+  display:inline-block;
+  margin:10px 20px 0 0;
+  padding:100px 0 0 10px;
+  border:1px solid #ccc;
+  box-shadow:-1px 1px 2px #ddd;
+  border-color: transparent transparent #ccc #ccc;
+  color:#999;
+  -webkit-transition:all 0.2s ease;
+  -moz-transition:all 0.2s ease;
+  -o-transition:all 0.2s ease;
+  transition:all 0.2s ease;
+}
+#frontlist li:hover {
+  border-color: transparent transparent #ED5A0B #ED5A0B;
+  color:#ED5A0B;
+} 
+
+.footer {
+  clear:right;
+  width:100%;
+  margin:auto;
+  color:#ddd;
+  text-align:center;
+}
