@@ -12,24 +12,31 @@ html, body {
   height:100%;
 }
 
-
+/*首頁中間*/
 .jumbotron {
   padding:200px 0;
   background:none;
 }
+
 .jumbotron .container {
   width:100%;
 }
+
+/*首頁中間的主要標題*/
 .headtitle {
   padding:10px 50px;
   color:#222;
-  font-weight:bold;
+  font-weight: bold;
   border-bottom:20px solid #333;
   box-shadow:0px 5px 0px 3px #ED5A0B, 0px 5px 0px 5px #333;
+  text-align:center;
 }
+
 .headtitle small {
-  font-size:.5em;
+  font-size:.55em;
 }
+
+/*首頁中間的語種*/
 #frontlist {
   float:right;
   margin:0 30% 0 0;
@@ -39,25 +46,32 @@ html, body {
   width:30px;
   display:inline-block;
   margin:10px 20px 0 0;
-  padding:100px 0 0 10px;
+  padding:100px 30px 0 30px;
   border:1px solid #ccc;
-  box-shadow:-1px 1px 2px #ddd;
+  box-shadow:-1px 1px 4px #ddd;
   border-color: transparent transparent #ccc #ccc;
-  color:#999;
+  color:#777;
   -webkit-transition:all 0.2s ease;
   -moz-transition:all 0.2s ease;
   -o-transition:all 0.2s ease;
   transition:all 0.2s ease;
 }
+
 #frontlist li:hover {
   border-color: transparent transparent #ED5A0B #ED5A0B;
   color:#ED5A0B;
+  box-shadow:-1px 1px 5px rgba(237,90,11,0.4);
 } 
 
+#frontlist span {
+	font-size: 1.8em;
+}
+
+/*首頁的下方版權聲明*/
 .footer {
   clear:right;
   width:100%;
   margin:auto;
-  color:#ddd;
+  color:#bcbcbc;
   text-align:center;
 }
