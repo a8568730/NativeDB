@@ -1,17 +1,52 @@
-.navbar-text {
-	font-size:1.5em;
-	font-weight:bold;
+/*主頁上半 導覽列*/
+.navbar {
+	margin-bottom:0px;
+}
+
+.navbar-default {
+	background:none;
+  	box-shadow:none;
+  	border-bottom:6px solid black;
+}
+
+.navbar-default .navbar-text {
+	font-size:1.7em;
+	color:black;
+	font-weight:500;
+}
+
+/*主頁上半 導覽列的按鈕*/
+.navbar-btn {
+	margin-top:10px;
+}
+
+.btn-warning {
+	background:#F97F3E;
+	text-shadow:none;
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+	background:#ED5A0B;
+}
+
+.btn-warning:active {
+	background:#BA4202;
+}
+
+.bar-stripe {
+	width:100%;
+	height:5px;
+	background:#ED5A0B;
+	
+	margin-bottom:30px; 
 }
 
 .nav-tabs {
 	font-size:1.3em;
 }
 
-.nav-tabs > li > a:hover {
-	background:#FF9258;
-	color:#fff;
-}
-
+/*主頁下半段 */
 .main {
 	position:relative;
 	margin:30px 0 0;
@@ -19,6 +54,20 @@
 
 .main p{
 	font-size:1.3em;
+}
+
+/*主頁左邊選單*/
+.list-group-item {
+	border-color:#ccc;
+}
+
+.nav-tabs {
+	border-bottom:1px solid #ccc;
+}
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+	border-color:#ccc #ccc transparent;
 }
 
 /*.details {
@@ -30,3 +79,8 @@
 	padding:10px 0;
 	border:1px solid #F9AB6A;
 }*/
+
+/*細節的表格*/
+.main .table {
+	margin-top:30px;
+}
