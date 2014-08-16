@@ -1,0 +1,2222 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 555.71 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Level 1" 
+        xmin = 0 
+        xmax = 555.71 
+        intervals: size = 552 
+        intervals [1]:
+            xmin = 0 
+            xmax = 3.5224834423330376 
+            text = "XXX" 
+        intervals [2]:
+            xmin = 3.5224834423330376 
+            xmax = 3.6711235823652792 
+            text = "C1-tsʰ(i4)-1" 
+        intervals [3]:
+            xmin = 3.6711235823652792 
+            xmax = 3.8658421658075155 
+            text = "V1-(tsʰ)i(4)-1" 
+        intervals [4]:
+            xmin = 3.8658421658075155 
+            xmax = 3.9325362456342305 
+            text = "XXX" 
+        intervals [5]:
+            xmin = 3.9325362456342305 
+            xmax = 3.9403105932610125 
+            text = "C2-b(in6)-1" 
+        intervals [6]:
+            xmin = 3.9403105932610125 
+            xmax = 4.186904868277158 
+            text = "V2-(b)i(n6)-1" 
+        intervals [7]:
+            xmin = 4.186904868277158 
+            xmax = 7.189863988967351 
+            text = "XXX" 
+        intervals [8]:
+            xmin = 7.189863988967351 
+            xmax = 7.254264051101764 
+            text = "C1-b(e4)-1" 
+        intervals [9]:
+            xmin = 7.254264051101764 
+            xmax = 7.465767413058992 
+            text = "V1-(b)e(4)-1" 
+        intervals [10]:
+            xmin = 7.465767413058992 
+            xmax = 7.54 
+            text = "XXX" 
+        intervals [11]:
+            xmin = 7.54 
+            xmax = 7.594674924691594 
+            text = "C2-ts(ua3)-1" 
+        intervals [12]:
+            xmin = 7.594674924691594 
+            xmax = 7.88 
+            text = "V2-(ts)ua(3)-1" 
+        intervals [13]:
+            xmin = 7.88 
+            xmax = 12.660713714690754 
+            text = "XXX" 
+        intervals [14]:
+            xmin = 12.660713714690754 
+            xmax = 12.770709487340307 
+            text = "C1-pʰ(ai2)-1" 
+        intervals [15]:
+            xmin = 12.770709487340307 
+            xmax = 12.961932907484917 
+            text = "V1-(pʰ)ai(2)-1" 
+        intervals [16]:
+            xmin = 12.961932907484917 
+            xmax = 13.073620922790617 
+            text = "XXX" 
+        intervals [17]:
+            xmin = 13.073620922790617 
+            xmax = 13.09 
+            text = "C2-k(ai3)-1" 
+        intervals [18]:
+            xmin = 13.09 
+            xmax = 13.384993571521662 
+            text = "V2-(k)ai(3)-1" 
+        intervals [19]:
+            xmin = 13.384993571521662 
+            xmax = 18.713006475335693 
+            text = "XXX" 
+        intervals [20]:
+            xmin = 18.713006475335693 
+            xmax = 18.746950619293504 
+            text = "C1-k(o5)-1" 
+        intervals [21]:
+            xmin = 18.746950619293504 
+            xmax = 18.989268624432682 
+            text = "V1-(k)o(5)-1" 
+        intervals [22]:
+            xmin = 18.989268624432682 
+            xmax = 19.002184470976268 
+            text = "XXX" 
+        intervals [23]:
+            xmin = 19.002184470976268 
+            xmax = 19.130021372054337 
+            text = "C2-s(i2)-1" 
+        intervals [24]:
+            xmin = 19.130021372054337 
+            xmax = 19.37700260844705 
+            text = "V2-(s)i(2)-1" 
+        intervals [25]:
+            xmin = 19.37700260844705 
+            xmax = 26.481795595718918 
+            text = "XXX" 
+        intervals [26]:
+            xmin = 26.481795595718918 
+            xmax = 26.5 
+            text = "C1-t(e6)-1" 
+        intervals [27]:
+            xmin = 26.5 
+            xmax = 26.69 
+            text = "V1-(t)e(6)-1" 
+        intervals [28]:
+            xmin = 26.69 
+            xmax = 26.708684867648493 
+            text = "XXX" 
+        intervals [29]:
+            xmin = 26.708684867648493 
+            xmax = 26.903624251303185 
+            text = "C2-s(i5)-1" 
+        intervals [30]:
+            xmin = 26.903624251303185 
+            xmax = 27.16 
+            text = "V2-(s)i(5)-1" 
+        intervals [31]:
+            xmin = 27.16 
+            xmax = 31.34028158781293 
+            text = "XXX" 
+        intervals [32]:
+            xmin = 31.34028158781293 
+            xmax = 31.35 
+            text = "C1-t(o6)-1" 
+        intervals [33]:
+            xmin = 31.35 
+            xmax = 31.55556243508798 
+            text = "V1-(t)o(6)-1" 
+        intervals [34]:
+            xmin = 31.55556243508798 
+            xmax = 31.638999686546658 
+            text = "XXX" 
+        intervals [35]:
+            xmin = 31.638999686546658 
+            xmax = 31.73326467292745 
+            text = "C2-ts(ui3)-1" 
+        intervals [36]:
+            xmin = 31.73326467292745 
+            xmax = 31.99 
+            text = "V2-(ts)ui(3)-1" 
+        intervals [37]:
+            xmin = 31.99 
+            xmax = 35.4104778761062 
+            text = "XXX" 
+        intervals [38]:
+            xmin = 35.4104778761062 
+            xmax = 35.42 
+            text = "C1-t(e2)-1" 
+        intervals [39]:
+            xmin = 35.42 
+            xmax = 35.7 
+            text = "V1-(t)e(2)-1" 
+        intervals [40]:
+            xmin = 35.7 
+            xmax = 35.84431951469017 
+            text = "XXX" 
+        intervals [41]:
+            xmin = 35.84431951469017 
+            xmax = 35.87211932452789 
+            text = "C2-t(i2)-1" 
+        intervals [42]:
+            xmin = 35.87211932452789 
+            xmax = 36.17 
+            text = "V2-(t)i(2)-1" 
+        intervals [43]:
+            xmin = 36.17 
+            xmax = 41.29800923221583 
+            text = "XXX" 
+        intervals [44]:
+            xmin = 41.29800923221583 
+            xmax = 41.37 
+            text = "C1-k(i1)-1" 
+        intervals [45]:
+            xmin = 41.37 
+            xmax = 41.56411234094564 
+            text = "V1-(k)i(1)-1" 
+        intervals [46]:
+            xmin = 41.56411234094564 
+            xmax = 41.691424416494804 
+            text = "XXX" 
+        intervals [47]:
+            xmin = 41.691424416494804 
+            xmax = 41.700816290920564 
+            text = "C2-t(e6)-1" 
+        intervals [48]:
+            xmin = 41.700816290920564 
+            xmax = 41.96758286262568 
+            text = "V2-(t)e(6)-1" 
+        intervals [49]:
+            xmin = 41.96758286262568 
+            xmax = 46.52050182264135 
+            text = "XXX" 
+        intervals [50]:
+            xmin = 46.52050182264135 
+            xmax = 46.53 
+            text = "C1-t(o4)-1" 
+        intervals [51]:
+            xmin = 46.53 
+            xmax = 46.73684469671854 
+            text = "V1-(t)o(4)-1" 
+        intervals [52]:
+            xmin = 46.73684469671854 
+            xmax = 46.879983939688046 
+            text = "XXX" 
+        intervals [53]:
+            xmin = 46.879983939688046 
+            xmax = 46.905474489805904 
+            text = "C2-k(ɛ1)-1" 
+        intervals [54]:
+            xmin = 46.905474489805904 
+            xmax = 47.176101921928684 
+            text = "V2-(k)ɛ(1)-1" 
+        intervals [55]:
+            xmin = 47.176101921928684 
+            xmax = 51.806673955737814 
+            text = "XXX" 
+        intervals [56]:
+            xmin = 51.806673955737814 
+            xmax = 51.823735262225895 
+            text = "C1-t(e6)-1" 
+        intervals [57]:
+            xmin = 51.823735262225895 
+            xmax = 51.99922298610325 
+            text = "V1-(t)e(6)-1" 
+        intervals [58]:
+            xmin = 51.99922298610325 
+            xmax = 52.12962011426211 
+            text = "XXX" 
+        intervals [59]:
+            xmin = 52.12962011426211 
+            xmax = 52.1393694322553 
+            text = "C2-p(ɔ6)-1" 
+        intervals [60]:
+            xmin = 52.1393694322553 
+            xmax = 52.38 
+            text = "V2-(p)ɔ(6)-1" 
+        intervals [61]:
+            xmin = 52.38 
+            xmax = 57.86443902797983 
+            text = "XXX" 
+        intervals [62]:
+            xmin = 57.86443902797983 
+            xmax = 57.89191469973061 
+            text = "C1-t(e6)-1" 
+        intervals [63]:
+            xmin = 57.89191469973061 
+            xmax = 58.127450947268486 
+            text = "V1-(t)e(6)-1" 
+        intervals [64]:
+            xmin = 58.127450947268486 
+            xmax = 58.2100952446502 
+            text = "XXX" 
+        intervals [65]:
+            xmin = 58.2100952446502 
+            xmax = 58.25141739334105 
+            text = "C2-k(i1)-1" 
+        intervals [66]:
+            xmin = 58.25141739334105 
+            xmax = 58.53196647075519 
+            text = "V2-(k)i(1)-1" 
+        intervals [67]:
+            xmin = 58.53196647075519 
+            xmax = 61.68023172078699 
+            text = "XXX" 
+        intervals [68]:
+            xmin = 61.68023172078699 
+            xmax = 61.780900149299725 
+            text = "C1-ts(u3)-1" 
+        intervals [69]:
+            xmin = 61.780900149299725 
+            xmax = 62.01 
+            text = "V1-(ts)u(3)-1" 
+        intervals [70]:
+            xmin = 62.01 
+            xmax = 62.120736064262054 
+            text = "XXX" 
+        intervals [71]:
+            xmin = 62.120736064262054 
+            xmax = 62.13 
+            text = "C2-t(e2)-1" 
+        intervals [72]:
+            xmin = 62.13 
+            xmax = 62.40047468057841 
+            text = "V2-(t)e(2)-1" 
+        intervals [73]:
+            xmin = 62.40047468057841 
+            xmax = 67.07887193359993 
+            text = "XXX" 
+        intervals [74]:
+            xmin = 67.07887193359993 
+            xmax = 67.09553052706136 
+            text = "C1-p(o3)-1" 
+        intervals [75]:
+            xmin = 67.09553052706136 
+            xmax = 67.23256089263121 
+            text = "V1-(p)o(3)-1" 
+        intervals [76]:
+            xmin = 67.23256089263121 
+            xmax = 67.3303629574693 
+            text = "XXX" 
+        intervals [77]:
+            xmin = 67.3303629574693 
+            xmax = 67.38410035573199 
+            text = "C2-p(ue5)-1" 
+        intervals [78]:
+            xmin = 67.38410035573199 
+            xmax = 67.61732066419205 
+            text = "V2-(p)ue(5)-1" 
+        intervals [79]:
+            xmin = 67.61732066419205 
+            xmax = 70.74853419048492 
+            text = "XXX" 
+        intervals [80]:
+            xmin = 70.74853419048492 
+            xmax = 70.81 
+            text = "C1-ts(iŋ4)-1" 
+        intervals [81]:
+            xmin = 70.81 
+            xmax = 71.0034451872621 
+            text = "V1-(ts)i(ŋ4)-1" 
+        intervals [82]:
+            xmin = 71.0034451872621 
+            xmax = 71.04151631015739 
+            text = "XXX" 
+        intervals [83]:
+            xmin = 71.04151631015739 
+            xmax = 71.11 
+            text = "C2-ts(iŋ4)-1" 
+        intervals [84]:
+            xmin = 71.11 
+            xmax = 71.33 
+            text = "V2-(ts)i(ŋ4)-1" 
+        intervals [85]:
+            xmin = 71.33 
+            xmax = 75.68802577174758 
+            text = "XXX" 
+        intervals [86]:
+            xmin = 75.68802577174758 
+            xmax = 75.73089825870336 
+            text = "C1-k(u4)-1" 
+        intervals [87]:
+            xmin = 75.73089825870336 
+            xmax = 75.92 
+            text = "V1-(k)u(4)-1" 
+        intervals [88]:
+            xmin = 75.92 
+            xmax = 76.02710816857979 
+            text = "XXX" 
+        intervals [89]:
+            xmin = 76.02710816857979 
+            xmax = 76.0556898265503 
+            text = "C2-k(oŋ1)-1" 
+        intervals [90]:
+            xmin = 76.0556898265503 
+            xmax = 76.310975998878 
+            text = "V2-(k)o(ŋ1)-1" 
+        intervals [91]:
+            xmin = 76.310975998878 
+            xmax = 79.5256163449721 
+            text = "XXX" 
+        intervals [92]:
+            xmin = 79.5256163449721 
+            xmax = 79.53145382041703 
+            text = "C1-p(ai2)-1" 
+        intervals [93]:
+            xmin = 79.53145382041703 
+            xmax = 79.719420529744 
+            text = "V1-(p)ai(2)-1" 
+        intervals [94]:
+            xmin = 79.719420529744 
+            xmax = 79.83733753373171 
+            text = "XXX" 
+        intervals [95]:
+            xmin = 79.83733753373171 
+            xmax = 79.85368246497754 
+            text = "C2-t(ui6)-1" 
+        intervals [96]:
+            xmin = 79.85368246497754 
+            xmax = 80.09 
+            text = "V2-(t)ui(6)-1" 
+        intervals [97]:
+            xmin = 80.09 
+            xmax = 85.94696149513386 
+            text = "XXX" 
+        intervals [98]:
+            xmin = 85.94696149513386 
+            xmax = 86.00679214823278 
+            text = "C1-p(ui2)-1" 
+        intervals [99]:
+            xmin = 86.00679214823278 
+            xmax = 86.25 
+            text = "V1-(p)ui(2)-1" 
+        intervals [100]:
+            xmin = 86.25 
+            xmax = 86.2853786267246 
+            text = "XXX" 
+        intervals [101]:
+            xmin = 86.2853786267246 
+            xmax = 86.4 
+            text = "C2-h(u2)-1" 
+        intervals [102]:
+            xmin = 86.4 
+            xmax = 86.66 
+            text = "V2-(h)u(2)-1" 
+        intervals [103]:
+            xmin = 86.66 
+            xmax = 90.5373631309338 
+            text = "XXX" 
+        intervals [104]:
+            xmin = 90.5373631309338 
+            xmax = 90.79 
+            text = "C1-s(u5)-1" 
+        intervals [105]:
+            xmin = 90.79 
+            xmax = 90.98 
+            text = "V1-(s)u(5)-1" 
+        intervals [106]:
+            xmin = 90.98 
+            xmax = 91.11530195024967 
+            text = "XXX" 
+        intervals [107]:
+            xmin = 91.11530195024967 
+            xmax = 91.12 
+            text = "C2-t(i6)-1" 
+        intervals [108]:
+            xmin = 91.12 
+            xmax = 91.41097198791209 
+            text = "V2-(t)i(6)-1" 
+        intervals [109]:
+            xmin = 91.41097198791209 
+            xmax = 95.86909708421332 
+            text = "XXX" 
+        intervals [110]:
+            xmin = 95.86909708421332 
+            xmax = 96.04116774924273 
+            text = "C1-s(i2)-1" 
+        intervals [111]:
+            xmin = 96.04116774924273 
+            xmax = 96.20399494879536 
+            text = "V1-(s)i(2)-1" 
+        intervals [112]:
+            xmin = 96.20399494879536 
+            xmax = 96.21181634266033 
+            text = "XXX" 
+        intervals [113]:
+            xmin = 96.21181634266033 
+            xmax = 96.38673115091338 
+            text = "C2-s(i2)-1" 
+        intervals [114]:
+            xmin = 96.38673115091338 
+            xmax = 96.62 
+            text = "V2-(s)i(2)-1" 
+        intervals [115]:
+            xmin = 96.62 
+            xmax = 103.15561270902904 
+            text = "XXX" 
+        intervals [116]:
+            xmin = 103.15561270902904 
+            xmax = 103.19406475935476 
+            text = "C1-k(ue5)-1" 
+        intervals [117]:
+            xmin = 103.19406475935476 
+            xmax = 103.3910875136913 
+            text = "V1-(k)ue(5)-1" 
+        intervals [118]:
+            xmin = 103.3910875136913 
+            xmax = 103.50223145963962 
+            text = "XXX" 
+        intervals [119]:
+            xmin = 103.50223145963962 
+            xmax = 103.51310793141438 
+            text = "C2-t(ɔ6)-1" 
+        intervals [120]:
+            xmin = 103.51310793141438 
+            xmax = 103.75 
+            text = "V2-(t)ɔ(6)-1" 
+        intervals [121]:
+            xmin = 103.75 
+            xmax = 110.882248398662 
+            text = "XXX" 
+        intervals [122]:
+            xmin = 110.882248398662 
+            xmax = 110.89848675977196 
+            text = "C1-p(o6)-1" 
+        intervals [123]:
+            xmin = 110.89848675977196 
+            xmax = 111.10878238235603 
+            text = "V1-(p)o(6)-1" 
+        intervals [124]:
+            xmin = 111.10878238235603 
+            xmax = 111.22438348482913 
+            text = "XXX" 
+        intervals [125]:
+            xmin = 111.22438348482913 
+            xmax = 111.24713476563501 
+            text = "C2-t(ui6)-1" 
+        intervals [126]:
+            xmin = 111.24713476563501 
+            xmax = 111.4838710659124 
+            text = "V2-(t)ui(6)-1" 
+        intervals [127]:
+            xmin = 111.4838710659124 
+            xmax = 115.74724461362386 
+            text = "XXX" 
+        intervals [128]:
+            xmin = 115.74724461362386 
+            xmax = 115.82 
+            text = "C1-b(e4)-1" 
+        intervals [129]:
+            xmin = 115.82 
+            xmax = 116.03550959801973 
+            text = "V1-(b)e(4)-1" 
+        intervals [130]:
+            xmin = 116.03550959801973 
+            xmax = 116.0543507339468 
+            text = "XXX" 
+        intervals [131]:
+            xmin = 116.0543507339468 
+            xmax = 116.11993386194685 
+            text = "C2-b(i4)-1" 
+        intervals [132]:
+            xmin = 116.11993386194685 
+            xmax = 116.37 
+            text = "V2-(b)i(4)-1" 
+        intervals [133]:
+            xmin = 116.37 
+            xmax = 121.31748279321573 
+            text = "XXX" 
+        intervals [134]:
+            xmin = 121.31748279321573 
+            xmax = 121.33 
+            text = "C1-p(o3)-1" 
+        intervals [135]:
+            xmin = 121.33 
+            xmax = 121.54 
+            text = "V1-(p)o(3)-1" 
+        intervals [136]:
+            xmin = 121.54 
+            xmax = 121.64440037461459 
+            text = "XXX" 
+        intervals [137]:
+            xmin = 121.64440037461459 
+            xmax = 121.66 
+            text = "C2-t(e6)-1" 
+        intervals [138]:
+            xmin = 121.66 
+            xmax = 121.92 
+            text = "V2-(t)e(6)-1" 
+        intervals [139]:
+            xmin = 121.92 
+            xmax = 128.74724739833604 
+            text = "XXX" 
+        intervals [140]:
+            xmin = 128.74724739833604 
+            xmax = 128.93 
+            text = "C1-tsʰ(i4)-1" 
+        intervals [141]:
+            xmin = 128.93 
+            xmax = 129.12359858248965 
+            text = "V1-(tsʰ)i(4)-1" 
+        intervals [142]:
+            xmin = 129.12359858248965 
+            xmax = 129.27141760361098 
+            text = "XXX" 
+        intervals [143]:
+            xmin = 129.27141760361098 
+            xmax = 129.3 
+            text = "C2-k(ɛ5)-1" 
+        intervals [144]:
+            xmin = 129.3 
+            xmax = 129.61 
+            text = "V2-(k)ɛ(5)-1" 
+        intervals [145]:
+            xmin = 129.61 
+            xmax = 135.39182139090542 
+            text = "XXX" 
+        intervals [146]:
+            xmin = 135.39182139090542 
+            xmax = 135.3992663344816 
+            text = "C1-p(ai5)-1" 
+        intervals [147]:
+            xmin = 135.3992663344816 
+            xmax = 135.632541233202 
+            text = "V1-(p)ai(5)-1" 
+        intervals [148]:
+            xmin = 135.632541233202 
+            xmax = 135.6505331801778 
+            text = "XXX" 
+        intervals [149]:
+            xmin = 135.6505331801778 
+            xmax = 135.82 
+            text = "C2-s(i5)-1" 
+        intervals [150]:
+            xmin = 135.82 
+            xmax = 136.01944099848035 
+            text = "V2-(s)i(5)-1" 
+        intervals [151]:
+            xmin = 136.01944099848035 
+            xmax = 150.0426487709196 
+            text = "XXX" 
+        intervals [152]:
+            xmin = 150.0426487709196 
+            xmax = 150.05238151257825 
+            text = "C1-p(iau3)-1" 
+        intervals [153]:
+            xmin = 150.05238151257825 
+            xmax = 150.27979985637225 
+            text = "V1-(p)iau(3)-1" 
+        intervals [154]:
+            xmin = 150.27979985637225 
+            xmax = 150.39294048240976 
+            text = "XXX" 
+        intervals [155]:
+            xmin = 150.39294048240976 
+            xmax = 150.42 
+            text = "C2-t(e6)-1" 
+        intervals [156]:
+            xmin = 150.42 
+            xmax = 150.6 
+            text = "V2-(t)e(6)-1" 
+        intervals [157]:
+            xmin = 150.6 
+            xmax = 159.1649908212254 
+            text = "XXX" 
+        intervals [158]:
+            xmin = 159.1649908212254 
+            xmax = 159.40436024641204 
+            text = "C1-s(i2)-1" 
+        intervals [159]:
+            xmin = 159.40436024641204 
+            xmax = 159.57533840725964 
+            text = "V1-(s)i(2)-1" 
+        intervals [160]:
+            xmin = 159.57533840725964 
+            xmax = 159.66775903474482 
+            text = "XXX" 
+        intervals [161]:
+            xmin = 159.66775903474482 
+            xmax = 159.69178839789097 
+            text = "C2-k(e5)-1" 
+        intervals [162]:
+            xmin = 159.69178839789097 
+            xmax = 159.91729472895483 
+            text = "V2-(k)e(5)-1" 
+        intervals [163]:
+            xmin = 159.91729472895483 
+            xmax = 164.39341008367268 
+            text = "XXX" 
+        intervals [164]:
+            xmin = 164.39341008367268 
+            xmax = 164.40597758728336 
+            text = "C1-t(e6)-1" 
+        intervals [165]:
+            xmin = 164.40597758728336 
+            xmax = 164.55661446479849 
+            text = "V1-(t)e(6)-1" 
+        intervals [166]:
+            xmin = 164.55661446479849 
+            xmax = 164.64794464762426 
+            text = "XXX" 
+        intervals [167]:
+            xmin = 164.64794464762426 
+            xmax = 164.68032956662077 
+            text = "C2-k(iu2)-1" 
+        intervals [168]:
+            xmin = 164.68032956662077 
+            xmax = 164.95402804530977 
+            text = "V2-(k)iu(2)-1" 
+        intervals [169]:
+            xmin = 164.95402804530977 
+            xmax = 172.46201139193928 
+            text = "XXX" 
+        intervals [170]:
+            xmin = 172.46201139193928 
+            xmax = 172.5920218354468 
+            text = "C1-b(i4)-1" 
+        intervals [171]:
+            xmin = 172.5920218354468 
+            xmax = 172.82391793757102 
+            text = "V1-(b)i(4)-1" 
+        intervals [172]:
+            xmin = 172.82391793757102 
+            xmax = 172.84801103909044 
+            text = "XXX" 
+        intervals [173]:
+            xmin = 172.84801103909044 
+            xmax = 173.02801016322792 
+            text = "C2-tsʰ(i4)-1" 
+        intervals [174]:
+            xmin = 173.02801016322792 
+            xmax = 173.26 
+            text = "V2-(tsʰ)i(4)-1" 
+        intervals [175]:
+            xmin = 173.26 
+            xmax = 177.00597807358858 
+            text = "XXX" 
+        intervals [176]:
+            xmin = 177.00597807358858 
+            xmax = 177.1069971557621 
+            text = "C1-b(i4)-1" 
+        intervals [177]:
+            xmin = 177.1069971557621 
+            xmax = 177.3411777553461 
+            text = "V1-(b)i(4)-1" 
+        intervals [178]:
+            xmin = 177.3411777553461 
+            xmax = 177.34921336415536 
+            text = "XXX" 
+        intervals [179]:
+            xmin = 177.34921336415536 
+            xmax = 177.40546262582015 
+            text = "C2-l(e6)-1" 
+        intervals [180]:
+            xmin = 177.40546262582015 
+            xmax = 177.61783228720765 
+            text = "V2-(l)e(6)-1" 
+        intervals [181]:
+            xmin = 177.61783228720765 
+            xmax = 181.71384379219788 
+            text = "XXX" 
+        intervals [182]:
+            xmin = 181.71384379219788 
+            xmax = 181.74214109033323 
+            text = "C1-k(au5)-1" 
+        intervals [183]:
+            xmin = 181.74214109033323 
+            xmax = 181.95369708115453 
+            text = "V1-(k)au(5)-1" 
+        intervals [184]:
+            xmin = 181.95369708115453 
+            xmax = 181.9617820234789 
+            text = "XXX" 
+        intervals [185]:
+            xmin = 181.9617820234789 
+            xmax = 182.09518357183117 
+            text = "C2-s(u1)-1" 
+        intervals [186]:
+            xmin = 182.09518357183117 
+            xmax = 182.32290944730124 
+            text = "V2-(s)u(1)-1" 
+        intervals [187]:
+            xmin = 182.32290944730124 
+            xmax = 195.95506952402647 
+            text = "XXX" 
+        intervals [188]:
+            xmin = 195.95506952402647 
+            xmax = 195.96118747024676 
+            text = "C1-t(e2)-1" 
+        intervals [189]:
+            xmin = 195.96118747024676 
+            xmax = 196.12101239206663 
+            text = "V1-(t)e(2)-1" 
+        intervals [190]:
+            xmin = 196.12101239206663 
+            xmax = 196.2235418095406 
+            text = "XXX" 
+        intervals [191]:
+            xmin = 196.2235418095406 
+            xmax = 196.2541070133731 
+            text = "C2-p(ue1)-1" 
+        intervals [192]:
+            xmin = 196.2541070133731 
+            xmax = 196.47 
+            text = "V2-(p)ue(1)-1" 
+        intervals [193]:
+            xmin = 196.47 
+            xmax = 200.55372147976576 
+            text = "XXX" 
+        intervals [194]:
+            xmin = 200.55372147976576 
+            xmax = 200.56722728027344 
+            text = "C1-p(o3)-1" 
+        intervals [195]:
+            xmin = 200.56722728027344 
+            xmax = 200.77144365077976 
+            text = "V1-(p)o(3)-1" 
+        intervals [196]:
+            xmin = 200.77144365077976 
+            xmax = 200.86726932736767 
+            text = "XXX" 
+        intervals [197]:
+            xmin = 200.86726932736767 
+            xmax = 200.87697319335126 
+            text = "C2-t(o1)-1" 
+        intervals [198]:
+            xmin = 200.87697319335126 
+            xmax = 201.10198158584566 
+            text = "V2-(t)o(1)-1" 
+        intervals [199]:
+            xmin = 201.10198158584566 
+            xmax = 210.72093375126204 
+            text = "XXX" 
+        intervals [200]:
+            xmin = 210.72093375126204 
+            xmax = 210.8880333038037 
+            text = "C1-s(iu1)-1" 
+        intervals [201]:
+            xmin = 210.8880333038037 
+            xmax = 211.09020313280473 
+            text = "V1-(s)iu(1)-1" 
+        intervals [202]:
+            xmin = 211.09020313280473 
+            xmax = 211.18922508986645 
+            text = "XXX" 
+        intervals [203]:
+            xmin = 211.18922508986645 
+            xmax = 211.222232408887 
+            text = "C2-k(u5)-1" 
+        intervals [204]:
+            xmin = 211.222232408887 
+            xmax = 211.45534659946983 
+            text = "V2-(k)u(5)-1" 
+        intervals [205]:
+            xmin = 211.45534659946983 
+            xmax = 214.53681520988056 
+            text = "XXX" 
+        intervals [206]:
+            xmin = 214.53681520988056 
+            xmax = 214.55606122507135 
+            text = "C1-k(a6)-1" 
+        intervals [207]:
+            xmin = 214.55606122507135 
+            xmax = 214.76 
+            text = "V1-(k)a(6)-1" 
+        intervals [208]:
+            xmin = 214.76 
+            xmax = 214.91095774518968 
+            text = "XXX" 
+        intervals [209]:
+            xmin = 214.91095774518968 
+            xmax = 214.92 
+            text = "C2-t(o1)-1" 
+        intervals [210]:
+            xmin = 214.92 
+            xmax = 215.18847670088934 
+            text = "V2-(t)o(1)-1" 
+        intervals [211]:
+            xmin = 215.18847670088934 
+            xmax = 221.35325215456024 
+            text = "XXX" 
+        intervals [212]:
+            xmin = 221.35325215456024 
+            xmax = 221.36 
+            text = "C1-b(e4)-1" 
+        intervals [213]:
+            xmin = 221.36 
+            xmax = 221.59 
+            text = "V1-(b)e(4)-1" 
+        intervals [214]:
+            xmin = 221.59 
+            xmax = 221.68429978772463 
+            text = "XXX" 
+        intervals [215]:
+            xmin = 221.68429978772463 
+            xmax = 221.83760428463566 
+            text = "C2-kʰ(a3)-1" 
+        intervals [216]:
+            xmin = 221.83760428463566 
+            xmax = 222.1190983461148 
+            text = "V2-(kʰ)a(3)-1" 
+        intervals [217]:
+            xmin = 222.1190983461148 
+            xmax = 226.57131909470905 
+            text = "XXXN" 
+        intervals [218]:
+            xmin = 226.57131909470905 
+            xmax = 226.5941099538181 
+            text = "C1-k(ɔ5)-1" 
+        intervals [219]:
+            xmin = 226.5941099538181 
+            xmax = 226.7981424067944 
+            text = "V1-(k)ɔ(5)-1" 
+        intervals [220]:
+            xmin = 226.7981424067944 
+            xmax = 226.891476401241 
+            text = "XXX" 
+        intervals [221]:
+            xmin = 226.891476401241 
+            xmax = 226.91643781836044 
+            text = "C2-k(au1)-1" 
+        intervals [222]:
+            xmin = 226.91643781836044 
+            xmax = 227.2 
+            text = "V2-(k)au(1)-1" 
+        intervals [223]:
+            xmin = 227.2 
+            xmax = 236.25793862400593 
+            text = "XXX" 
+        intervals [224]:
+            xmin = 236.25793862400593 
+            xmax = 236.27706188121474 
+            text = "C1-t(ui5)-1" 
+        intervals [225]:
+            xmin = 236.27706188121474 
+            xmax = 236.4839407546555 
+            text = "V1-(t)ui(5)-1" 
+        intervals [226]:
+            xmin = 236.4839407546555 
+            xmax = 236.61202817717054 
+            text = "XXX" 
+        intervals [227]:
+            xmin = 236.61202817717054 
+            xmax = 236.65431159160667 
+            text = "C2-k(u5)-1" 
+        intervals [228]:
+            xmin = 236.65431159160667 
+            xmax = 236.92 
+            text = "V2-(k)u(5)-1" 
+        intervals [229]:
+            xmin = 236.92 
+            xmax = 241.42767529020608 
+            text = "XXX" 
+        intervals [230]:
+            xmin = 241.42767529020608 
+            xmax = 241.44 
+            text = "C1-t(o3)-1" 
+        intervals [231]:
+            xmin = 241.44 
+            xmax = 241.62377056861615 
+            text = "V1-(t)o(3)-1" 
+        intervals [232]:
+            xmin = 241.62377056861615 
+            xmax = 241.72030978260264 
+            text = "XXX" 
+        intervals [233]:
+            xmin = 241.72030978260264 
+            xmax = 241.73 
+            text = "C2-t(ai2)-1" 
+        intervals [234]:
+            xmin = 241.73 
+            xmax = 242.0257658893568 
+            text = "V2-(t)ai(2)-1" 
+        intervals [235]:
+            xmin = 242.0257658893568 
+            xmax = 245.1754104018196 
+            text = "XXX" 
+        intervals [236]:
+            xmin = 245.1754104018196 
+            xmax = 245.2488088591302 
+            text = "C1-ts(ui3)-1" 
+        intervals [237]:
+            xmin = 245.2488088591302 
+            xmax = 245.4097208616958 
+            text = "V1-(ts)ui(3)-1" 
+        intervals [238]:
+            xmin = 245.4097208616958 
+            xmax = 245.4986848685605 
+            text = "XXX" 
+        intervals [239]:
+            xmin = 245.4986848685605 
+            xmax = 245.52405307404504 
+            text = "C2-k(o3)-1" 
+        intervals [240]:
+            xmin = 245.52405307404504 
+            xmax = 245.79 
+            text = "V2-(k)o(3)-1" 
+        intervals [241]:
+            xmin = 245.79 
+            xmax = 250.36577999836626 
+            text = "XXX" 
+        intervals [242]:
+            xmin = 250.36577999836626 
+            xmax = 250.37691210838926 
+            text = "C1-p(o4)-1" 
+        intervals [243]:
+            xmin = 250.37691210838926 
+            xmax = 250.54454858873558 
+            text = "V1-(p)o(4)-1" 
+        intervals [244]:
+            xmin = 250.54454858873558 
+            xmax = 250.64473757894257 
+            text = "XXX" 
+        intervals [245]:
+            xmin = 250.64473757894257 
+            xmax = 250.67 
+            text = "C2-t(ui6)-1" 
+        intervals [246]:
+            xmin = 250.67 
+            xmax = 250.92 
+            text = "V2-(t)ui(6)-1" 
+        intervals [247]:
+            xmin = 250.92 
+            xmax = 255.9927173482836 
+            text = "XXX" 
+        intervals [248]:
+            xmin = 255.9927173482836 
+            xmax = 256.01 
+            text = "C1-p(ɔ5)-1" 
+        intervals [249]:
+            xmin = 256.01 
+            xmax = 256.2185595607829 
+            text = "V1-(p)ɔ(5)-1" 
+        intervals [250]:
+            xmin = 256.2185595607829 
+            xmax = 256.234508447369 
+            text = "XXX" 
+        intervals [251]:
+            xmin = 256.234508447369 
+            xmax = 256.39 
+            text = "C2-s(i2)-1" 
+        intervals [252]:
+            xmin = 256.39 
+            xmax = 256.61 
+            text = "V2-(s)i(2)-1" 
+        intervals [253]:
+            xmin = 256.61 
+            xmax = 259.6529325851948 
+            text = "XXX" 
+        intervals [254]:
+            xmin = 259.6529325851948 
+            xmax = 259.67 
+            text = "C1-b(e4)-1" 
+        intervals [255]:
+            xmin = 259.67 
+            xmax = 259.84 
+            text = "V1-(b)e(4)-1" 
+        intervals [256]:
+            xmin = 259.84 
+            xmax = 259.9749182658948 
+            text = "XXX" 
+        intervals [257]:
+            xmin = 259.9749182658948 
+            xmax = 259.99 
+            text = "C2-t(u1)-1" 
+        intervals [258]:
+            xmin = 259.99 
+            xmax = 260.23 
+            text = "V2-(t)u(1)-1" 
+        intervals [259]:
+            xmin = 260.23 
+            xmax = 268.27040157866696 
+            text = "XXX" 
+        intervals [260]:
+            xmin = 268.27040157866696 
+            xmax = 268.31 
+            text = "C1-k(a1)-1" 
+        intervals [261]:
+            xmin = 268.31 
+            xmax = 268.54 
+            text = "V1-(k)a(1)-1" 
+        intervals [262]:
+            xmin = 268.54 
+            xmax = 268.6400999711953 
+            text = "XXX" 
+        intervals [263]:
+            xmin = 268.6400999711953 
+            xmax = 268.67 
+            text = "C2-k(au5)-1" 
+        intervals [264]:
+            xmin = 268.67 
+            xmax = 268.9 
+            text = "V2-(k)au(5)-1" 
+        intervals [265]:
+            xmin = 268.9 
+            xmax = 272.4071201793004 
+            text = "XXX" 
+        intervals [266]:
+            xmin = 272.4071201793004 
+            xmax = 272.44694937771124 
+            text = "C1-k(i2)-1" 
+        intervals [267]:
+            xmin = 272.44694937771124 
+            xmax = 272.58946545470934 
+            text = "V1-(k)i(2)-1" 
+        intervals [268]:
+            xmin = 272.58946545470934 
+            xmax = 272.69844833711966 
+            text = "XXX" 
+        intervals [269]:
+            xmin = 272.69844833711966 
+            xmax = 272.7424606550161 
+            text = "C2-k(uai5)-1" 
+        intervals [270]:
+            xmin = 272.7424606550161 
+            xmax = 272.9625222444985 
+            text = "V2-(k)uai(5)-1" 
+        intervals [271]:
+            xmin = 272.9625222444985 
+            xmax = 277.4878950923336 
+            text = "XXX" 
+        intervals [272]:
+            xmin = 277.4878950923336 
+            xmax = 277.50173569343167 
+            text = "C1-t(ua6)-1" 
+        intervals [273]:
+            xmin = 277.50173569343167 
+            xmax = 277.6698001353372 
+            text = "V1-(t)ua(6)-1" 
+        intervals [274]:
+            xmin = 277.6698001353372 
+            xmax = 277.72991953282116 
+            text = "XXX" 
+        intervals [275]:
+            xmin = 277.72991953282116 
+            xmax = 277.7943655452201 
+            text = "C2-ts(ui3)-1" 
+        intervals [276]:
+            xmin = 277.7943655452201 
+            xmax = 278.07 
+            text = "V2-(ts)ui(3)-1" 
+        intervals [277]:
+            xmin = 278.07 
+            xmax = 281.04110045967957 
+            text = "XXX" 
+        intervals [278]:
+            xmin = 281.04110045967957 
+            xmax = 281.05 
+            text = "C1-b(e4)-1" 
+        intervals [279]:
+            xmin = 281.05 
+            xmax = 281.2668547876776 
+            text = "V1-(b)e(4)-1" 
+        intervals [280]:
+            xmin = 281.2668547876776 
+            xmax = 281.2840440696743 
+            text = "XXX" 
+        intervals [281]:
+            xmin = 281.2840440696743 
+            xmax = 281.43569520510573 
+            text = "C2-tsʰ(ai5)-1" 
+        intervals [282]:
+            xmin = 281.43569520510573 
+            xmax = 281.63563326923185 
+            text = "V2-(tsʰ)ai(5)-1" 
+        intervals [283]:
+            xmin = 281.63563326923185 
+            xmax = 286.304060553104 
+            text = "XXX" 
+        intervals [284]:
+            xmin = 286.304060553104 
+            xmax = 286.31813696484903 
+            text = "C1-p(o5)-1" 
+        intervals [285]:
+            xmin = 286.31813696484903 
+            xmax = 286.50252179809263 
+            text = "V1-(p)o(5)-1" 
+        intervals [286]:
+            xmin = 286.50252179809263 
+            xmax = 286.5521910367288 
+            text = "XXX" 
+        intervals [287]:
+            xmin = 286.5521910367288 
+            xmax = 286.6013376542584 
+            text = "C2-ts(ua3)-1" 
+        intervals [288]:
+            xmin = 286.6013376542584 
+            xmax = 286.8798516477734 
+            text = "V2-(ts)ua(3)-1" 
+        intervals [289]:
+            xmin = 286.8798516477734 
+            xmax = 292.47316068518876 
+            text = "XXX" 
+        intervals [290]:
+            xmin = 292.47316068518876 
+            xmax = 292.49606490862715 
+            text = "C1-p(ɔ6)-1" 
+        intervals [291]:
+            xmin = 292.49606490862715 
+            xmax = 292.69 
+            text = "V1-(p)ɔ(6)-1" 
+        intervals [292]:
+            xmin = 292.69 
+            xmax = 292.715708099068 
+            text = "XXX" 
+        intervals [293]:
+            xmin = 292.715708099068 
+            xmax = 292.83949544628183 
+            text = "C2-s(ɔ5)-1" 
+        intervals [294]:
+            xmin = 292.83949544628183 
+            xmax = 293.09 
+            text = "V2-(s)ɔ(5)-1" 
+        intervals [295]:
+            xmin = 293.09 
+            xmax = 297.9513442520234 
+            text = "XXX" 
+        intervals [296]:
+            xmin = 297.9513442520234 
+            xmax = 297.97 
+            text = "C1-t(ua6)-1" 
+        intervals [297]:
+            xmin = 297.97 
+            xmax = 298.14 
+            text = "V1-(t)ua(6)-1" 
+        intervals [298]:
+            xmin = 298.14 
+            xmax = 298.25848425753367 
+            text = "XXX" 
+        intervals [299]:
+            xmin = 298.25848425753367 
+            xmax = 298.27 
+            text = "C2-t(o1)-1" 
+        intervals [300]:
+            xmin = 298.27 
+            xmax = 298.4839712010785 
+            text = "V2-(t)o(1)-1" 
+        intervals [301]:
+            xmin = 298.4839712010785 
+            xmax = 304.454444494275 
+            text = "XXX" 
+        intervals [302]:
+            xmin = 304.454444494275 
+            xmax = 304.4687988399828 
+            text = "C1-t(e3)-1" 
+        intervals [303]:
+            xmin = 304.4687988399828 
+            xmax = 304.63796295226246 
+            text = "V1-(t)e(3)-1" 
+        intervals [304]:
+            xmin = 304.63796295226246 
+            xmax = 304.7894961849334 
+            text = "XXX" 
+        intervals [305]:
+            xmin = 304.7894961849334 
+            xmax = 304.95 
+            text = "C2-k(i1)-1" 
+        intervals [306]:
+            xmin = 304.95 
+            xmax = 305.25918709340226 
+            text = "V2-(k)i(1)-1" 
+        intervals [307]:
+            xmin = 305.25918709340226 
+            xmax = 308.48270062505986 
+            text = "XXX" 
+        intervals [308]:
+            xmin = 308.48270062505986 
+            xmax = 308.4956780803031 
+            text = "C1-p(o3)-1" 
+        intervals [309]:
+            xmin = 308.4956780803031 
+            xmax = 308.73 
+            text = "V1-(p)o(3)-1" 
+        intervals [310]:
+            xmin = 308.73 
+            xmax = 308.74067491546106 
+            text = "XXX" 
+        intervals [311]:
+            xmin = 308.74067491546106 
+            xmax = 308.8124493512786 
+            text = "C2-h(ɔ6)-1" 
+        intervals [312]:
+            xmin = 308.8124493512786 
+            xmax = 309.03392237635086 
+            text = "V2-(h)ɔ(6)-1" 
+        intervals [313]:
+            xmin = 309.03392237635086 
+            xmax = 313.1072137490798 
+            text = "XXX" 
+        intervals [314]:
+            xmin = 313.1072137490798 
+            xmax = 313.13052598128957 
+            text = "C1-k(a1)-1" 
+        intervals [315]:
+            xmin = 313.13052598128957 
+            xmax = 313.2783516322002 
+            text = "V1-(k)a(1)-1" 
+        intervals [316]:
+            xmin = 313.2783516322002 
+            xmax = 313.3939887672499 
+            text = "XXX" 
+        intervals [317]:
+            xmin = 313.3939887672499 
+            xmax = 313.4088335917198 
+            text = "C2-t(o1)-1" 
+        intervals [318]:
+            xmin = 313.4088335917198 
+            xmax = 313.62408354653456 
+            text = "V2-(t)o(1)-1" 
+        intervals [319]:
+            xmin = 313.62408354653456 
+            xmax = 323.51998599643974 
+            text = "XXX" 
+        intervals [320]:
+            xmin = 323.51998599643974 
+            xmax = 323.53 
+            text = "C1-t(e6)-1" 
+        intervals [321]:
+            xmin = 323.53 
+            xmax = 323.68 
+            text = "V1-(t)e(6)-1" 
+        intervals [322]:
+            xmin = 323.68 
+            xmax = 323.7758243581058 
+            text = "XXX" 
+        intervals [323]:
+            xmin = 323.7758243581058 
+            xmax = 323.80633719023115 
+            text = "C2-k(au3)-1" 
+        intervals [324]:
+            xmin = 323.80633719023115 
+            xmax = 324.0345966459378 
+            text = "V2-(k)au(3)-1" 
+        intervals [325]:
+            xmin = 324.0345966459378 
+            xmax = 329.22063687944785 
+            text = "XXX" 
+        intervals [326]:
+            xmin = 329.22063687944785 
+            xmax = 329.24 
+            text = "C1-t(e6)-1" 
+        intervals [327]:
+            xmin = 329.24 
+            xmax = 329.39 
+            text = "V1-(t)e(6)-1" 
+        intervals [328]:
+            xmin = 329.39 
+            xmax = 329.5199809588949 
+            text = "XXX" 
+        intervals [329]:
+            xmin = 329.5199809588949 
+            xmax = 329.53 
+            text = "C2-t(ɔ2)-1" 
+        intervals [330]:
+            xmin = 329.53 
+            xmax = 329.8 
+            text = "V2-(t)ɔ(2)-1" 
+        intervals [331]:
+            xmin = 329.8 
+            xmax = 333.3709532738805 
+            text = "XXX" 
+        intervals [332]:
+            xmin = 333.3709532738805 
+            xmax = 333.4 
+            text = "C1-k(ɔ1)-1" 
+        intervals [333]:
+            xmin = 333.4 
+            xmax = 333.61 
+            text = "V1-(k)ɔ(1)-1" 
+        intervals [334]:
+            xmin = 333.61 
+            xmax = 333.7551529366306 
+            text = "XXX" 
+        intervals [335]:
+            xmin = 333.7551529366306 
+            xmax = 333.81 
+            text = "C2-k(i1)-1" 
+        intervals [336]:
+            xmin = 333.81 
+            xmax = 334.0901452966764 
+            text = "V2-(k)i(1)-1" 
+        intervals [337]:
+            xmin = 334.0901452966764 
+            xmax = 348.46408796228786 
+            text = "XXX" 
+        intervals [338]:
+            xmin = 348.46408796228786 
+            xmax = 348.50779132708556 
+            text = "C1-k(i2)-1" 
+        intervals [339]:
+            xmin = 348.50779132708556 
+            xmax = 348.74133118272323 
+            text = "V1-(k)i(2)-1" 
+        intervals [340]:
+            xmin = 348.74133118272323 
+            xmax = 348.74474550809805 
+            text = "XXX" 
+        intervals [341]:
+            xmin = 348.74474550809805 
+            xmax = 348.81849493619416 
+            text = "C2-h(o6)-1" 
+        intervals [342]:
+            xmin = 348.81849493619416 
+            xmax = 349.02 
+            text = "V2-(h)o(6)-1" 
+        intervals [343]:
+            xmin = 349.02 
+            xmax = 353.6483193994348 
+            text = "XXX" 
+        intervals [344]:
+            xmin = 353.6483193994348 
+            xmax = 353.65315310692415 
+            text = "C1-t(o4)-1" 
+        intervals [345]:
+            xmin = 353.65315310692415 
+            xmax = 353.87352552396743 
+            text = "V1-(t)o(4)-1" 
+        intervals [346]:
+            xmin = 353.87352552396743 
+            xmax = 353.9554710238927 
+            text = "XXX" 
+        intervals [347]:
+            xmin = 353.9554710238927 
+            xmax = 353.9745933040146 
+            text = "C2-k(au5)-1" 
+        intervals [348]:
+            xmin = 353.9745933040146 
+            xmax = 354.22917605840354 
+            text = "V2-(k)au(5)-1" 
+        intervals [349]:
+            xmin = 354.22917605840354 
+            xmax = 365.6497957895465 
+            text = "XXX" 
+        intervals [350]:
+            xmin = 365.6497957895465 
+            xmax = 365.6764284212361 
+            text = "C1-k(ɔ2)-1" 
+        intervals [351]:
+            xmin = 365.6764284212361 
+            xmax = 365.8889446516674 
+            text = "V1-(k)ɔ(3)-1" 
+        intervals [352]:
+            xmin = 365.8889446516674 
+            xmax = 365.986626182423 
+            text = "XXX" 
+        intervals [353]:
+            xmin = 365.986626182423 
+            xmax = 366 
+            text = "C2-t(ɔ1)-1" 
+        intervals [354]:
+            xmin = 366 
+            xmax = 366.24 
+            text = "V2-(t)ɔ(1)-1" 
+        intervals [355]:
+            xmin = 366.24 
+            xmax = 369.75718862730145 
+            text = "XXX" 
+        intervals [356]:
+            xmin = 369.75718862730145 
+            xmax = 369.77 
+            text = "C1-t(e6)-1" 
+        intervals [357]:
+            xmin = 369.77 
+            xmax = 369.9351715567122 
+            text = "V1-(t)e(6)-1" 
+        intervals [358]:
+            xmin = 369.9351715567122 
+            xmax = 370.05793276566027 
+            text = "XXX" 
+        intervals [359]:
+            xmin = 370.05793276566027 
+            xmax = 370.07 
+            text = "C2-p(o5)-1" 
+        intervals [360]:
+            xmin = 370.07 
+            xmax = 370.32 
+            text = "V2-(p)o(5)-1" 
+        intervals [361]:
+            xmin = 370.32 
+            xmax = 374.8681269131666 
+            text = "XXX" 
+        intervals [362]:
+            xmin = 374.8681269131666 
+            xmax = 374.89466084527817 
+            text = "C1-k(ɔ3)-1" 
+        intervals [363]:
+            xmin = 374.89466084527817 
+            xmax = 375.0701825696553 
+            text = "V1-(k)ɔ(3)-1" 
+        intervals [364]:
+            xmin = 375.0701825696553 
+            xmax = 375.1258056513241 
+            text = "XXX" 
+        intervals [365]:
+            xmin = 375.1258056513241 
+            xmax = 375.18 
+            text = "C2-ts(a3)-1" 
+        intervals [366]:
+            xmin = 375.18 
+            xmax = 375.45 
+            text = "V2-(ts)a(3)-1" 
+        intervals [367]:
+            xmin = 375.45 
+            xmax = 379.73807385807345 
+            text = "XXX" 
+        intervals [368]:
+            xmin = 379.73807385807345 
+            xmax = 379.76295590730797 
+            text = "C1-k(au6)-1" 
+        intervals [369]:
+            xmin = 379.76295590730797 
+            xmax = 379.91528259896313 
+            text = "V1-(k)au(6)-1" 
+        intervals [370]:
+            xmin = 379.91528259896313 
+            xmax = 380.0220933468966 
+            text = "XXX" 
+        intervals [371]:
+            xmin = 380.0220933468966 
+            xmax = 380.06 
+            text = "C2-k(au6)-1" 
+        intervals [372]:
+            xmin = 380.06 
+            xmax = 380.2581693749996 
+            text = "V2-(k)au(6)-1" 
+        intervals [373]:
+            xmin = 380.2581693749996 
+            xmax = 384.73221389373686 
+            text = "XXX" 
+        intervals [374]:
+            xmin = 384.73221389373686 
+            xmax = 384.82343592733656 
+            text = "C1-pʰ(ai2)-1" 
+        intervals [375]:
+            xmin = 384.82343592733656 
+            xmax = 385.01538223958374 
+            text = "V1-(pʰ)ai(2)-1" 
+        intervals [376]:
+            xmin = 385.01538223958374 
+            xmax = 385.1100828921027 
+            text = "XXX" 
+        intervals [377]:
+            xmin = 385.1100828921027 
+            xmax = 385.21 
+            text = "C2-ts(ui3)-1" 
+        intervals [378]:
+            xmin = 385.21 
+            xmax = 385.44 
+            text = "V2-(ts)ui(3)-1" 
+        intervals [379]:
+            xmin = 385.44 
+            xmax = 390.54788429171316 
+            text = "XXX" 
+        intervals [380]:
+            xmin = 390.54788429171316 
+            xmax = 390.56245123101616 
+            text = "C1-t(e3)-1" 
+        intervals [381]:
+            xmin = 390.56245123101616 
+            xmax = 390.7406161040293 
+            text = "V1-(t)e(3)-1" 
+        intervals [382]:
+            xmin = 390.7406161040293 
+            xmax = 390.85379001707537 
+            text = "XXX" 
+        intervals [383]:
+            xmin = 390.85379001707537 
+            xmax = 390.89973190256933 
+            text = "C2-k(i2)-1" 
+        intervals [384]:
+            xmin = 390.89973190256933 
+            xmax = 391.12 
+            text = "V2-(k)i(2)-1" 
+        intervals [385]:
+            xmin = 391.12 
+            xmax = 395.47531228905797 
+            text = "XXX" 
+        intervals [386]:
+            xmin = 395.47531228905797 
+            xmax = 395.4904723161298 
+            text = "C1-t(u1)-1" 
+        intervals [387]:
+            xmin = 395.4904723161298 
+            xmax = 395.6619201604709 
+            text = "V1-(t)u(1)-1" 
+        intervals [388]:
+            xmin = 395.6619201604709 
+            xmax = 395.77162050531757 
+            text = "XXX" 
+        intervals [389]:
+            xmin = 395.77162050531757 
+            xmax = 395.78 
+            text = "C2-t(ɔ6)-1" 
+        intervals [390]:
+            xmin = 395.78 
+            xmax = 396.0061296257382 
+            text = "V2-(t)ɔ(6)-1" 
+        intervals [391]:
+            xmin = 396.0061296257382 
+            xmax = 407.50193886639715 
+            text = "XXX" 
+        intervals [392]:
+            xmin = 407.50193886639715 
+            xmax = 407.53244544258314 
+            text = "C1-k(e1)-1" 
+        intervals [393]:
+            xmin = 407.53244544258314 
+            xmax = 407.68444888386455 
+            text = "V1-(k)e(1)-1" 
+        intervals [394]:
+            xmin = 407.68444888386455 
+            xmax = 407.77283726292904 
+            text = "XXX" 
+        intervals [395]:
+            xmin = 407.77283726292904 
+            xmax = 407.79759808268915 
+            text = "C2-p(o2)-1" 
+        intervals [396]:
+            xmin = 407.79759808268915 
+            xmax = 408.0032380479055 
+            text = "V2-(p)o(2)-1" 
+        intervals [397]:
+            xmin = 408.0032380479055 
+            xmax = 412.9990441349005 
+            text = "XXX" 
+        intervals [398]:
+            xmin = 412.9990441349005 
+            xmax = 413.01 
+            text = "C1-b(e4)-1" 
+        intervals [399]:
+            xmin = 413.01 
+            xmax = 413.16 
+            text = "V1-(b)e(4)-1" 
+        intervals [400]:
+            xmin = 413.16 
+            xmax = 413.2558236563689 
+            text = "XXX" 
+        intervals [401]:
+            xmin = 413.2558236563689 
+            xmax = 413.3 
+            text = "C2-k(i2)-1" 
+        intervals [402]:
+            xmin = 413.3 
+            xmax = 413.56 
+            text = "V2-(k)i(2)-1" 
+        intervals [403]:
+            xmin = 413.56 
+            xmax = 418.5920981425994 
+            text = "XXX" 
+        intervals [404]:
+            xmin = 418.5920981425994 
+            xmax = 418.631209935432 
+            text = "C1-k(i5)-1" 
+        intervals [405]:
+            xmin = 418.631209935432 
+            xmax = 418.76592833296667 
+            text = "V1-(k)i(5)-1" 
+        intervals [406]:
+            xmin = 418.76592833296667 
+            xmax = 418.8296660694346 
+            text = "XXX" 
+        intervals [407]:
+            xmin = 418.8296660694346 
+            xmax = 418.92 
+            text = "C2-ts(ia3)-1" 
+        intervals [408]:
+            xmin = 418.92 
+            xmax = 419.17732645016906 
+            text = "V2-(ts)ia(3)-1" 
+        intervals [409]:
+            xmin = 419.17732645016906 
+            xmax = 423.66814425018436 
+            text = "XXX" 
+        intervals [410]:
+            xmin = 423.66814425018436 
+            xmax = 423.69 
+            text = "C1-k(au1)-1" 
+        intervals [411]:
+            xmin = 423.69 
+            xmax = 423.86381160789574 
+            text = "V1-(k)au(1)-1" 
+        intervals [412]:
+            xmin = 423.86381160789574 
+            xmax = 423.99315459396144 
+            text = "XXX" 
+        intervals [413]:
+            xmin = 423.99315459396144 
+            xmax = 424.01536898323286 
+            text = "C2-p(o3)-1" 
+        intervals [414]:
+            xmin = 424.01536898323286 
+            xmax = 424.24 
+            text = "V2-(p)o(3)-1" 
+        intervals [415]:
+            xmin = 424.24 
+            xmax = 429.615689208212 
+            text = "XXX" 
+        intervals [416]:
+            xmin = 429.615689208212 
+            xmax = 429.73511074997106 
+            text = "V1-i(4)-1" 
+        intervals [417]:
+            xmin = 429.73511074997106 
+            xmax = 429.8224586589746 
+            text = "XXX" 
+        intervals [418]:
+            xmin = 429.8224586589746 
+            xmax = 429.89357300764726 
+            text = "C2-ts(iŋ2)-1" 
+        intervals [419]:
+            xmin = 429.89357300764726 
+            xmax = 430.15 
+            text = "V2-(ts)iŋ2-1" 
+        intervals [420]:
+            xmin = 430.15 
+            xmax = 433.38800981655356 
+            text = "XXX" 
+        intervals [421]:
+            xmin = 433.38800981655356 
+            xmax = 433.4 
+            text = "C1-p(au1)-1" 
+        intervals [422]:
+            xmin = 433.4 
+            xmax = 433.62 
+            text = "V1-(p)au(1)-1" 
+        intervals [423]:
+            xmin = 433.62 
+            xmax = 433.64328835867684 
+            text = "XXX" 
+        intervals [424]:
+            xmin = 433.64328835867684 
+            xmax = 433.8087986222513 
+            text = "C2-s(u1)-1" 
+        intervals [425]:
+            xmin = 433.8087986222513 
+            xmax = 434.0447292554875 
+            text = "V2-(s)u(1)-1" 
+        intervals [426]:
+            xmin = 434.0447292554875 
+            xmax = 441.1742205081173 
+            text = "XXX" 
+        intervals [427]:
+            xmin = 441.1742205081173 
+            xmax = 441.2724516137237 
+            text = "C1-ts(u3)-1" 
+        intervals [428]:
+            xmin = 441.2724516137237 
+            xmax = 441.43729363619894 
+            text = "V1-(ts)u(3)-1" 
+        intervals [429]:
+            xmin = 441.43729363619894 
+            xmax = 441.53054729890533 
+            text = "XXX" 
+        intervals [430]:
+            xmin = 441.53054729890533 
+            xmax = 441.57 
+            text = "C2-k(e1)-1" 
+        intervals [431]:
+            xmin = 441.57 
+            xmax = 441.78 
+            text = "V2-(k)e(1)-1" 
+        intervals [432]:
+            xmin = 441.78 
+            xmax = 445.42100642719197 
+            text = "XXX" 
+        intervals [433]:
+            xmin = 445.42100642719197 
+            xmax = 445.4333599002517 
+            text = "C1-p(o5)-1" 
+        intervals [434]:
+            xmin = 445.4333599002517 
+            xmax = 445.60284254377876 
+            text = "V1-(p)o(5)-1" 
+        intervals [435]:
+            xmin = 445.60284254377876 
+            xmax = 445.7003815140087 
+            text = "XXX" 
+        intervals [436]:
+            xmin = 445.7003815140087 
+            xmax = 445.73 
+            text = "C2-k(ɛ5)-1" 
+        intervals [437]:
+            xmin = 445.73 
+            xmax = 445.9169588718196 
+            text = "V2-(k)ɛ(5)-1" 
+        intervals [438]:
+            xmin = 445.9169588718196 
+            xmax = 452.6159169074201 
+            text = "XXX" 
+        intervals [439]:
+            xmin = 452.6159169074201 
+            xmax = 452.6461595226568 
+            text = "C1-t(ua6)-1" 
+        intervals [440]:
+            xmin = 452.6461595226568 
+            xmax = 452.84 
+            text = "V1-(t)ua(6)-1" 
+        intervals [441]:
+            xmin = 452.84 
+            xmax = 452.9348392311677 
+            text = "XXX" 
+        intervals [442]:
+            xmin = 452.9348392311677 
+            xmax = 452.97 
+            text = "C2-k(i2)-1" 
+        intervals [443]:
+            xmin = 452.97 
+            xmax = 453.19 
+            text = "V2-(k)i(2)-1" 
+        intervals [444]:
+            xmin = 453.19 
+            xmax = 457.77576261021835 
+            text = "XXX" 
+        intervals [445]:
+            xmin = 457.77576261021835 
+            xmax = 457.7878466210751 
+            text = "C1-t(ɛ2)-1" 
+        intervals [446]:
+            xmin = 457.7878466210751 
+            xmax = 458.07413585524034 
+            text = "V1-(t)ɛ(2)-1" 
+        intervals [447]:
+            xmin = 458.07413585524034 
+            xmax = 458.1720762167008 
+            text = "XXX" 
+        intervals [448]:
+            xmin = 458.1720762167008 
+            xmax = 458.2 
+            text = "C2-k(ɛ5)-1" 
+        intervals [449]:
+            xmin = 458.2 
+            xmax = 458.48 
+            text = "V2-(k)ɛ(5)-1" 
+        intervals [450]:
+            xmin = 458.48 
+            xmax = 464.691508895814 
+            text = "XXX" 
+        intervals [451]:
+            xmin = 464.691508895814 
+            xmax = 464.723083657877 
+            text = "C1-p(iau1)-1" 
+        intervals [452]:
+            xmin = 464.723083657877 
+            xmax = 464.8967950120431 
+            text = "V1-(p)iau(1)-1" 
+        intervals [453]:
+            xmin = 464.8967950120431 
+            xmax = 465.00282187088175 
+            text = "XXX" 
+        intervals [454]:
+            xmin = 465.00282187088175 
+            xmax = 465.05261628272325 
+            text = "C2-k(i6)-1" 
+        intervals [455]:
+            xmin = 465.05261628272325 
+            xmax = 465.2559994959818 
+            text = "V2-(k)i(6)-1" 
+        intervals [456]:
+            xmin = 465.2559994959818 
+            xmax = 469.8802832874223 
+            text = "XXX" 
+        intervals [457]:
+            xmin = 469.8802832874223 
+            xmax = 470.04089203003883 
+            text = "C1-s(i5)-1" 
+        intervals [458]:
+            xmin = 470.04089203003883 
+            xmax = 470.2091561603861 
+            text = "V1-(s)i(5)-1" 
+        intervals [459]:
+            xmin = 470.2091561603861 
+            xmax = 470.3217959248468 
+            text = "XXX" 
+        intervals [460]:
+            xmin = 470.3217959248468 
+            xmax = 470.34 
+            text = "C2-p(au1)-1" 
+        intervals [461]:
+            xmin = 470.34 
+            xmax = 470.5453864901617 
+            text = "V2-(p)au(1)-1" 
+        intervals [462]:
+            xmin = 470.5453864901617 
+            xmax = 474.8516942896282 
+            text = "XXX" 
+        intervals [463]:
+            xmin = 474.8516942896282 
+            xmax = 474.87 
+            text = "C1-k(ɔ1)-1" 
+        intervals [464]:
+            xmin = 474.87 
+            xmax = 475 
+            text = "V1-(k)ɔ(1)-1" 
+        intervals [465]:
+            xmin = 475 
+            xmax = 475.12792895225857 
+            text = "XXX" 
+        intervals [466]:
+            xmin = 475.12792895225857 
+            xmax = 475.16 
+            text = "C2-p(o2)-1" 
+        intervals [467]:
+            xmin = 475.16 
+            xmax = 475.38 
+            text = "V2-(p)o(2)-1" 
+        intervals [468]:
+            xmin = 475.38 
+            xmax = 479.2999637426393 
+            text = "XXX" 
+        intervals [469]:
+            xmin = 479.2999637426393 
+            xmax = 479.33 
+            text = "C1-k(o1)-1" 
+        intervals [470]:
+            xmin = 479.33 
+            xmax = 479.5 
+            text = "V1-(k)o(1)-1" 
+        intervals [471]:
+            xmin = 479.5 
+            xmax = 479.62809359974295 
+            text = "XXX" 
+        intervals [472]:
+            xmin = 479.62809359974295 
+            xmax = 479.67 
+            text = "C2-k(ui5)-1" 
+        intervals [473]:
+            xmin = 479.67 
+            xmax = 479.93 
+            text = "V2-(k)ui(5)-1" 
+        intervals [474]:
+            xmin = 479.93 
+            xmax = 486.0536341760566 
+            text = "XXX" 
+        intervals [475]:
+            xmin = 486.0536341760566 
+            xmax = 486.07 
+            text = "C1-t(e2)-1" 
+        intervals [476]:
+            xmin = 486.07 
+            xmax = 486.24 
+            text = "V1-(t)e(2)-1" 
+        intervals [477]:
+            xmin = 486.24 
+            xmax = 486.3373728455116 
+            text = "XXX" 
+        intervals [478]:
+            xmin = 486.3373728455116 
+            xmax = 486.36 
+            text = "C2-k(ɔ3)-1" 
+        intervals [479]:
+            xmin = 486.36 
+            xmax = 486.58 
+            text = "V2-(k)ɔ(3)-1" 
+        intervals [480]:
+            xmin = 486.58 
+            xmax = 494.3113600001348 
+            text = "XXX" 
+        intervals [481]:
+            xmin = 494.3113600001348 
+            xmax = 494.33565457552675 
+            text = "C1-k(ɛ1)-1" 
+        intervals [482]:
+            xmin = 494.33565457552675 
+            xmax = 494.50248579858186 
+            text = "V1-(k)ɛ(1)-1" 
+        intervals [483]:
+            xmin = 494.50248579858186 
+            xmax = 494.5710805799201 
+            text = "XXX" 
+        intervals [484]:
+            xmin = 494.5710805799201 
+            xmax = 494.6474349597233 
+            text = "C2-ts(ui3)-1" 
+        intervals [485]:
+            xmin = 494.6474349597233 
+            xmax = 494.86 
+            text = "V2-(ts)ui(3)-1" 
+        intervals [486]:
+            xmin = 494.86 
+            xmax = 498.9587195651686 
+            text = "XXX" 
+        intervals [487]:
+            xmin = 498.9587195651686 
+            xmax = 499.0402647677831 
+            text = "C1-tʰ(ɔ2)-1" 
+        intervals [488]:
+            xmin = 499.0402647677831 
+            xmax = 499.2087278340087 
+            text = "V1-(tʰ)ɔ(2)-1" 
+        intervals [489]:
+            xmin = 499.2087278340087 
+            xmax = 499.30759885937675 
+            text = "XXX" 
+        intervals [490]:
+            xmin = 499.30759885937675 
+            xmax = 499.33 
+            text = "C2-t(ue6)-1" 
+        intervals [491]:
+            xmin = 499.33 
+            xmax = 499.5496482006089 
+            text = "V2-(t)ue(6)-1" 
+        intervals [492]:
+            xmin = 499.5496482006089 
+            xmax = 504.60255731531646 
+            text = "XXX" 
+        intervals [493]:
+            xmin = 504.60255731531646 
+            xmax = 504.69 
+            text = "C1-ts(i3)-1" 
+        intervals [494]:
+            xmin = 504.69 
+            xmax = 504.85956619785543 
+            text = "V1-(ts)i(3)-1" 
+        intervals [495]:
+            xmin = 504.85956619785543 
+            xmax = 504.906377081379 
+            text = "XXX" 
+        intervals [496]:
+            xmin = 504.906377081379 
+            xmax = 505.05 
+            text = "C2-s(ɔ5)-1" 
+        intervals [497]:
+            xmin = 505.05 
+            xmax = 505.27616128042376 
+            text = "V2-(s)ɔ(5)-1" 
+        intervals [498]:
+            xmin = 505.27616128042376 
+            xmax = 509.01308749631653 
+            text = "XXX" 
+        intervals [499]:
+            xmin = 509.01308749631653 
+            xmax = 509.0316070158504 
+            text = "C1-t(u1)-1" 
+        intervals [500]:
+            xmin = 509.0316070158504 
+            xmax = 509.2092345512966 
+            text = "V1-(t)u(1)-1" 
+        intervals [501]:
+            xmin = 509.2092345512966 
+            xmax = 509.3123657211804 
+            text = "XXX" 
+        intervals [502]:
+            xmin = 509.3123657211804 
+            xmax = 509.3198188007942 
+            text = "C2-p(ai2)-1" 
+        intervals [503]:
+            xmin = 509.3198188007942 
+            xmax = 509.5664615125952 
+            text = "V2-(p)ai(2)-1" 
+        intervals [504]:
+            xmin = 509.5664615125952 
+            xmax = 515.240175017629 
+            text = "XXX" 
+        intervals [505]:
+            xmin = 515.240175017629 
+            xmax = 515.2587031425143 
+            text = "C1-b(e4)-1" 
+        intervals [506]:
+            xmin = 515.2587031425143 
+            xmax = 515.46 
+            text = "V1-(b)e(4)-1" 
+        intervals [507]:
+            xmin = 515.46 
+            xmax = 515.4774545524498 
+            text = "XXX" 
+        intervals [508]:
+            xmin = 515.4774545524498 
+            xmax = 515.56 
+            text = "C2-h(u2)-1" 
+        intervals [509]:
+            xmin = 515.56 
+            xmax = 515.79 
+            text = "V2-(h)u(2)-1" 
+        intervals [510]:
+            xmin = 515.79 
+            xmax = 519.1458837603701 
+            text = "XXX" 
+        intervals [511]:
+            xmin = 519.1458837603701 
+            xmax = 519.1879573685721 
+            text = "C1-k(ɔ1)-1" 
+        intervals [512]:
+            xmin = 519.1879573685721 
+            xmax = 519.35 
+            text = "V1-(k)ɔ(1)-1" 
+        intervals [513]:
+            xmin = 519.35 
+            xmax = 519.401586872688 
+            text = "XXX" 
+        intervals [514]:
+            xmin = 519.401586872688 
+            xmax = 519.51380190759 
+            text = "C2-s(o3)-1" 
+        intervals [515]:
+            xmin = 519.51380190759 
+            xmax = 519.73 
+            text = "V2-(s)o(3)-1" 
+        intervals [516]:
+            xmin = 519.73 
+            xmax = 523.8285045610484 
+            text = "XXX" 
+        intervals [517]:
+            xmin = 523.8285045610484 
+            xmax = 523.869368240969 
+            text = "C1-k(ue5)-1" 
+        intervals [518]:
+            xmin = 523.869368240969 
+            xmax = 524.0353604947984 
+            text = "V1-(k)ue(5)-1" 
+        intervals [519]:
+            xmin = 524.0353604947984 
+            xmax = 524.1211048378361 
+            text = "XXX" 
+        intervals [520]:
+            xmin = 524.1211048378361 
+            xmax = 524.17 
+            text = "C2-k(i2)-1" 
+        intervals [521]:
+            xmin = 524.17 
+            xmax = 524.38 
+            text = "V2-(k)i(2)-1" 
+        intervals [522]:
+            xmin = 524.38 
+            xmax = 528.6132381322541 
+            text = "XXX" 
+        intervals [523]:
+            xmin = 528.6132381322541 
+            xmax = 528.6309200162874 
+            text = "C1-b(i4)-1" 
+        intervals [524]:
+            xmin = 528.6309200162874 
+            xmax = 528.7966876790994 
+            text = "V1-(b)i(4)-1" 
+        intervals [525]:
+            xmin = 528.7966876790994 
+            xmax = 528.8143695631326 
+            text = "XXX" 
+        intervals [526]:
+            xmin = 528.8143695631326 
+            xmax = 528.8939380412824 
+            text = "C2-h(un3)-1" 
+        intervals [527]:
+            xmin = 528.8939380412824 
+            xmax = 529.1481151242606 
+            text = "V2-(h)u(n3)-1" 
+        intervals [528]:
+            xmin = 529.1481151242606 
+            xmax = 537.7324773825461 
+            text = "XXX" 
+        intervals [529]:
+            xmin = 537.7324773825461 
+            xmax = 537.756116966274 
+            text = "C1-p(o3)-1" 
+        intervals [530]:
+            xmin = 537.756116966274 
+            xmax = 537.9347072764617 
+            text = "V1-(p)o(3)-1" 
+        intervals [531]:
+            xmin = 537.9347072764617 
+            xmax = 538.0520672519787 
+            text = "XXX" 
+        intervals [532]:
+            xmin = 538.0520672519787 
+            xmax = 538.06 
+            text = "C2-t(o3)-1" 
+        intervals [533]:
+            xmin = 538.06 
+            xmax = 538.31 
+            text = "V2-(t)o(3)-1" 
+        intervals [534]:
+            xmin = 538.31 
+            xmax = 541.5580157360064 
+            text = "XXX" 
+        intervals [535]:
+            xmin = 541.5580157360064 
+            xmax = 541.5755231653742 
+            text = "C1-p(ɔ5)-1" 
+        intervals [536]:
+            xmin = 541.5755231653742 
+            xmax = 541.7625912832639 
+            text = "V1-(p)ɔ(5)-1n" 
+        intervals [537]:
+            xmin = 541.7625912832639 
+            xmax = 541.8638510069152 
+            text = "XXX" 
+        intervals [538]:
+            xmin = 541.8638510069152 
+            xmax = 541.8816290120711 
+            text = "C2-t(e6)-1" 
+        intervals [539]:
+            xmin = 541.8816290120711 
+            xmax = 542.0963652979807 
+            text = "V2-(t)e(6)-1" 
+        intervals [540]:
+            xmin = 542.0963652979807 
+            xmax = 546.232772404938 
+            text = "XXX" 
+        intervals [541]:
+            xmin = 546.232772404938 
+            xmax = 546.28 
+            text = "C1-p(ui2)-1" 
+        intervals [542]:
+            xmin = 546.28 
+            xmax = 546.45 
+            text = "V1-(p)ui(2)-1" 
+        intervals [543]:
+            xmin = 546.45 
+            xmax = 546.5798423498389 
+            text = "XXX" 
+        intervals [544]:
+            xmin = 546.5798423498389 
+            xmax = 546.6 
+            text = "C2-t(u1)-1" 
+        intervals [545]:
+            xmin = 546.6 
+            xmax = 546.82 
+            text = "V2-(t)u(1)-1" 
+        intervals [546]:
+            xmin = 546.82 
+            xmax = 552.0040320556316 
+            text = "XXX" 
+        intervals [547]:
+            xmin = 552.0040320556316 
+            xmax = 552.0260881624203 
+            text = "C1-p(o3)-1" 
+        intervals [548]:
+            xmin = 552.0260881624203 
+            xmax = 552.1793796609901 
+            text = "V1-(p)o(3)-1" 
+        intervals [549]:
+            xmin = 552.1793796609901 
+            xmax = 552.3076722976795 
+            text = "XXX" 
+        intervals [550]:
+            xmin = 552.3076722976795 
+            xmax = 552.3273029747851 
+            text = "C2-p(i5)-1" 
+        intervals [551]:
+            xmin = 552.3273029747851 
+            xmax = 552.5462056206027 
+            text = "V2-(p)i(5)-1" 
+        intervals [552]:
+            xmin = 552.5462056206027 
+            xmax = 555.71 
+            text = "XXX" 
