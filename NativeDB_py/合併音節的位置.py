@@ -1,24 +1,60 @@
 
 def 合併位置(資料):
 	#	看到第一個xxx時, 下一行C的值要記錄min
-	#	直到看到第二個xxx, 最後一行的值要紀錄max
-	
-	xxx	= 0
-	sylmin = 1000000.0
-	sylmax = -100.0
-	syl = []
+	#	直到看到第二個xxx, 最後一行的值要紀錄max	
+# 	累積文字 = ['字字字字字', '開頭', '結尾']
+	累積文字 = []
 	寫出結果 = []
-	for	line in 資料:
-		名字,	xmin, xmax = line
-		xmin = float(xmin)
-		xmax = float(xmax)
-		if(名字=="XXX" and xxx==0):
-			xxx = 1
-		elif(名字=="XXX" and xxx==1):
-			寫出結果.append((','.join(syl), sylmin, sylmax))
-			syl = []
-		else:
-			sylmin = xmin if sylmin > xmin else sylmin;
-			sylmax = xmax if sylmax < xmax else sylmax;
-			syl.append(名字)
-	return 寫出結果		
+	
+	for	索引, 行 in enumerate(資料):
+		現在的字,	開頭字串, 結尾字串 = 行
+		開頭 = float(開頭字串)
+		結尾 = float(結尾字串)
+		if(索引 == 0):
+			前一個字 = 現在的字
+			if(現在的字=="XXX"):
+				叉叉時間 = 開頭
+			else:
+				累積文字.append(現在的字)
+				音節時間 = [開頭字串, 結尾字串]
+			
+		elif(前一個字 == "XXX" and 現在的字 != "XXX"):
+# 			若xxx前面是有字的
+			if(len(累積文字)>0):
+				累積文字.append(現在的字)
+				音節時間[1]=結尾字串
+#			若是現在指到資料的第二行
+			else:
+				累積文字.append(現在的字)
+				音節時間 = [開頭字串, 結尾字串]
+			
+		elif(前一個字 != "XXX" and 現在的字 == "XXX"):
+# 			CV區間結束
+			叉叉時間 = 結尾-開頭
+			if(叉叉時間 > 1):
+				if(len(累積文字)!=0):
+					寫出結果.append((','.join(累積文字), 音節時間[0], 音節時間[1]))
+				累積文字=[]
+				
+		elif(前一個字 == "XXX" and 現在的字 == "XXX"):
+# 			在叉叉區間中
+# 			更新叉叉區間
+			叉叉時間 += 結尾-開頭
+			if(叉叉時間 > 1):
+				if(len(累積文字)!=0):
+					寫出結果.append((','.join(累積文字), 音節時間[0], 音節時間[1]))
+				累積文字=[]
+
+		else:		
+# 			在文字區間中
+# 			更新文字區間
+			累積文字.append(現在的字)
+			音節時間[1] = 結尾字串
+			
+		前一個字 = 現在的字	
+	return 寫出結果	
+	
+	
+# def 計算時間(時間陣列, 開頭, 結尾):	
+# 	時間陣列[0] = 開頭 if 時間陣列[0] > 開頭 else 時間陣列[0];
+# 	時間陣列[1] = 結尾 if 時間陣列[1] < 結尾 else 時間陣列[1];
