@@ -16,14 +16,14 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = 把EXCEL讀進來(問題)
 		self.assertEqual(答案, 結果)
 	
-	def test_基本shortX(self):
-		問題 = '../NativeDB_py/numberbook2.xlsx'
-		答案 = [
-					['Num','Word','IPA','Note'],
-					['Zhang_VT_001','(乖zzzz)巧'	, 'kʰa3','kʰa3']
-				]
-		結果 = 把EXCEL讀進來(問題)
-		self.assertNotEqual(答案, 結果)
+# 	def test_基本shortX(self):
+# 		問題 = '../NativeDB_py/numberbook2.xlsx'
+# 		答案 = [
+# 					['Num','Word','IPA','Note'],
+# 					['Zhang_VT_001','(乖zzzz)巧'	, 'kʰa3','kʰa3']
+# 				]
+# 		結果 = 把EXCEL讀進來(問題)
+# 		self.assertNotEqual(答案, 結果)
 	
 	def test_基本long(self):
 		問題 = '../NativeDB_py/numberbook.xlsx'
