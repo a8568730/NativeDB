@@ -6,7 +6,7 @@ class 基本元素試驗(unittest.TestCase):
 		pass
 	def tearDown(self):
 		pass
-	
+# 	'你試驗足完整！！！'
 # 	單詞
 # 	def test_單詞(self):
 # 		問題 = [
@@ -65,7 +65,7 @@ class 基本元素試驗(unittest.TestCase):
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
  				['Zhang_VT_002','(乖)','kʰa3','kʰa3']
  			]
-		答案 =  'col(2)的Word字數應為1'
+		答案 =  'col(2)的字格式不符'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
@@ -77,6 +77,17 @@ class 基本元素試驗(unittest.TestCase):
  				['Zhang_VT_002','','kʰa3','kʰa3']
  			]
 		答案 =  'col(2)沒有字'
+		詞數 = 1
+		結果 = xlsx陣列轉json(問題, 詞數)
+		self.assertEqual(答案, 結果)
+
+	def test_單詞字有特殊符號(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang2_VT_001','(乖)巧$','kʰa3','kʰa3'],
+				['Zhang2_VT_002','(乖)巧','kʰa3','kʰa3']
+			]
+		答案 =  'col(1)含特殊符號'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
@@ -125,7 +136,51 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
 	
-				
+	def test_單詞格式右(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3']
+			]
+		答案 =  'OK'
+		結果 = xlsx陣列轉json(問題, 1)
+		self.assertEqual(答案, 結果)
+	
+	def test_單詞格式左(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','巧(乖)','kʰa3','kʰa3']
+			]
+		答案 =  'OK'
+		結果 = xlsx陣列轉json(問題, 1)
+		self.assertEqual(答案, 結果)
+	
+	def test_單詞格式純(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','巧','kʰa3','kʰa3']
+			]
+		答案 =  'OK'
+		結果 = xlsx陣列轉json(問題, 1)
+		self.assertEqual(答案, 結果)
+	
+	def test_單詞格式X(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','(巧)','kʰa3','kʰa3']
+			]
+		答案 =  'col(1)的Word字數應為1'
+		結果 = xlsx陣列轉json(問題, 1)
+		self.assertEqual(答案, 結果)
+	
+	def test_單詞格式兩邊(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','(喔)巧(乖)','kʰa3','kʰa3']
+			]
+		答案 =  'OK'
+		結果 = xlsx陣列轉json(問題, 1)
+		self.assertEqual(答案, 結果)
+							
 # 	def test_單詞短(self):
 # 		問題 = [
 # 				['Num','Word','IPA','Note'],

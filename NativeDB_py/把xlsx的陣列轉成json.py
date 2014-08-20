@@ -23,7 +23,6 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 			初始編號字 = 完整編號.strip('0123456789')
 			初始編號數 = re.sub(初始編號字, '', 完整編號)
 			初始編號數字長度 = len(初始編號數)
-			print(初始編號字, 初始編號數)
 
 		編號字 = 完整編號.strip('0123456789')
 		if(編號字 != 初始編號字):
@@ -33,8 +32,19 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 		if(len(字)==0):
 			return 'col(' + str(索引+1) + ')沒有字'
 		
-		#	不能有其他符號，不能只有括號
-# 		if(re.search(ur'[\u4e00-\u9fff]+',sample)):
+		#	字不能有其他奇怪符號
+		if(any(c in 字 for c in '*$&#^%@~+|')):
+			return 'col(' + str(索引+1) + ')含特殊符號'
+		
+		#	不能只有括號
+		if('()' == 字):
+			return 'col(' + str(索引+1) + ')只有()'
+		
+		patternL = re.compile(r'[\u4e00-\u9fff]{'+ str(詞數) +'}(\([\u4e00-\u9fff]*\))')
+		patternR = re.compile(r'[\([\u4e00-\u9fff]*\)][\u4e00-\u9fff]{'+ str(詞數) +'}')
+		patternP = re.compile(r'[\u4e00-\u9fff]{'+ str(詞數) +'}')
+		if((not patternL.fullmatch(字)) or (not patternR.fullmatch(字)) or (not patternP.fullmatch(字))):
+			return 'col(' + str(索引+1) + ')的字格式不符'
 		
 		#	若是單詞卻有兩字以上, 雙詞卻有三字以上, 必須有括號
 		if(詞數 != len(字)):
@@ -42,6 +52,7 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 			for 括號 in 括號組:
 				if(字.find(括號)==-1):
 					return 'col(' + str(索引+1) + ')的Word少了' + 括號 
+			
 			#	()以外的字不得少於詞數
 			第一次切出, 剩餘字串 = 字.split('(')
 			括號內的字串, 第二次切出 = 剩餘字串.split(')') 
