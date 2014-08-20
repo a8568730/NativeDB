@@ -8,6 +8,15 @@ class 基本元素試驗(unittest.TestCase):
 		pass
 	
 # 	單詞
+# 	def test_單詞(self):
+# 		問題 = [
+# 				['Num','Word','IPA','Note'],
+# 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3']
+# 			]
+# 		答案 =  "[{Num:'Zhang_VT_001',Word:'(乖)巧',	IPA:'kʰa3',Note:'kʰa3'}]"
+# 		結果 = xlsx陣列轉json(問題, 1)
+# 		self.assertEqual(答案, 結果)
+		
 	def test_單詞欄位不夠(self):
 		問題 = [
 				['Num','Word'],
@@ -28,17 +37,28 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)	
 		
-# 	def test_單詞編號不一致(self):
-# 		問題 = [
-# 				['Num','Word','IPA','Note'],
-# 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
-# 				['_VT_002','(乖)','kʰa3','kʰa3']
-# 			]
-# 		答案 =  'col(2)的Num應為Zhang_VT_002'
-# 		詞數 = 1
-# 		結果 = xlsx陣列轉json(問題, 詞數)
-# 		self.assertEqual(答案, 結果)
+	def test_單詞編號不一致(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
+				['_VT_002','(乖)','kʰa3','kʰa3']
+			]
+		答案 =  'col(2)的Num有誤'
+		詞數 = 1
+		結果 = xlsx陣列轉json(問題, 詞數)
+		self.assertEqual(答案, 結果)
 			
+	def test_單詞編號內含數字(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang2_VT_001','(乖)巧','kʰa3','kʰa3'],
+				['Zhang2_VT_002','(乖)巧','kʰa3','kʰa3']
+			]
+		答案 =  'OK'
+		詞數 = 1
+		結果 = xlsx陣列轉json(問題, 詞數)
+		self.assertEqual(答案, 結果)
+				
 	def test_單詞字數不符(self):
 		問題 = [
  				['Num','Word','IPA','Note'],
@@ -50,7 +70,7 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
 
-	def test_單詞有空字串(self):
+	def test_單詞空字串(self):
 		問題 = [
  				['Num','Word','IPA','Note'],
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
