@@ -24,6 +24,7 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 			初始編號數 = re.sub(初始編號字, '', 完整編號)
 			初始編號數字長度 = len(初始編號數)
 
+		#	編號的頭尾去掉數字、得到編號名稱 		
 		編號字 = 完整編號.strip('0123456789')
 		if(編號字 != 初始編號字):
 			return 'col(' + str(索引+1) + ')的Num有誤'
@@ -39,18 +40,7 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 		
 		#	若是單詞卻有兩字以上, 雙詞卻有三字以上, 必須有括號
 		if(詞數 != len(字)):
-# 			括號組="()"
-# 			for 括號 in 括號組:
-# 				if(字.find(括號)==-1):
-# 					return 'col(' + str(索引+1) + ')的Word少了' + 括號 
-# 			
-# 			#	()以外的字不得少於詞數
-# 			第一次切出, 剩餘字串 = 字.split('(')
-# 			括號內的字串, 第二次切出 = 剩餘字串.split(')') 
-# 			if(len(第一次切出) != 詞數 and len(第二次切出) != 詞數):
-# 				return 'col(' + str(索引+1) + ')的Word字數應為' + str(詞數)
-
-			regex = re.compile('\(.+?\)')
+			regex = re.compile('\(.*?\)')
 			去掉括號後的字們 = regex.sub(',', 字)
 			print(去掉括號後的字們)
 			
@@ -66,6 +56,16 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 			
 			if(not 有符合詞數):
 				return 'col(' + str(索引+1) + ')的字格式不符'
-			
+		
+		#	IPA不能為空字串
+		if(len(音標)==0):
+			return 'col(' + str(索引+1) + ')的IPA欄位空白'
+		
+		寫出結果.append(
+				{'Name':編號字 + ("{0:0"+str(初始編號數字長度)+"d}").format(索引+1),
+				'Word':字, 
+				'IPA':音標, 
+				'Note':註記
+			});	
 	return 'OK'
 
