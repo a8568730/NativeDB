@@ -30,34 +30,42 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 		
 		#	字不能為空字串
 		if(len(字)==0):
-			return 'col(' + str(索引+1) + ')沒有字'
+			return 'col(' + str(索引+1) + ')的Word欄位空白'
 		
 		#	字不能有其他奇怪符號
-		if(any(c in 字 for c in '*$&#^%@~+|')):
+		if(any(c in 字 for c in ' *$&#^%@~+|,.')):
 			return 'col(' + str(索引+1) + ')含特殊符號'
 		
-		#	不能只有括號
-		if('()' == 字):
-			return 'col(' + str(索引+1) + ')只有()'
-		
-		patternL = re.compile(r'[\u4e00-\u9fff]{'+ str(詞數) +'}(\([\u4e00-\u9fff]*\))')
-		patternR = re.compile(r'[\([\u4e00-\u9fff]*\)][\u4e00-\u9fff]{'+ str(詞數) +'}')
-		patternP = re.compile(r'[\u4e00-\u9fff]{'+ str(詞數) +'}')
-		if((not patternL.fullmatch(字)) or (not patternR.fullmatch(字)) or (not patternP.fullmatch(字))):
-			return 'col(' + str(索引+1) + ')的字格式不符'
 		
 		#	若是單詞卻有兩字以上, 雙詞卻有三字以上, 必須有括號
 		if(詞數 != len(字)):
-			括號組="()"
-			for 括號 in 括號組:
-				if(字.find(括號)==-1):
-					return 'col(' + str(索引+1) + ')的Word少了' + 括號 
+# 			括號組="()"
+# 			for 括號 in 括號組:
+# 				if(字.find(括號)==-1):
+# 					return 'col(' + str(索引+1) + ')的Word少了' + 括號 
+# 			
+# 			#	()以外的字不得少於詞數
+# 			第一次切出, 剩餘字串 = 字.split('(')
+# 			括號內的字串, 第二次切出 = 剩餘字串.split(')') 
+# 			if(len(第一次切出) != 詞數 and len(第二次切出) != 詞數):
+# 				return 'col(' + str(索引+1) + ')的Word字數應為' + str(詞數)
+
+			regex = re.compile('\(.+?\)')
+			去掉括號後的字們 = regex.sub(',', 字)
+			print(去掉括號後的字們)
 			
-			#	()以外的字不得少於詞數
-			第一次切出, 剩餘字串 = 字.split('(')
-			括號內的字串, 第二次切出 = 剩餘字串.split(')') 
-			if(len(第一次切出) != 詞數 and len(第二次切出) != 詞數):
-				return 'col(' + str(索引+1) + ')的Word字數應為' + str(詞數)
+			if(去掉括號後的字們==''):
+				return 'col(' + str(索引+1) + ')的字格式不符'
+			
+			括號外的字陣列 = 去掉括號後的字們.split(',')
+			print(括號外的字陣列)
+			有符合詞數 = False
+			for 一個 in 括號外的字陣列:
+				if(len(一個) == 詞數):
+					有符合詞數  = True
+			
+			if(not 有符合詞數):
+				return 'col(' + str(索引+1) + ')的字格式不符'
 			
 	return 'OK'
 
