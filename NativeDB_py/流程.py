@@ -4,8 +4,12 @@ from NativeDB_py.照位置切割音檔 import 切割音檔
 from NativeDB_py.檢查輸入的檔案 import 檢查輸入
 from NativeDB_py.檢查取出的位置大小 import 檢查位置大小
 
-文字檔路徑 = 'C:\\Users\\SIDK\\Desktop\\Penang_Y_M01_01.TextGrid'
-聲音檔路徑 = 'C:\\Users\\SIDK\\Desktop\\Penang_Y_M01_01.wav'
+# 	單詞：
+# 文字檔路徑 = 'C:\\Users\\SIDK\\Desktop\\Penang_Y_M01_02.TextGrid'
+# 聲音檔路徑 = 'C:\\Users\\SIDK\\Desktop\\Penang_Y_M01_02.wav'
+文字檔路徑 = '/home/sui2/桌面/Penang_Y_M01_02.TextGrid'
+聲音檔路徑 = '/home/sui2/桌面/Penang_Y_M01_02.wav'
+# 	雙詞：
 
 
 資料 = 取出聲音位置(文字檔路徑)
