@@ -5,6 +5,7 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 
 # 	是否剛好有四個欄位
 	欄數=len(xlsx陣列[0])
+	print(xlsx陣列[0])
 	if(欄數!=4):
 		return 'xlsx檔要四個欄位: Num, Word, IPA, Note'
 
