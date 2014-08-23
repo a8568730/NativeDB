@@ -6,7 +6,6 @@ def 切割音檔(音檔路徑, 合併後的資料):
 # 	合併後的資料，可能好幾組文字的切割時間區間
 # 	[(字1, '開頭', '結尾'), ...]
 	音檔原名 = os.path.splitext(音檔路徑)[0]
-	切割總數 = len(合併後的資料)
 	
 	for 第幾筆, 一筆資料 in enumerate(合併後的資料):
 		origAudio = wave.open(音檔路徑,'r')
@@ -29,10 +28,11 @@ def 切割音檔(音檔路徑, 合併後的資料):
 		chunkData = origAudio.readframes(end-start)
 			
 		#	分為切割一次或兩次以上的檔名取法
-		if(切割總數 > 1):
-			輸出名 = 音檔原名 + '_chunk.wav' 
-		else:
-			輸出名 = 音檔原名 + '_chunk.wav'
+# 		if(切割總數 > 1):
+# 			輸出名 = 音檔原名 + '_chunk.wav' 
+# 		else:
+# 			輸出名 = 音檔原名 + '_chunk.wav'
+		輸出名 = 音檔原名 + '_' + ("{0:05d}").format(第幾筆+1) +'.wav'
 			
 		chunkAudio = wave.open(輸出名,'w')
 		chunkAudio.setnchannels(nChannels)
