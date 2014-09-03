@@ -15,10 +15,10 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = 音標比對excel(檔案, 問題)
 		self.assertEqual(答案, 結果)
 		
-	def test_比對_記者交保(self):
+	def test_比對_記者交保以前(self):
 		檔案 = '../NativeDB_py/numberbook3.xlsx'
 		問題 = [(['ki5','tsia3'], '1.7946093688657765', '2.02'), (['kau1', 'po3'], '4.38', '7.7')]
-		答案 = True
+		答案 = False
 		結果 = 音標比對excel(檔案, 問題)
 		self.assertEqual(答案, 結果)
 	
