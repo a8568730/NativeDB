@@ -28,7 +28,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# 新增資料夾
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    '海外頁面'
 )
 
 MIDDLEWARE_CLASSES = (
