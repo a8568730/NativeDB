@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block 標題 %}海外漢語方言資料庫{% endblock %}</title>
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	{% block extrahead %}{% endblock %}
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">	
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <h1 class="navbar-text navbar-left">
+      	海外漢語方言資料庫&nbsp;&nbsp;
+      	<small>Database of Chinese languages in Singapore and Malaysia</small>
+      </h1>
+      <button type="button" class="btn btn-warning navbar-btn navbar-right">Sign in</button>
+    </div>
+    <div class="bar-stripe"></div>
+    
+    	<div class="row">
+			<div class="col-md-3 listgroup">
+				<a href="#mono" class="list-group-item">Mono-phone<span class="badge">10</span></a>
+				<a href="#duo" class="list-group-item">Duo-phone<span class="badge">20</span></a>
+				<a href="#story" class="list-group-item">Story<span class="badge">1</span></a>
+			</div>
+			<div class="col-md-9">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="active">
+						<a href="#">國語</a>
+					</li>
+					<li>
+						<a href="#">閩語</a>
+					</li>
+					<li>
+						<a href="#">客語</a>
+					</li>
+				</ul>
+				<div class="main">
+					{% block 內容 %}海外漢語方言資料庫{% endblock %}
+				</div>
+			</div>
+	
+    </div>
+  </div>
+</body>
+
+</html>

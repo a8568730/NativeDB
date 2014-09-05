@@ -1,77 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>海外漢語方言資料庫</title>
-    <!-- Bootstrap -->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	{% block extrahead %}{% endblock %}
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'css/index.css' %}">	
-</head>
-
-<body>
-  <div class="container">
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <h1 class="navbar-text navbar-left">
-      	海外漢語方言資料庫&nbsp;&nbsp;
-      	<small>Database of Chinese languages in Singapore and Malaysia</small>
-      </h1>
-      <button type="button" class="btn btn-warning navbar-btn navbar-right">Sign in</button>
-    </div>
-    <div class="bar-stripe"></div>
-    
-    	<div class="row">
-			<div class="col-md-3 listgroup">
-				<a href="#mono" class="list-group-item">Mono-phone<span class="badge">10</span></a>
-				<a href="#duo" class="list-group-item">Duo-phone<span class="badge">20</span></a>
-				<a href="#story" class="list-group-item">Story<span class="badge">1</span></a>
-			</div>
-			<div class="col-md-9">
-				<ul class="nav nav-tabs" role="tablist">
-					<li class="active">
-						<a href="#">國語</a>
-					</li>
-					<li>
-						<a href="#">閩語</a>
-					</li>
-					<li>
-						<a href="#">客語</a>
-					</li>
-				</ul>
-				<div class="main">
-					<!-- <dl class="dl-horizontal details">
-						<dt>word</dt>
-						<dd>媠媠</dd>
-						<dt>pronounce</dt>
-						<dd>sui2sui2</dd>
-						<dt>source 1</dt>
-						<dd>...</dd>
-						<dt>source 2</dt>
-						<dd>...</dd> 
-					</dl> -->					
-					<p><a href="#">媠</a></p>
-					<p><a href="#">靚</a></p>
-					<p><a href="#">美</a></p>
-					<p><a href="#">豬</a></p>
-					<p><a href="#">嗝</a></p>
-					<hr/>
-					<p><a href="#">媠媠</a></p>
-					<p><a href="#">靚靚</a></p>
-					<p><a href="#">美美</a></p>
-					<p><a href="#">豬豬</a></p>
-					<p><a href="#">玉山豬</a></p>
-					<hr/>
-					<p>我有一天走到山腰下，就被抓走了。</p>
-				</div>
-			</div>
-	
-    </div>
-  </div>
-</body>
-
-</html>
+{% extends '海外頁面/框一.html' %}
+{% block 標題 %}海外漢語方言資料庫{% endblock %}
+{% block 內容 %}
+	<p><a href="#">媠</a></p>
+	<p><a href="#">靚</a></p>
+	<p><a href="#">美</a></p>
+	<p><a href="#">豬</a></p>
+	<p><a href="#">嗝</a></p>
+	<hr/>
+	<p><a href="#">媠媠</a></p>
+	<p><a href="#">靚靚</a></p>
+	<p><a href="#">美美</a></p>
+	<p><a href="#">豬豬</a></p>
+	<p><a href="#">玉山豬</a></p>
+	<hr/>
+	<p>我有一天走到山腰下，就被抓走了。</p>
+{% endblock %}
