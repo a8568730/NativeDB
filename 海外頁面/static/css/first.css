@@ -12,7 +12,7 @@ html, body {
   height:100%;
 }
 
-/*­º­¶¤¤¶¡*/
+/*é¦–é ä¸­é–“*/
 .jumbotron {
   padding:200px 0;
   background:none;
@@ -22,7 +22,7 @@ html, body {
   width:100%;
 }
 
-/*­º­¶¤¤¶¡ªº¥D­n¼ĞÃD*/
+/*é¦–é ä¸­é–“çš„ä¸»è¦æ¨™é¡Œ*/
 .headtitle {
   padding:10px 50px;
   color:#222;
@@ -36,38 +36,40 @@ html, body {
   font-size:.55em;
 }
 
-/*­º­¶¤¤¶¡ªº»yºØ*/
+/*é¦–é ä¸­é–“çš„èªç¨®*/
 #frontlist {
   float:right;
   margin:0 30% 0 0;
 }
 
 #frontlist li {
-  width:30px;
   display:inline-block;
   margin:10px 20px 0 0;
+  
+}
+
+#frontlist button {
+  width:30px;
   padding:100px 30px 0 30px;
+  background:none;
   border:1px solid #ccc;
-  box-shadow:-1px 1px 4px #ddd;
-  border-color: transparent transparent #ccc #ccc;
   color:#777;
+  font-size: 1.8em;
+  border-color: transparent transparent #ccc #ccc;
+  box-shadow:-1px 1px 4px #ddd;
   -webkit-transition:all 0.2s ease;
   -moz-transition:all 0.2s ease;
   -o-transition:all 0.2s ease;
   transition:all 0.2s ease;
 }
 
-#frontlist li:hover {
+#frontlist button:hover {
   border-color: transparent transparent #ED5A0B #ED5A0B;
   color:#ED5A0B;
   box-shadow:-1px 1px 5px rgba(237,90,11,0.4);
 } 
 
-#frontlist span {
-	font-size: 1.8em;
-}
-
-/*­º­¶ªº¤U¤èª©ÅvÁn©ú*/
+/*é¦–é çš„ä¸‹æ–¹ç‰ˆæ¬Šè²æ˜*/
 .footer {
   clear:right;
   width:100%;
