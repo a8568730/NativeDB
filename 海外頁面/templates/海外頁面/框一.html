@@ -53,9 +53,9 @@
 				</div> -->
 				<!-- { % block 內容 % }海外漢語方言資料庫{ % endblock % }-->
 				<div class="main">
-					<tabset justfied>
+					<tabset justfied="true">
 						<tab ng-repeat="one in tabs" heading="{$ one.title $}">
-							<p>0</p>
+							<p>{$ $index $}</p>
 						</tab>
 					</tabset>
 				</div>
