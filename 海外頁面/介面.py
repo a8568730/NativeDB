@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.db.models import Q
 from django.views.generic.base import View
+from 海外頁面.表格 import 顯示語言表表格
+from 海外頁面.模型 import 語言表
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -35,3 +37,24 @@ def 細節描述頁(request):
 	context = RequestContext(request, {
 	})
 	return HttpResponse(template.render(context))
+
+def 加語言表表格(request):
+	if request.method == 'POST':  # If the form has been submitted...
+		# 	request.POST=['語言':'...', '類型':'...', ]->傳給表格.py的顯示語言表->傳給模型.py的語言表確認只有語言欄位。
+		語言表格 = 顯示語言表表格(request.POST)  # A form bound to the POST data
+		if 語言表格.is_valid():
+			語言 = 語言表格.save()
+# 			return redirect('加語言表表格')
+	else:
+		語言表格 = 顯示語言表表格()
+# 	template = loader.get_template('海外頁面/新文章.html')
+# 	context = RequestContext(request, {
+# 		'文章': 文章表格,
+# 	})
+# 	return HttpResponse(template.render(context))
+	揣著語言 = 語言表.objects.all()
+	# 	決定要有哪些輸入欄位
+	return render(request, '海外頁面/新語言.html', {
+		'語言': 語言表格,
+		'揣著語言':揣著語言,
+	})

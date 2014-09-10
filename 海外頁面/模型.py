@@ -1,14 +1,16 @@
 from django.db import models
 
+# 決定資料庫有哪些表，各自有哪些欄位
+
 # 華語 閩南 客話
 class 語言表(models.Model):
-	語言 = models.CharField(max_length=100)
+	語言 = models.CharField(max_length=100, unique=True)
 	def __str__(self):
 		return self.語言
 
 # 單詞, 雙詞, 故事
 class 類型表(models.Model):
-	類型 = models.CharField(max_length=100)
+	類型 = models.CharField(max_length=1000, unique=True)
 	def __str__(self):
 		return self.類型
 
