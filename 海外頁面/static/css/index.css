@@ -1,4 +1,4 @@
-/*¥D­¶¤W¥b ¾ÉÄý¦C*/
+/*ï¿½Dï¿½ï¿½ï¿½Wï¿½b ï¿½ï¿½ï¿½ï¿½C*/
 .navbar {
 	margin-bottom:0px;
 }
@@ -15,7 +15,7 @@
 	font-weight:500;
 }
 
-/*¥D­¶¤W¥b ¾ÉÄý¦Cªº«ö¶s*/
+/*ï¿½Dï¿½ï¿½ï¿½Wï¿½b ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½s*/
 .navbar-btn {
 	margin-top:10px;
 }
@@ -46,7 +46,7 @@
 	font-size:1.3em;
 }
 
-/*¥D­¶¤U¥b¬q */
+/*ï¿½Dï¿½ï¿½ï¿½Uï¿½bï¿½q */
 .main {
 	position:relative;
 	margin:30px 0 0;
@@ -54,33 +54,4 @@
 
 .main p{
 	font-size:1.3em;
-}
-
-/*¥D­¶¥ªÃä¿ï³æ*/
-.list-group-item {
-	border-color:#ccc;
-}
-
-.nav-tabs {
-	border-bottom:1px solid #ccc;
-}
-.nav-tabs > li.active > a, 
-.nav-tabs > li.active > a:hover, 
-.nav-tabs > li.active > a:focus {
-	border-color:#ccc #ccc transparent;
-}
-
-/*.details {
-	position:absolute;
-	right:0;
-	top:0;
-	min-height:100px;
-	width:50%;
-	padding:10px 0;
-	border:1px solid #F9AB6A;
-}*/
-
-/*²Ó¸`ªºªí®æ*/
-.main .table {
-	margin-top:30px;
 }

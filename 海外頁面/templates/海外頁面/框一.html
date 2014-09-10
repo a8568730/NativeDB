@@ -7,15 +7,19 @@
     <title>{% block 標題 %}海外漢語方言資料庫{% endblock %}</title>
     <!-- Bootstrap -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+	<!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.min.js"></script>
+    
 	{% block extrahead %}{% endblock %}
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'css/index.css' %}">	
+	<script src="{% static 'js/first.js' %}"></script>
 </head>
 
-<body>
+<body ng-app="app1">
   <div class="container">
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <h1 class="navbar-text navbar-left">
@@ -32,8 +36,8 @@
 				<a href="#duo" class="list-group-item">Duo-phone<span class="badge">20</span></a>
 				<a href="#story" class="list-group-item">Story<span class="badge">1</span></a>
 			</div>
-			<div class="col-md-9">
-				<ul class="nav nav-tabs" role="tablist">
+			<div class="col-md-9" ng-controller="indexController">
+				<!-- <ul class="nav nav-tabs" role="tablist">
 					<li class="active">
 						<a href="#">國語</a>
 					</li>
@@ -45,7 +49,15 @@
 					</li>
 				</ul>
 				<div class="main">
-					{% block 內容 %}海外漢語方言資料庫{% endblock %}
+					{ % block 內容 % }海外漢語方言資料庫{ % endblock % }
+				</div> -->
+				<!-- { % block 內容 % }海外漢語方言資料庫{ % endblock % }-->
+				<div class="main">
+					<tabset justfied>
+						<tab ng-repeat="one in tabs" heading="{$ one.title $}">
+							<p>0</p>
+						</tab>
+					</tabset>
 				</div>
 			</div>
 	
