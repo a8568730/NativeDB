@@ -61,7 +61,7 @@ def 加語言表表格(request):
 		'揣著語言':揣著語言,
 	})
 
-def 加語言表表格json(request):
+def 語言表全部json(request):
 	全部語言=[]
 	for 揣著語言 in 語言表.objects.all():
 		全部語言.append(揣著語言.語言)
