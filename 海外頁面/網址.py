@@ -7,7 +7,8 @@ from 海外頁面.介面 import 語言表全部json
 from 海外頁面.介面 import 加類型表表格
 from 海外頁面.介面 import 類型表全部json
 from 海外頁面.介面 import 加原始語料表表格
-from 海外頁面.介面 import 原始語料表全部json
+from 海外頁面.介面 import 顯示全部語料
+
 
 
 urlpatterns = patterns('',
@@ -21,7 +22,9 @@ urlpatterns = patterns('',
 	url(r'^類型表全部json$',類型表全部json, name='類型表全部json'),
 
 	url(r'^加原始語料表表格$',加原始語料表表格, name='加原始語料表表格'),
-	url(r'^原始語料表全部json$',原始語料表全部json, name='原始語料表全部json'),
+# 	為了details.html顯示語料描述
+	url(r'^顯示全部語料/(?P<想看的語言>[^/]*)/*$',顯示全部語料, name='顯示全部語料'),
+	url(r'^顯示全部語料/(?P<想看的語言>.*)/(?P<想看的類型>[^/]*)/*$',顯示全部語料, name='顯示全部語料'),
 
 	url(r'^.*$', 首頁, name='首頁')
 )

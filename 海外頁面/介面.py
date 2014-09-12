@@ -109,9 +109,8 @@ def 加原始語料表表格(request):
 		'揣著語言':揣著原始語料,
 	})
 
-def 原始語料表全部json(request):
-	全部原始語料=[]
-	for 揣著原始語料 in 原始語料表.objects.all():
-		全部原始語料.append(揣著原始語料.原始語料)
-	return HttpResponse(json.dumps(全部原始語料), content_type="application/json")
-
+def 顯示全部語料(request, 想看的語言, 想看的類型='單詞'):
+	全部原始語料=原始語料表.objects.filter(語言表__語言=想看的語言, 類型表__類型=想看的類型)
+	return render(request, '海外頁面/顯示全部語料.html', {
+		'揣著語料':全部原始語料,
+	})
