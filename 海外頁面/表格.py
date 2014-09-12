@@ -2,6 +2,8 @@ from django.forms import ModelForm
 from django.forms import Textarea
 from django.forms import Select
 from 海外頁面.模型 import 語言表
+from 海外頁面.模型 import 類型表
+from 海外頁面.模型 import 原始語料表
 
 # 決定HTML要顯示資料庫有的哪些資料
 
@@ -9,6 +11,16 @@ class 顯示語言表表格(ModelForm):
 	class Meta:
 		model = 語言表
 		#	接著會根據模型.py，知道語言表有一個欄位：語言
+		fields = '__all__'
+
+class 顯示類型表表格(ModelForm):
+	class Meta:
+		model = 類型表
+		fields = '__all__'
+
+class 顯示原始語料表表格(ModelForm):
+	class Meta:
+		model = 原始語料表
 		fields = '__all__'
 
 # class 加新文章表格(ModelForm):

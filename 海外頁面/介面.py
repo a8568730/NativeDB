@@ -14,6 +14,10 @@ from django.views.generic.base import View
 from 海外頁面.表格 import 顯示語言表表格
 from 海外頁面.模型 import 語言表
 import json
+from 海外頁面.表格 import 顯示類型表表格
+from 海外頁面.模型 import 類型表
+from 海外頁面.模型 import 原始語料表
+from 海外頁面.表格 import 顯示原始語料表表格
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -66,3 +70,48 @@ def 語言表全部json(request):
 	for 揣著語言 in 語言表.objects.all():
 		全部語言.append(揣著語言.語言)
 	return HttpResponse(json.dumps(全部語言), content_type="application/json")
+
+
+def 加類型表表格(request):
+	if request.method == 'POST':  # If the form has been submitted...
+		類型表格 = 顯示類型表表格(request.POST)  # A form bound to the POST data
+		if 類型表格.is_valid():
+			類型 = 類型表格.save()
+			return redirect('加類型表表格')
+	else:
+		類型表格 = 顯示類型表表格()
+
+	揣著類型 = 類型表.objects.all()
+	return render(request, '海外頁面/新語言.html', {
+		'語言': 類型表格,
+		'揣著語言':揣著類型,
+	})
+
+def 類型表全部json(request):
+	全部類型=[]
+	for 揣著類型 in 類型表.objects.all():
+		全部類型.append(揣著類型.類型)
+	return HttpResponse(json.dumps(全部類型), content_type="application/json")
+
+
+def 加原始語料表表格(request):
+	if request.method == 'POST':  # If the form has been submitted...
+		原始語料表格 = 顯示原始語料表表格(request.POST)  # A form bound to the POST data
+		if 原始語料表格.is_valid():
+			原始語料 = 原始語料表格.save()
+			return redirect('加原始語料表表格')
+	else:
+		原始語料表格 = 顯示原始語料表表格()
+
+	揣著原始語料 = 原始語料表.objects.all()
+	return render(request, '海外頁面/新語言.html', {
+		'語言': 原始語料表格,
+		'揣著語言':揣著原始語料,
+	})
+
+def 原始語料表全部json(request):
+	全部原始語料=[]
+	for 揣著原始語料 in 原始語料表.objects.all():
+		全部原始語料.append(揣著原始語料.原始語料)
+	return HttpResponse(json.dumps(全部原始語料), content_type="application/json")
+
