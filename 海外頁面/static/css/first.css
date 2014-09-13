@@ -14,7 +14,7 @@ html, body {
 
 /*首頁中間*/
 .jumbotron {
-  padding:200px 0;
+  padding:150px 0 20px;
   background:none;
 }
 
@@ -37,20 +37,15 @@ html, body {
 }
 
 /*首頁中間的語種*/
-#frontlist {
-  float:right;
-  margin:0 30% 0 0;
+#langform {
+  margin-left: 55%;
+  margin-top: 10px;
 }
 
-#frontlist li {
-  display:inline-block;
-  margin:10px 20px 0 0;
-  
-}
-
-#frontlist button {
+#langform button {
   width:30px;
-  padding:100px 30px 0 30px;
+  margin-right: 15px;
+  padding:50px 30px 0 30px;
   background:none;
   border:1px solid #ccc;
   color:#777;
@@ -63,7 +58,7 @@ html, body {
   transition:all 0.2s ease;
 }
 
-#frontlist button:hover {
+#langform button:hover {
   border-color: transparent transparent #ED5A0B #ED5A0B;
   color:#ED5A0B;
   box-shadow:-1px 1px 5px rgba(237,90,11,0.4);
@@ -71,7 +66,6 @@ html, body {
 
 /*首頁的下方版權聲明*/
 .footer {
-  clear:right;
   width:100%;
   margin:auto;
   color:#bcbcbc;

@@ -50,11 +50,9 @@
         </div>
         
         <div class="row">
-          <ul id="frontlist" ng-controller="LangController">
-            <li ng-repeat="lang in langs">
-              <button ng-click="call(lang)">{$ lang $}</button>
-            </li>
-          </ul>
+          <form action="index.html" method="get" ng-controller="LangController" id="langform">
+				<button type="submit" ng-repeat="lang in langs" ng-submit="call(lang)">{$ lang $}</button>
+          </form>
         </div>
 
       </div>
