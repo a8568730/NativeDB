@@ -3,9 +3,9 @@
 {% block 內容 %}
 
 <!-- { { 初始顯示語言 } } -->
-<p data-sui2="{{ 初始顯示語言 }}" style="display:none;"></p>
+<p data-sui2="{{ 初始顯示語言 }}" style="display:none;" language-flag></p>
 <div  ng-controller="indexController">
-{$ param $}
+{$ sui2sui2 $}
 	<tabset>
 		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active">
 			<p>{$ $index $}</p>
