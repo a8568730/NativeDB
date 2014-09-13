@@ -27,8 +27,8 @@ app.controller("LangController",["$scope", "$log","$http", function($scope, $log
 	
 }]);
 
-app.controller("indexController",["$scope", "$log","$http","$routeParams", "$route", 
-	function($scope, $log, $http,$routeParams, $route){
+app.controller("indexController",["$scope", "$log","$http","$routeParams", "$route", "$location","$window",
+	function($scope, $log, $http,$routeParams, $route, $location, $window){
 		//		Method 1 :
 		//			inject $route and $routeParams to get url params
 		// 			index/媠媠媠
@@ -52,19 +52,28 @@ app.controller("indexController",["$scope", "$log","$http","$routeParams", "$rou
 				console.log('sui2=' + $scope.sui2sui2);
 		});
 		
+		$scope.refresh = function(somelang){
+			//		改網址
+			if(somelang !=  $scope.sui2sui2){
+//					$window.location.href = '/index/' + somelang;
+				$location.path('/index/' + somelang);
+				$scope.sui2sui2 = somelang;
+			}
+//			if(!$scope.$$phase) $scope.$apply();
+		};
 }]);
 
 
 //		Method 1 :
 //			inject $route and $routeParams to get url params
-//app.config(function($routeProvider, $locationProvider) {
-//	  $routeProvider
-//	  	.when('/index/', {redirectTo: '/index/豬豬語'})
-//	  	.when('/index/:language', {
-//	    controller: 'indexController'
-//	  });
-//	  $locationProvider.html5Mode(true);
-//});
+app.config(function($routeProvider, $locationProvider) {
+	  $routeProvider
+	  	.when('/index/', {redirectTo: '/index/豬豬語'})
+	  	.when('/index/:language', {
+	    controller: 'indexController'
+	  });
+	  $locationProvider.html5Mode(true);
+});
 
 /* 解決 Django 和 AngularJS共用{{}}的混淆問題 */
 app.config(function($interpolateProvider) {

@@ -28,6 +28,7 @@ urlpatterns = patterns('',
 	url(r'^顯示全部語料/(?P<想看的語言>.*)/(?P<想看的類型>[^/]*)/*$',顯示全部語料, name='顯示全部語料'),
 
 	url(r'^index$',index初始顯示語言, name='index初始顯示語言'),
+	url(r'^index/*$',index初始顯示語言, name='index初始顯示語言'),
 	url(r'^index/(?P<想看的語言>[^/]+)/*$',index初始顯示語言, name='index初始顯示語言'),
 
 	url(r'^.*$', 首頁, name='首頁')

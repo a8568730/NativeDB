@@ -7,7 +7,7 @@
 <div  ng-controller="indexController">
 {$ sui2sui2 $}
 	<tabset>
-		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active">
+		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="refresh( tab.lang )">
 			<p>{$ $index $}</p>
 		</tab>
 	</tabset>
