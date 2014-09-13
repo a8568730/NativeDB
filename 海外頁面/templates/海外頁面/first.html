@@ -50,7 +50,7 @@
         </div>
         
         <div ng-controller="LangController" id="langform" class="row">
-          <form ng-repeat="lang in langs" action="{$ '/顯示全部語料/' + lang $}" method="get">
+          <form ng-repeat="lang in langs" action="{$ '/index/' + lang $}" method="get">
 				<button type="submit" ng-submit="call(lang)">{$ lang $}</button>
           </form>
         </div>

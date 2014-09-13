@@ -36,32 +36,14 @@
 				<a href="#duo" class="list-group-item">Duo-phone<span class="badge">20</span></a>
 				<a href="#story" class="list-group-item">Story<span class="badge">1</span></a>
 			</div>
-			<div class="col-md-9" ng-controller="indexController">
-				<!-- <ul class="nav nav-tabs" role="tablist">
-					<li class="active">
-						<a href="#">國語</a>
-					</li>
-					<li>
-						<a href="#">閩語</a>
-					</li>
-					<li>
-						<a href="#">客語</a>
-					</li>
-				</ul>
+			
+			<div class="col-md-9" ng-controller="LangController">
 				<div class="main">
-					{ % block 內容 % }海外漢語方言資料庫{ % endblock % }
-				</div> -->
-				<!-- { % block 內容 % }海外漢語方言資料庫{ % endblock % }-->
-				<div class="main">
-					<tabset justfied="true">
-						<tab ng-repeat="one in tabs" heading="{$ one.title $}">
-							<p>{$ $index $}</p>
-						</tab>
-					</tabset>
+					{% block 內容 %}海外漢語方言資料庫{% endblock %}
 				</div>
 			</div>
-	
-    </div>
+    	</div>
+    
   </div>
 </body>
 

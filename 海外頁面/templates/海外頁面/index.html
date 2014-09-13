@@ -1,11 +1,13 @@
 {% extends '海外頁面/框一.html' %}
 {% block 標題 %}海外漢語方言資料庫{% endblock %}
-<!--{% block 內容 %}
-<!-- <tabset>
-	<tab ng-repeat="one in tabs" heading="{$ one.title $}" style="background:yellow;">
-		<p>0</p>
+{% block 內容 %}
+
+{{ 想看的語言 }}
+<tabset>
+	<tab ng-repeat="lang in langs" heading="{$ lang $}">
+		<p>{$ $index $}</p>
 	</tab>
-</tabset> -->
+</tabset>
 	<!-- <p><a href="#">媠</a></p>
 	<p><a href="#">靚</a></p>
 	<p><a href="#">美</a></p>
@@ -19,4 +21,4 @@
 	<p><a href="#">玉山豬</a></p>
 	<hr/>
 	<p>我有一天走到山腰下，就被抓走了。</p> -->
-<!-- {% endblock %}-->
+{% endblock %}
