@@ -8,7 +8,7 @@ from 海外頁面.介面 import 加類型表表格
 from 海外頁面.介面 import 類型表全部json
 from 海外頁面.介面 import 加原始語料表表格
 from 海外頁面.介面 import 顯示全部語料
-from 海外頁面.介面 import 顯示全部語料index
+from 海外頁面.介面 import index初始顯示語言
 
 
 
@@ -27,7 +27,8 @@ urlpatterns = patterns('',
 	url(r'^顯示全部語料/(?P<想看的語言>[^/]*)/*$',顯示全部語料, name='顯示全部語料'),
 	url(r'^顯示全部語料/(?P<想看的語言>.*)/(?P<想看的類型>[^/]*)/*$',顯示全部語料, name='顯示全部語料'),
 
-	url(r'^index/(?P<想看的語言>[^/]*)/*$',顯示全部語料index, name='顯示全部語料index'),
+	url(r'^index$',index初始顯示語言, name='index初始顯示語言'),
+	url(r'^index/(?P<想看的語言>[^/]+)/*$',index初始顯示語言, name='index初始顯示語言'),
 
 	url(r'^.*$', 首頁, name='首頁')
 )

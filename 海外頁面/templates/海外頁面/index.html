@@ -2,23 +2,12 @@
 {% block 標題 %}海外漢語方言資料庫{% endblock %}
 {% block 內容 %}
 
-{{ 想看的語言 }}
-<tabset>
-	<tab ng-repeat="lang in langs" heading="{$ lang $}">
-		<p>{$ $index $}</p>
-	</tab>
-</tabset>
-	<!-- <p><a href="#">媠</a></p>
-	<p><a href="#">靚</a></p>
-	<p><a href="#">美</a></p>
-	<p><a href="#">豬</a></p>
-	<p><a href="#">嗝</a></p>
-	<hr/>
-	<p><a href="#">媠媠</a></p>
-	<p><a href="#">靚靚</a></p>
-	<p><a href="#">美美</a></p>
-	<p><a href="#">豬豬</a></p>
-	<p><a href="#">玉山豬</a></p>
-	<hr/>
-	<p>我有一天走到山腰下，就被抓走了。</p> -->
+{{ 初始顯示語言 }}
+<div  ng-controller="LangController">
+	<tabset>
+		<tab ng-repeat="lang in langs" heading="{$ lang $}">
+			<p>{$ $index $}</p>
+		</tab>
+	</tabset>
+</div>
 {% endblock %}

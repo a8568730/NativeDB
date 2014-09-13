@@ -12,7 +12,7 @@ class 語言表(models.Model):
 class 類型表(models.Model):
 	類型 = models.CharField(max_length=1000, unique=True)
 	def __str__(self):
-		return self.類型
+		return str(self.pk) + self.類型
 
 class 原始語料表(models.Model):
 	頭一擺翻譯時間 = models.DateField(auto_now_add=True)

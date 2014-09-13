@@ -115,9 +115,10 @@ def 顯示全部語料(request, 想看的語言, 想看的類型='單詞'):
 		'揣著語料':全部原始語料,
 	})
 
-def 顯示全部語料index(request, 想看的語言, 想看的類型='單詞'):
-	全部原始語料=原始語料表.objects.filter(語言表__語言=想看的語言, 類型表__類型=想看的類型)
+def index初始顯示語言(request, 想看的語言):
+	if 想看的語言 == None:
+		想看的語言 = 語言表.objects.order_by('pk').first().語言
+	print(想看的語言)			
 	return render(request, '海外頁面/index.html', {
-		'揣著語料':全部原始語料,
-	})
-	# return HttpResponse(template.render(context))	
+		'初始顯示語言':想看的語言,
+	})		
