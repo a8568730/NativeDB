@@ -49,9 +49,9 @@
           <h2>海外漢語方言資料庫&nbsp;&nbsp;<small>Database of Chinese languages in Singapore and Malaysia</small></h2>
         </div>
         
-        <div class="row">
-          <form action="index.html" method="get" ng-controller="LangController" id="langform">
-				<button type="submit" ng-repeat="lang in langs" ng-submit="call(lang)">{$ lang $}</button>
+        <div ng-controller="LangController" id="langform" class="row">
+          <form ng-repeat="lang in langs" action="{$ '/顯示全部語料/' + lang $}" method="get">
+				<button type="submit" ng-submit="call(lang)">{$ lang $}</button>
           </form>
         </div>
 
