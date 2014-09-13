@@ -2,8 +2,9 @@
 {% block 標題 %}海外漢語方言資料庫{% endblock %}
 {% block 內容 %}
 
-{{ 初始顯示語言 }}
-<div  ng-controller="LangController">
+<!-- { { 初始顯示語言 } } -->
+<div  ng-controller="indexController">
+{$ param $}
 	<tabset>
 		<tab ng-repeat="lang in langs" heading="{$ lang $}">
 			<p>{$ $index $}</p>
