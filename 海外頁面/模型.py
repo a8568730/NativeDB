@@ -30,6 +30,7 @@ class 原始檔案表(models.Model):
 	上尾修改時間 = models.DateField(auto_now=True)
 	語料表 = models.ForeignKey('原始語料表', related_name='原始檔案表')
 	原始檔名 = models.CharField(max_length=255)
+	原始檔 = models.FileField()
 	def __str__(self):
 		return self.語料表 + ' ' + self.原始檔名
 

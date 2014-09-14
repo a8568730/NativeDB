@@ -4,6 +4,7 @@ from django.forms import Select
 from 海外頁面.模型 import 語言表
 from 海外頁面.模型 import 類型表
 from 海外頁面.模型 import 原始語料表
+from django import forms
 
 # 決定HTML要顯示資料庫有的哪些資料
 
@@ -23,6 +24,10 @@ class 顯示原始語料表表格(ModelForm):
 		model = 原始語料表
 		fields = '__all__'
 
+class 上傳檔案表格(forms.Form):
+    title = forms.CharField(max_length=50)
+    file = forms.FileField()
+    
 # class 加新文章表格(ModelForm):
 # 	class Meta:
 # 		model = 何澤政文章

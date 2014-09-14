@@ -18,6 +18,9 @@ from 海外頁面.表格 import 顯示類型表表格
 from 海外頁面.模型 import 類型表
 from 海外頁面.模型 import 原始語料表
 from 海外頁面.表格 import 顯示原始語料表表格
+from django.shortcuts import render_to_response
+from django import forms
+from 海外頁面.表格 import 上傳檔案表格
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -122,3 +125,18 @@ def index初始顯示語言(request, 想看的語言=None):
 	return render(request, '海外頁面/index.html', {
 		'初始顯示語言':想看的語言,
 	})		
+ 
+def 上傳檔案(request):
+    if request.method == 'POST':
+        form = 上傳檔案表格(request.POST, request.FILES)
+        if form.is_valid():
+            處理上傳後的檔案(request.FILES['file'])
+            return HttpResponseRedirect('/success/url/')
+    else:
+        form = 上傳檔案表格()
+    return render_to_response('upload.html', {'form': form})
+   
+def 處理上傳後的檔案(f):
+    with open('some/file/name.txt', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)

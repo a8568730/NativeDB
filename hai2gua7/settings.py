@@ -76,6 +76,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+# 使用者上傳檔案
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(PROJECT_DIR, "media")
+MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
