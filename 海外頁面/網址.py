@@ -9,6 +9,7 @@ from 海外頁面.介面 import 類型表全部json
 from 海外頁面.介面 import 加原始語料表表格
 from 海外頁面.介面 import 顯示全部語料
 from 海外頁面.介面 import index初始顯示語言
+from 海外頁面.介面 import 上傳檔案
 
 
 
@@ -30,6 +31,8 @@ urlpatterns = patterns('',
 	url(r'^index$',index初始顯示語言, name='index初始顯示語言'),
 	url(r'^index/*$',index初始顯示語言, name='index初始顯示語言'),
 	url(r'^index/(?P<想看的語言>[^/]+)/*$',index初始顯示語言, name='index初始顯示語言'),
-
+	
+	url(r'^上傳檔案$', 上傳檔案, name='上傳檔案'),
+	
 	url(r'^.*$', 首頁, name='首頁')
 )

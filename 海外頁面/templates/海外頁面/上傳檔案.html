@@ -1,7 +1,9 @@
     
     
     
-<form enctype='multipart/form-data' method="post">
-
-
+<form enctype='multipart/form-data' method="post">{% csrf_token %}
+	<ul>
+		{{ form.as_p}}
+	</ul>
+	<input type="submit" name="submit" value="送出"/>
 </form>

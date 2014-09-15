@@ -32,7 +32,7 @@ class 原始檔案表(models.Model):
 	原始檔名 = models.CharField(max_length=255)
 	原始檔 = models.FileField()
 	def __str__(self):
-		return self.語料表 + ' ' + self.原始檔名
+		return str(self.語料表) + ' ' + self.原始檔名
 
 class 轉好的表(models.Model):
 	頭一擺翻譯時間 = models.DateField(auto_now_add=True)
