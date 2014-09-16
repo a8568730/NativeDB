@@ -27,7 +27,7 @@ class 顯示原始語料表表格(ModelForm):
 class 上傳檔案表格(ModelForm):
 	class Meta:
 		model = 原始檔案表
-		fields = '__all__'
+		fields = ['語料表','原始檔']
 
 # class 加新文章表格(ModelForm):
 # 	class Meta:

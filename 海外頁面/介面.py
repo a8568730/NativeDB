@@ -130,17 +130,16 @@ def index初始顯示語言(request, 想看的語言=None):
 def 上傳檔案(request):
 	if request.method == 'POST':
 		form = 上傳檔案表格(request.POST, request.FILES)
+		檔名 = request.FILES['原始檔'].name
 		if form.is_valid():
 #			 處理上傳後的檔案(request.FILES['file'])
 #			 return HttpResponseRedirect('/success/url/')
 			原始檔案 = form.save()
-			return redirect('上傳檔案')
+			return redirect('首頁')
+		return render(request, '海外頁面/上傳檔案.html', {'form':form})
 	else:
-		form = 上傳檔案表格()
-			
-# 	args = {}
-# 	args['form'] = form		
-	return render(request, '海外頁面/上傳檔案.html', {'form':form})
+		form = 上傳檔案表格(initial = {"原始檔名": "blahblah"})
+		return render(request, '海外頁面/上傳檔案.html', {'form':form})
 
 # def 處理上傳後的檔案(f):
 #	 with open('some/file/name.txt', 'wb+') as destination:
