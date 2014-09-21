@@ -153,7 +153,7 @@ def 顯示原始語料表(request):
 	
 def 揣著語料的全部檔案(request, 語料編號):
 # 	揣著全部檔案 = 原始檔案表.objects.filter(語料表.pk=語料編號)
-	揣著全部檔案 = 原始檔案表.objects.all()
-	return render(request, '海外頁面/顯示全部語料.html', {
+	揣著全部檔案 = 原始檔案表.objects.filter(語料表__pk=語料編號)
+	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料':揣著全部檔案,
 	})

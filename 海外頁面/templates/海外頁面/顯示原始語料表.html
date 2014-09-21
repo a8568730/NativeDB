@@ -1,0 +1,8 @@
+
+<p>目前的語料有：</p>
+
+<ul>
+	{% for gi2 in 揣著語料 %}
+	<li><a href="{% url '揣著語料的全部檔案'  gi2.pk  %}">{{ gi2 }}</a></li>
+	{% endfor %}
+</ul>
