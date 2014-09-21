@@ -23,7 +23,7 @@ class 原始語料表(models.Model):
 	年歲 = models.CharField(max_length=255)
 	性別 = models.CharField(max_length=10, choices=[('查埔', '先生'), ('查某', '細妹')])
 	def __str__(self):
-		return self.語言表.語言 + '  ' + self.類型表.類型 + ' ' + self.所在 + ' ' + self.年歲 + ' ' + self.性別
+		return str(self.pk) + ' ' + self.語言表.語言 + '  ' + self.類型表.類型 + ' ' + self.所在 + ' ' + self.年歲 + ' ' + self.性別
 
 class 原始檔案表(models.Model):
 	頭一擺翻譯時間 = models.DateField(auto_now_add=True)

@@ -10,6 +10,9 @@ from 海外頁面.介面 import 加原始語料表表格
 from 海外頁面.介面 import 顯示全部語料
 from 海外頁面.介面 import index初始顯示語言
 from 海外頁面.介面 import 上傳檔案
+from hai2gua7 import settings
+from 海外頁面.介面 import 顯示原始語料表
+from 海外頁面.介面 import 揣著語料的全部檔案
 
 
 
@@ -33,6 +36,19 @@ urlpatterns = patterns('',
 	url(r'^index/(?P<想看的語言>[^/]+)/*$',index初始顯示語言, name='index初始顯示語言'),
 	
 	url(r'^上傳檔案$', 上傳檔案, name='上傳檔案'),
+	url(r'^顯示原始語料表$', 顯示原始語料表, name='顯示原始語料表'),
+	url(r'^(?P<語料編號>\d+)/揣著語料的全部檔案$', 揣著語料的全部檔案, name='揣著語料的全部檔案'),
 	
+	url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+					
 	url(r'^.*$', 首頁, name='首頁')
 )
+
+
+# 可以下載檔案
+# if settings.DEBUG:
+#     urlpatterns = patterns('',
+#         
+# )

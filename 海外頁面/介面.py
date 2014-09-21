@@ -22,6 +22,10 @@ from django.shortcuts import render_to_response
 from django import forms
 from 海外頁面.表格 import 上傳檔案表格
 from django.core.context_processors import csrf
+from django.utils.encoding import smart_str
+import os.path
+from hai2gua7.settings import MEDIA_ROOT
+from 海外頁面.模型 import 原始檔案表
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -139,3 +143,17 @@ def 上傳檔案(request):
 	else:
 		form = 上傳檔案表格(initial = {"原始檔名": "blahblah"})
 		return render(request, '海外頁面/上傳檔案.html', {'form':form})
+
+def 顯示原始語料表(request):
+	揣著語料 = 原始語料表.objects.all()
+	print(揣著語料)
+	return render(request, '海外頁面/顯示原始語料表.html', {
+		'揣著語料':揣著語料,
+	})
+	
+def 揣著語料的全部檔案(request, 語料編號):
+# 	揣著全部檔案 = 原始檔案表.objects.filter(語料表.pk=語料編號)
+	揣著全部檔案 = 原始檔案表.objects.all()
+	return render(request, '海外頁面/顯示全部語料.html', {
+		'揣著語料':揣著全部檔案,
+	})
