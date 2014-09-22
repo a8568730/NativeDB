@@ -26,6 +26,8 @@ from django.utils.encoding import smart_str
 import os.path
 from hai2gua7.settings import MEDIA_ROOT
 from 海外頁面.模型 import 原始檔案表
+from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
+from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -155,16 +157,23 @@ def 揣著語料的全部檔案(request, 語料編號):
 	揣著全部檔案 = 原始檔案表.objects.filter(語料表__pk=語料編號)
 	有xlsx檔 = False
 	xlsx檔名 = ''
+	詞數 = ''
 	for 檔案 in 揣著全部檔案: 
 		if(檔案.副檔名() == 'xlsx'):
 			有xlsx檔 = True
 			xlsx檔名 = 檔案.原始檔名
+			詞數 = 檔案.語料表.類型表.類型
+	print(詞數)		
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': 揣著全部檔案,
 		'有xlsx檔': 有xlsx檔, 
 		'xlsx檔名': os.path.join(MEDIA_ROOT, xlsx檔名),
+		'詞數': 詞數
 	})
 
 def 顯示xlsx的音(request):
 	全部的音 = ['haha']
+	
+# 	xlsx陣列 = 把EXCEL讀進來(xlsx檔名)
+# 	音json = xlsx陣列轉json(xlsx陣列, 詞數)
 	return HttpResponse(json.dumps(全部的音), content_type="application/json")
