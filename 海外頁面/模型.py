@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 # 決定資料庫有哪些表，各自有哪些欄位
 
@@ -33,7 +34,10 @@ class 原始檔案表(models.Model):
 	原始檔名 = models.CharField(max_length=255)
 	def __str__(self):
 		return str(self.pk) + ' ' + str(self.語料表) + ' ' + self.原始檔名
-
+	def 副檔名(self):
+		name, extension = os.path.splitext(self.原始檔名)
+		return extension[1:]
+	
 class 轉好的表(models.Model):
 	頭一擺翻譯時間 = models.DateField(auto_now_add=True)
 	上尾修改時間 = models.DateField(auto_now=True)

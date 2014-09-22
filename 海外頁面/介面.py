@@ -152,8 +152,20 @@ def 顯示原始語料表(request):
 	})
 	
 def 揣著語料的全部檔案(request, 語料編號):
-# 	揣著全部檔案 = 原始檔案表.objects.filter(語料表.pk=語料編號)
 	揣著全部檔案 = 原始檔案表.objects.filter(語料表__pk=語料編號)
+	有xlsx檔 = False
+	xlsx檔名 = ''
+	for 檔案 in 揣著全部檔案: 
+		print(檔案.原始檔.name + ' '  + 檔案.副檔名())
+		if(檔案.副檔名() == 'xlsx'):
+			有xlsx檔 = True
+			xlsx檔名 = 檔案.原始檔名
 	return render(request, '海外頁面/顯示全部檔案.html', {
-		'揣著語料':揣著全部檔案,
+		'揣著語料': 揣著全部檔案,
+		'有xlsx檔': 有xlsx檔, 
+		'xlsx檔名': os.path.join(MEDIA_ROOT, xlsx檔名),
 	})
+
+def 顯示xlsx的音(request):
+	全部的音 = ['haha']
+	return HttpResponse(json.dumps(全部的音), content_type="application/json")

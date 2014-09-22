@@ -4,3 +4,12 @@
 	{% for gi2 in 揣著語料 %}
 	{{ gi2 }}<br/>
 	{% endfor %}
+	
+	{% if 有xlsx檔 %}
+	<p>{{ xlsx檔名 }}</p>
+	<form action="{% url '顯示xlsx的音' %}">
+		<button type="submit">顯示xlsx的音</button>
+	</form>
+	{% else %}
+	<p>此語料沒有xlsx檔，請補。</p>
+	{% endif %}

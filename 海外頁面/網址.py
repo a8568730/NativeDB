@@ -13,6 +13,7 @@ from 海外頁面.介面 import 上傳檔案
 from hai2gua7 import settings
 from 海外頁面.介面 import 顯示原始語料表
 from 海外頁面.介面 import 揣著語料的全部檔案
+from 海外頁面.介面 import 顯示xlsx的音
 
 
 
@@ -39,10 +40,12 @@ urlpatterns = patterns('',
 	url(r'^顯示原始語料表$', 顯示原始語料表, name='顯示原始語料表'),
 	url(r'^(?P<語料編號>\d+)/揣著語料的全部檔案$', 揣著語料的全部檔案, name='揣著語料的全部檔案'),
 	
+	url(r'^顯示原始語料表$', 顯示原始語料表, name='顯示原始語料表'),
 	url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),
-					
+	url(r'^顯示xlsx的音$', 顯示xlsx的音, name='顯示xlsx的音'),
+	
 	url(r'^.*$', 首頁, name='首頁')
 )
 
