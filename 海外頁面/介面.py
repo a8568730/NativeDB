@@ -163,17 +163,24 @@ def 揣著語料的全部檔案(request, 語料編號):
 			有xlsx檔 = True
 			xlsx檔名 = 檔案.原始檔名
 			詞數 = 檔案.語料表.類型表.類型
-	print(詞數)		
+	print(os.path.join(MEDIA_ROOT, xlsx檔名))		
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': 揣著全部檔案,
 		'有xlsx檔': 有xlsx檔, 
-		'xlsx檔名': os.path.join(MEDIA_ROOT, xlsx檔名),
-		'詞數': 詞數
+		'xlsx檔名': xlsx檔名,
+ 		'詞數': 詞數
 	})
 
-def 顯示xlsx的音(request):
+def 顯示xlsx的音(request,  xlsx檔名):
 	全部的音 = ['haha']
+	xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
+	全部的音.append(xlsx完整路徑檔名)
 	
-# 	xlsx陣列 = 把EXCEL讀進來(xlsx檔名)
+# 	詞數 = 1  #目前先預設單詞=1, 事後再補模型
+	xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
+	全部的音.append(xlsx陣列)
 # 	音json = xlsx陣列轉json(xlsx陣列, 詞數)
+# 	return render(request, '海外頁面/顯示xlsx.html', {
+# 		'xlsx陣列': xlsx陣列,
+# 	})
 	return HttpResponse(json.dumps(全部的音), content_type="application/json")
