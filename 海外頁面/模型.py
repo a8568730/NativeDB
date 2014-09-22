@@ -35,7 +35,7 @@ class 原始檔案表(models.Model):
 	def __str__(self):
 		return str(self.pk) + ' ' + str(self.語料表) + ' ' + self.原始檔名
 	def 副檔名(self):
-		name, extension = os.path.splitext(self.原始檔名)
+		name, extension = os.path.splitext(self.原始檔.name)
 		return extension[1:]
 	
 class 轉好的表(models.Model):

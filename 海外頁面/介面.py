@@ -156,7 +156,6 @@ def 揣著語料的全部檔案(request, 語料編號):
 	有xlsx檔 = False
 	xlsx檔名 = ''
 	for 檔案 in 揣著全部檔案: 
-		print(檔案.原始檔.name + ' '  + 檔案.副檔名())
 		if(檔案.副檔名() == 'xlsx'):
 			有xlsx檔 = True
 			xlsx檔名 = 檔案.原始檔名
