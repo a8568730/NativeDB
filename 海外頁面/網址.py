@@ -40,11 +40,10 @@ urlpatterns = patterns('',
 	url(r'^顯示原始語料表$', 顯示原始語料表, name='顯示原始語料表'),
 	url(r'^(?P<語料編號>\d+)/揣著語料的全部檔案$', 揣著語料的全部檔案, name='揣著語料的全部檔案'),
 	
-	url(r'^顯示原始語料表$', 顯示原始語料表, name='顯示原始語料表'),
 	url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),
-	url(r'^顯示xlsx的音$', 顯示xlsx的音, name='顯示xlsx的音'),
+	url(r'^顯示xlsx的音/(?P<xlsx檔名>[^/]+)/*$', 顯示xlsx的音, name='顯示xlsx的音'),
 	
 	url(r'^.*$', 首頁, name='首頁')
 )
