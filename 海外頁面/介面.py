@@ -181,7 +181,7 @@ def 揣著語料的全部檔案(request, 語料編號):
  		'字數': 字數
 	})
 
-def 顯示xlsx的音(request,  xlsx檔名):
+def 顯示xlsx的音(request,  xlsx檔名, 字數):
 	全部的音 = []
 	xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
 	全部的音.append(xlsx完整路徑檔名)
@@ -189,7 +189,6 @@ def 顯示xlsx的音(request,  xlsx檔名):
 # 	字數 = 1  #目前先預設單詞=1, 事後再補模型
 	xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
 	全部的音.append(xlsx陣列)
-	字數 = 1
 	音json = xlsx陣列轉json(xlsx陣列, 字數)
 # 	return render(request, '海外頁面/顯示xlsx.html', {
 # 		'xlsx陣列': xlsx陣列,

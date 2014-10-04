@@ -43,7 +43,7 @@ urlpatterns = patterns('',
 	url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),
-	url(r'^顯示xlsx的音/(?P<xlsx檔名>[^/]+)/*$', 顯示xlsx的音, name='顯示xlsx的音'),
+	url(r'^顯示xlsx的音/(?P<xlsx檔名>[^/]+)/(?P<字數>[^/]+)/*$', 顯示xlsx的音, name='顯示xlsx的音'),
 	
 	url(r'^.*$', 首頁, name='首頁')
 )

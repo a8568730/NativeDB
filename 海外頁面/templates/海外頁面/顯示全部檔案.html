@@ -7,7 +7,7 @@
 	
 	{% if 有xlsx檔 %}
 	<p>{{ xlsx檔名 }}, {{ 字數 }}</p>
-	<form action="{% url '顯示xlsx的音'  xlsx檔名 %}">
+	<form action="{% url '顯示xlsx的音'  xlsx檔名 字數 %}">
 		<button type="submit">顯示xlsx的音</button>
 	</form>
 	{% else %}
