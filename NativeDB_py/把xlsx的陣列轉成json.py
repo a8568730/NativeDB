@@ -1,6 +1,6 @@
 import re
 
-def xlsx陣列轉json(xlsx陣列, 詞數):
+def xlsx陣列轉json(xlsx陣列, 字數):
 	寫出結果 = []
 
 # 	是否剛好有四個欄位
@@ -40,7 +40,7 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 		
 		
 		#	若是單詞卻有兩字以上, 雙詞卻有三字以上, 必須有括號
-		if(詞數 != len(字)):
+		if(字數 != len(字)):
 			regex = re.compile('\(.*?\)')
 			去掉括號後的字們 = regex.sub(',', 字)
 
@@ -49,12 +49,12 @@ def xlsx陣列轉json(xlsx陣列, 詞數):
 				return 'col(' + str(索引+1) + ')的字格式不符'
 			
 			括號外的字陣列 = 去掉括號後的字們.split(',')
-			有符合詞數 = False
+			有符合字數 = False
 			for 一個 in 括號外的字陣列:
-				if(len(一個) == 詞數):
-					有符合詞數  = True
+				if(len(一個) == 字數):
+					有符合字數  = True
 			
-			if(not 有符合詞數):
+			if(not 有符合字數):
 				return 'col(' + str(索引+1) + ')的字格式不符'
 		
 		#	IPA不能為空字串
