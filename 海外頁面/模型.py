@@ -22,7 +22,7 @@ class 原始語料表(models.Model):
 	語言表 = models.ForeignKey('語言表', related_name='原始語料表')
 	類型表 = models.ForeignKey('類型表', related_name='原始語料表')
 	所在 = models.CharField(max_length=300)
-	年歲 = models.CharField(max_length=255)
+	年歲 = models.CharField(max_length=255, choices=[('青年','青年'), ('中年','中年'),('老年','老年')])
 	性別 = models.CharField(max_length=10, choices=[('查埔', '先生'), ('查某', '細妹')])
 	def __str__(self):
 		return str(self.pk) + ' ' + self.語言表.語言 + '  ' + self.類型表.類型 + ' ' + self.所在 + ' ' + self.年歲 + ' ' + self.性別
