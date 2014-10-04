@@ -152,35 +152,46 @@ def 顯示原始語料表(request):
 	return render(request, '海外頁面/顯示原始語料表.html', {
 		'揣著語料':揣著語料,
 	})
+
+def 揣字數(類型):
+	if(類型 == '單詞'):
+		return 1
+	if(類型 == '雙詞'):
+		return 2
+	if(類型 == '三字詞'):
+		return 3
+	if(類型 == '故事'):
+		return 10000
 	
 def 揣著語料的全部檔案(request, 語料編號):
 	揣著全部檔案 = 原始檔案表.objects.filter(語料表__pk=語料編號)
 	有xlsx檔 = False
 	xlsx檔名 = ''
-	詞數 = ''
+	字數 = -1
 	for 檔案 in 揣著全部檔案: 
 		if(檔案.副檔名() == 'xlsx'):
 			有xlsx檔 = True
 			xlsx檔名 = 檔案.原始檔名
-			詞數 = 檔案.語料表.類型表.類型
+			字數 = 揣字數(檔案.語料表.類型表.類型)
 	print(os.path.join(MEDIA_ROOT, xlsx檔名))		
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': 揣著全部檔案,
 		'有xlsx檔': 有xlsx檔, 
 		'xlsx檔名': xlsx檔名,
- 		'詞數': 詞數
+ 		'字數': 字數
 	})
 
 def 顯示xlsx的音(request,  xlsx檔名):
-	全部的音 = ['haha']
+	全部的音 = []
 	xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
 	全部的音.append(xlsx完整路徑檔名)
 	
-# 	詞數 = 1  #目前先預設單詞=1, 事後再補模型
+# 	字數 = 1  #目前先預設單詞=1, 事後再補模型
 	xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
 	全部的音.append(xlsx陣列)
-# 	音json = xlsx陣列轉json(xlsx陣列, 詞數)
+	字數 = 1
+	音json = xlsx陣列轉json(xlsx陣列, 字數)
 # 	return render(request, '海外頁面/顯示xlsx.html', {
 # 		'xlsx陣列': xlsx陣列,
 # 	})
-	return HttpResponse(json.dumps(全部的音), content_type="application/json")
+	return HttpResponse(json.dumps(音json), content_type="application/json")

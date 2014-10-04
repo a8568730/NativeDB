@@ -12,6 +12,7 @@ class 語言表(models.Model):
 # 單詞, 雙詞, 故事
 class 類型表(models.Model):
 	類型 = models.CharField(max_length=1000, unique=True)
+# 	字數 = models.PositiveIntegerField(choices=[1,2,3,4,5,6,7,8,9,10,(10000,'故事')])
 	def __str__(self):
 		return str(self.pk) + self.類型
 
