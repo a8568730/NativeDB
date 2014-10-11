@@ -14,12 +14,14 @@ from hai2gua7 import settings
 from 海外頁面.介面 import 顯示原始語料表
 from 海外頁面.介面 import 揣著語料的全部檔案
 from 海外頁面.介面 import 顯示xlsx的音
+from 海外頁面.介面 import 後台
 
 
 
 urlpatterns = patterns('',
 	url(r'^index$', 主頁, name='主頁'),
 	url(r'^details$', 細節描述頁, name='細節描述頁'),
+	url(r'^後台$', 後台, name='後台'),
 	
 	url(r'^加語言表表格$',加語言表表格, name='加語言表表格'),
 	url(r'^語言表全部json$',語言表全部json, name='語言表全部json'),

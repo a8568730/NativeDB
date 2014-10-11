@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block 標題 %}後台{% endblock %}</title>
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	{% block extrahead %}{% endblock %}
+	<style type="text/css">
+		.if {
+			width:48%; 
+			height:200px; 
+			border:none;
+		}
+		hr {
+			border-color: #CDCDCD;
+		}
+	</style>
+</head>
+<body>
+	<p>新增語言</p>
+	<iframe src="{% url '加語言表表格' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
+	<hr/>
+	<p>新增詞彙類型</p>
+	<iframe src="{% url '加類型表表格' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
+	<hr/>
+	<p>新增詞彙類型</p>
+	<iframe src="{% url '加原始語料表表格' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
+	<hr/>
+	<p>新增詞彙類型</p>
+	<iframe src="{% url '顯示原始語料表' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
+	<hr/>
+	<p>新增詞彙類型</p>
+	<iframe src="{% url '上傳檔案' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
+</body>
+</html>

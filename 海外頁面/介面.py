@@ -53,6 +53,12 @@ def 細節描述頁(request):
 	})
 	return HttpResponse(template.render(context))
 
+def 後台(request):
+	template = loader.get_template('海外頁面/後台.html')
+	context = RequestContext(request, {
+	})
+	return HttpResponse(template.render(context))
+
 def 加語言表表格(request):
 	if request.method == 'POST':  # If the form has been submitted...
 		# 	request.POST=['語言':'...', '類型':'...', ]->傳給表格.py的顯示語言表->傳給模型.py的語言表確認只有語言欄位。
