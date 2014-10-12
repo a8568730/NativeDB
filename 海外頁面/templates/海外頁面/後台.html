@@ -7,32 +7,59 @@
     <title>{% block 標題 %}後台{% endblock %}</title>
     <!-- Bootstrap -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	{% block extrahead %}{% endblock %}
-	<style type="text/css">
-		.if {
-			width:48%; 
-			height:200px; 
-			border:none;
-		}
-		hr {
-			border-color: #CDCDCD;
-		}
-	</style>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/backend.css' %}"/>
+	<script src="{% static 'js/backend.js' %}"></script>
 </head>
-<body>
-	<p>新增語言</p>
-	<iframe src="{% url '加語言表表格' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
-	<hr/>
-	<p>新增詞彙類型</p>
-	<iframe src="{% url '加類型表表格' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
-	<hr/>
-	<p>新增詞彙類型</p>
-	<iframe src="{% url '加原始語料表表格' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
-	<hr/>
-	<p>新增詞彙類型</p>
-	<iframe src="{% url '顯示原始語料表' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
-	<hr/>
-	<p>新增詞彙類型</p>
-	<iframe src="{% url '上傳檔案' %}" class="if">所用的瀏覽器不支援iframes標籤</iframe>
+<body ng-app="app1">
+	 <div class="container" ng-controller="BackendController">
+    	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<h4 class="navbar-text navbar-left">
+				海外漢語方言資料庫&nbsp;&nbsp;
+				<small>後台</small>
+			</h4>
+    	</div>
+    	<!-- <ul class="list-unstyled">
+  			<li><a href="{% url '加語言表表格' %}">新增語言</a></li>
+  			<li><a href="{% url '加類型表表格' %}">新增類型</a></li>
+  			<li><a href="{% url '加原始語料表表格' %}">新增語料(地區，年齡，性別，ID)</a></li>
+  			<li><a href="{% url '顯示原始語料表' %}">顯示所有原始語料</a></li>
+  			<li><a href="{% url '上傳檔案' %}">上傳檔案</a></li>
+		</ul> -->
+	<!-- 	<div class="panel panel-default">
+			  <div class="panel-heading">語言</div>
+			  <div class="panel-body">
+			    <a href="{% url '加語言表表格' %}">新增語言</a>
+			  </div>
+		</div>
+    	<div class="panel panel-default">
+			  <div class="panel-heading">類型</div>
+			  <div class="panel-body">
+			    <a href="{% url '加類型表表格' %}">新增類型</a>
+			  </div>
+		</div>
+		<div class="panel panel-default">
+			  <div class="panel-heading">語料</div>
+			  <ul class="list-group">
+			    	<li class="list-group-item"><a href="{% url '加原始語料表表格' %}">新增語料(地區，年齡，性別，ID)</a></li>
+			    	<li class="list-group-item"><a href="{% url '顯示原始語料表' %}">顯示所有原始語料</a></li>
+			   </ul>
+		</div>
+		<div class="panel panel-default">
+			  <div class="panel-heading">檔案</div>
+			  <div class="panel-body">
+			    <a href="{% url '上傳檔案' %}">上傳檔案</a>
+			  </div>
+		</div> -->
+		<div class="panel panel-default" ng-repeat="panel in panels">
+			  <div class="panel-heading">{$ panel.head $}</div>
+			  <div class="panel-body">
+			    <a ng-repeat="link in panel.links" ng-href="{$ link.path $}" >{$ link.text $}</a>
+			  </div>
+		</div>
+		
+	</div>
 </body>
 </html>
