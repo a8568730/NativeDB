@@ -21,43 +21,13 @@
 				<small>後台</small>
 			</h4>
     	</div>
-    	<!-- <ul class="list-unstyled">
-  			<li><a href="{% url '加語言表表格' %}">新增語言</a></li>
-  			<li><a href="{% url '加類型表表格' %}">新增類型</a></li>
-  			<li><a href="{% url '加原始語料表表格' %}">新增語料(地區，年齡，性別，ID)</a></li>
-  			<li><a href="{% url '顯示原始語料表' %}">顯示所有原始語料</a></li>
-  			<li><a href="{% url '上傳檔案' %}">上傳檔案</a></li>
-		</ul> -->
-	<!-- 	<div class="panel panel-default">
-			  <div class="panel-heading">語言</div>
-			  <div class="panel-body">
-			    <a href="{% url '加語言表表格' %}">新增語言</a>
-			  </div>
-		</div>
-    	<div class="panel panel-default">
-			  <div class="panel-heading">類型</div>
-			  <div class="panel-body">
-			    <a href="{% url '加類型表表格' %}">新增類型</a>
-			  </div>
-		</div>
-		<div class="panel panel-default">
-			  <div class="panel-heading">語料</div>
-			  <ul class="list-group">
-			    	<li class="list-group-item"><a href="{% url '加原始語料表表格' %}">新增語料(地區，年齡，性別，ID)</a></li>
-			    	<li class="list-group-item"><a href="{% url '顯示原始語料表' %}">顯示所有原始語料</a></li>
-			   </ul>
-		</div>
-		<div class="panel panel-default">
-			  <div class="panel-heading">檔案</div>
-			  <div class="panel-body">
-			    <a href="{% url '上傳檔案' %}">上傳檔案</a>
-			  </div>
-		</div> -->
-		<div class="panel panel-default" ng-repeat="panel in panels">
+    		<div class="panel panel-default" ng-repeat="panel in panels">
 			  <div class="panel-heading">{$ panel.head $}</div>
-			  <div class="panel-body">
-			    <a ng-repeat="link in panel.links" ng-href="{$ link.path $}" >{$ link.text $}</a>
-			  </div>
+			    <ul class="list-group">
+			    	<li class="list-group-item" ng-repeat="link in panel.links">
+			    		<a  ng-href="{$ link.path $}" >{$ link.text $}</a>
+			    	</li>
+			    </ul>
 		</div>
 		
 	</div>
