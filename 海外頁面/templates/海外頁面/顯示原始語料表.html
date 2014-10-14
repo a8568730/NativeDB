@@ -1,3 +1,5 @@
+{% extends '海外頁面/後台框.html' %}
+{% block 內容 %}
 
 <p>目前的語料有：</p>
 
@@ -6,3 +8,5 @@
 	<li><a href="{% url '揣著語料的全部檔案'  gi2.pk  %}">{{ gi2 }}</a></li>
 	{% endfor %}
 </ul>
+
+{% endblock %}

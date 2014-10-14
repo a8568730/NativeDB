@@ -53,6 +53,12 @@ def 細節描述頁(request):
 	})
 	return HttpResponse(template.render(context))
 
+def 後台(request):
+	template = loader.get_template('海外頁面/後台.html')
+	context = RequestContext(request, {
+	})
+	return HttpResponse(template.render(context))
+
 def 加語言表表格(request):
 	if request.method == 'POST':  # If the form has been submitted...
 		# 	request.POST=['語言':'...', '類型':'...', ]->傳給表格.py的顯示語言表->傳給模型.py的語言表確認只有語言欄位。
@@ -168,28 +174,38 @@ def 揣著語料的全部檔案(request, 語料編號):
 	有xlsx檔 = False
 	xlsx檔名 = ''
 	字數 = -1
+	音json = ""
 	for 檔案 in 揣著全部檔案: 
 		if(檔案.副檔名() == 'xlsx'):
 			有xlsx檔 = True
 			xlsx檔名 = 檔案.原始檔名
 			字數 = 揣字數(檔案.語料表.類型表.類型)
-	print(os.path.join(MEDIA_ROOT, xlsx檔名))		
+			xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
+			xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
+			音json = xlsx陣列轉json(xlsx陣列, int(字數))
+	if 有xlsx檔 and isinstance(音json, str):
+		錯誤資訊 = 音json
+	else:
+		錯誤資訊 = None
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': 揣著全部檔案,
 		'有xlsx檔': 有xlsx檔, 
 		'xlsx檔名': xlsx檔名,
- 		'字數': 字數
+ 		'字數': 字數,
+ 		'音json': 音json,
+ 		'錯誤資訊':錯誤資訊
 	})
 
 def 顯示xlsx的音(request,  xlsx檔名, 字數):
 	全部的音 = []
 	xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
-	全部的音.append(xlsx完整路徑檔名)
+# 	全部的音.append(xlsx完整路徑檔名)
 	
 # 	字數 = 1  #目前先預設單詞=1, 事後再補模型
 	xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
-	全部的音.append(xlsx陣列)
-	音json = xlsx陣列轉json(xlsx陣列, 字數)
+# 	全部的音.append(xlsx陣列)
+	音json = xlsx陣列轉json(xlsx陣列, int(字數))
+	print(音json)
 # 	return render(request, '海外頁面/顯示xlsx.html', {
 # 		'xlsx陣列': xlsx陣列,
 # 	})

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block 標題 %}後台{% endblock %}</title>
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/backend.css' %}"/>
+	<script src="{% static 'js/backend.js' %}"></script>
+</head>
+<body ng-app="app1">
+	 <div class="container" ng-controller="BackendController">
+    	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<h4 class="navbar-text navbar-left">
+				海外漢語方言資料庫&nbsp;&nbsp;
+				<small>後台</small>
+			</h4>
+    	</div>
+   		
+   		{% block 內容 %}{% endblock %}
+   		<!-- <div class="panel panel-default" ng-repeat="panel in panels">
+			<div class="panel-heading">{$ panel.head $}</div>
+		    	<ul class="list-group">
+		    		<li class="list-group-item" ng-repeat="link in panel.links">
+		    			<a  ng-href="{$ link.path $}" >{$ link.text $}</a>
+		    		</li>
+		    	</ul>
+		</div> -->
+	
+	</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends '海外頁面/後台框.html' %}
+{% block 內容 %}
+    		<div class="panel panel-default" ng-repeat="panel in panels">
+			  <div class="panel-heading">{$ panel.head $}</div>
+			    <ul class="list-group">
+			    	<li class="list-group-item" ng-repeat="link in panel.links">
+			    		<a  ng-href="{$ link.path $}" >{$ link.text $}</a>
+			    	</li>
+			    </ul>
+		</div>
+{% endblock %}

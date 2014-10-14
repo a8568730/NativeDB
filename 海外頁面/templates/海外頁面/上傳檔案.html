@@ -1,9 +1,12 @@
-    
-    
-    
+{% extends '海外頁面/後台框.html' %}
+{% block 內容 %}
+
+
 <form enctype='multipart/form-data' method="post">{% csrf_token %}
-	<ul>
-		{{ form.as_p}}
-	</ul>
+	<table>
+		 {{ form.as_table }}
+	</table>
 	<input type="submit" name="submit" value="送出"/>
 </form>
+
+{% endblock %}
