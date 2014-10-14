@@ -29,6 +29,14 @@ from 海外頁面.模型 import 原始檔案表
 from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
 from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
 
+def 複製到剪貼簿(request):
+# 	output = ', '.join([p.title for p in latest_poll_list])
+# 	return HttpResponse(output)
+	template = loader.get_template('海外頁面/ZeroClipboard.html')
+	context = RequestContext(request, {
+	})
+	return HttpResponse(template.render(context))
+
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
 # 	return HttpResponse(output)

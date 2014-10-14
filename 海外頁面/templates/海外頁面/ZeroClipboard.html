@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <textarea id="fe_text"></textarea>
+    <!-- <button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>-->
+    <button id="copy-button" data-clipboard-target="fe_text" title="Click to copy me.">Copy to Clipboard</button>
+    {% load staticfiles %}
+    <script src="{% static 'js/ZeroClipboard.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
+
