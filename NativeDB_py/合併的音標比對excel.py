@@ -1,7 +1,7 @@
 from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
 # import xlrd
 
-def 音標比對excel(xlsx檔名,  合併音標):
+def 音標比對excel(xlsx檔名, 合併音標):
 	excel音表 = 把EXCEL讀進來(xlsx檔名)
 	# 移掉表頭列 0th row = ['Num', 'Word', 'IPA', 'Note']
 	excel音表.remove(excel音表[0])
@@ -18,28 +18,28 @@ def 音標比對excel(xlsx檔名,  合併音標):
 	合格的字格 = []
 	不合格的字格 = []
 	
+	# 	1. 先找出excel的詞當中，有哪些的IPA不在textgrid裡
+	# 	順便紀錄合格的textgrid的索引
 	for 列 in excel音表:
 		if 列[2] in 對應表:
-			# 	合格
-			合格的字格.append( 對應表.index(列[2]) )
+			# 	合格，因為在textgrid有對應音檔
+			合格的字格.append(對應表.index(列[2]))
 		elif 列[3] == 'x':
-			# 	合格			
+			# 	合格，因為有紀錄此詞本身無對應音檔			
 			pass
 		else:
 			# 	不合格
 			不合格的表.append(列)
 		
-	# 	檢查完excel後，也順便找出textgrid中無法對應的元素
+	# 	2. 檢查完excel後，也要挑出textgrid中沒有對應的IPA的，不合格的詞
 	for 索引 in range(len(對應表)):
 		if 索引 in 合格的字格:		
 				pass
 		else:
 			不合格的字格.append(合併音標[索引])
 
-	if not len(不合格的表) == 0:
-		print('Excel 中沒有音檔的: {0}'.format(不合格的表))
-		if not len(不合格的字格) == 0:
-			print('TextGrid中沒有對應的IPA: {0}'.format(不合格的字格))
-		return False
+	if not len(不合格的表) == 0 or not len(不合格的字格) == 0:
+		return False, 'Excel 中沒有音檔的: {0}。TextGrid中沒有對應的IPA: {1}'.format(不合格的表, 不合格的字格)
 	else:
-		return True
+		# 	3. 確認後，xlsx和textgrid的IPA應該一致
+		return True, 'xlsx和textgrid的IPA目前檢查一致～～'
