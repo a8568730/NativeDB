@@ -141,18 +141,18 @@ def index初始顯示語言(request, 想看的語言=None):
 		'初始顯示語言':想看的語言,
 	})		
 
-def 上傳檔案(request):
-	if request.method == 'POST':
-		form = 上傳檔案表格(request.POST, request.FILES)
-		if form.is_valid():
-			# 	存了輸入表格的資料後，回傳一筆資料的索引，可以修改它再回存
-			原始檔案 = form.save()
-			原始檔案.原始檔名 = request.FILES['原始檔'].name
-			原始檔案.save()
-			return redirect('上傳檔案')
-	else:
-		form = 上傳檔案表格(initial = {"原始檔名": "blahblah"})
-		return render(request, '海外頁面/上傳檔案.html', {'form':form})
+# def 上傳檔案(request):
+# 	if request.method == 'POST':
+# 		form = 上傳檔案表格(request.POST, request.FILES)
+# 		if form.is_valid():
+# 			# 	存了輸入表格的資料後，回傳一筆資料的索引，可以修改它再回存
+# 			原始檔案 = form.save()
+# 			原始檔案.原始檔名 = request.FILES['原始檔'].name
+# 			原始檔案.save()
+# 			return redirect('上傳檔案')
+# 	else:
+# 		form = 上傳檔案表格(initial = {"原始檔名": "blahblah"})
+# 		return render(request, '海外頁面/上傳檔案.html', {'form':form})
 
 def 顯示原始語料表(request):
 	揣著語料 = 原始語料表.objects.all()
@@ -172,6 +172,16 @@ def 揣字數(類型):
 		return 10000
 	
 def 揣著語料的全部檔案(request, 語料編號):
+	if request.method == 'POST':
+		上傳表格 = 上傳檔案表格(request.POST, request.FILES)
+		if 上傳表格.is_valid():
+			# 	存了輸入表格的資料後，回傳一筆資料的索引，可以修改它再回存
+			原始檔案 = 上傳表格.save()
+			原始檔案.原始檔名 = request.FILES['原始檔'].name
+			原始檔案.save()
+	else:
+		上傳表格 = 上傳檔案表格(initial = {"原始檔名": "blahblah"})
+	
 	揣著全部檔案 = 原始檔案表.objects.filter(語料表__pk=語料編號)
 	有xlsx檔 = False
 	xlsx檔名 = ''
@@ -191,13 +201,16 @@ def 揣著語料的全部檔案(request, 語料編號):
 		錯誤資訊 = 音json
 	else:
 		錯誤資訊 = None
+		
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': 揣著全部檔案,
 		'有xlsx檔': 有xlsx檔, 
 		'xlsx檔名': xlsx檔名,
  		'字數': 字數,
  		'音json': 音json,
- 		'錯誤資訊':錯誤資訊
+ 		'錯誤資訊': 錯誤資訊,
+ 		'上傳表格': 上傳表格,
+ 		'語料編號': 語料編號
 	})
 
 def 顯示xlsx的音(request,  xlsx檔名, 字數):
