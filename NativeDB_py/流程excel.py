@@ -12,17 +12,18 @@ import json
 # 	return True
 
 
-excel檔名 = 'Penang_Y_M01_correct.xlsx'
+excel檔名 = 'numberbook2.xlsx'
 xlsx陣列 = 把EXCEL讀進來(excel檔名)
-if(len(xlsx陣列) != 0):
+
+# 輸出sheet超過一頁的錯誤訊息
+if isinstance(xlsx陣列, str):
+	print(xlsx陣列)
+	
+elif(len(xlsx陣列) != 0):
 	json陣列 = xlsx陣列轉json(xlsx陣列, 1)
 	if(type(json陣列[0]) is dict):
+		print('success', json陣列)
 		寫出json檔(json陣列, excel檔名)
-# 	print(json陣列)
-# 	result= json.loads("[{\"num\":\"100\"}]")
-# 	print(result)
-	else:
-		# 輸出錯誤訊息		
-		print(json陣列)	
-
-
+	else:	
+		# 輸出錯誤訊息
+		print('ohno', json陣列)

@@ -183,7 +183,9 @@ def 揣著語料的全部檔案(request, 語料編號):
 			xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
 			xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
 			音json = xlsx陣列轉json(xlsx陣列, int(字數))
-	if 有xlsx檔 and isinstance(音json, str):
+	if 有xlsx檔 and isinstance(xlsx陣列, str):
+		錯誤資訊 = xlsx陣列
+	elif 有xlsx檔 and isinstance(音json, str):
 		錯誤資訊 = 音json
 	else:
 		錯誤資訊 = None
