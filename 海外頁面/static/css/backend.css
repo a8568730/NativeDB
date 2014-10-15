@@ -1,2 +1,5 @@
 .navbar-inverse .navbar-text {color:#ddd;}
-		.navbar-inverse .navbar-text > small {color:#ccc;}
+.navbar-inverse .navbar-text > small {color:#ccc;}
+a.back {color: yellow;}
+a.back:hover { color: #f5e100;}		
+		

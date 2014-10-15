@@ -18,7 +18,9 @@
     	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<h4 class="navbar-text navbar-left">
 				海外漢語方言資料庫&nbsp;&nbsp;
-				<small>後台</small>
+				{% block 回首頁按鈕 %}
+					<small><a href="{% url '後台' %}" class="back">回後台</a></small>
+				{% endblock %}
 			</h4>
     	</div>
    		
