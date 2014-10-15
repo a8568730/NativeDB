@@ -79,6 +79,7 @@ def 加語言表表格(request):
 	return render(request, '海外頁面/新語言.html', {
 		'語言': 語言表格,
 		'揣著語言':揣著語言,
+		'介面名': '加語言表表格'
 	})
 
 def 語言表全部json(request):
@@ -101,6 +102,7 @@ def 加類型表表格(request):
 	return render(request, '海外頁面/新語言.html', {
 		'語言': 類型表格,
 		'揣著語言':揣著類型,
+		'介面名': '加類型表表格'
 	})
 
 def 類型表全部json(request):
@@ -120,9 +122,9 @@ def 加原始語料表表格(request):
 		原始語料表格 = 顯示原始語料表表格()
 
 	揣著原始語料 = 原始語料表.objects.all()
-	return render(request, '海外頁面/新語言.html', {
-		'語言': 原始語料表格,
-		'揣著語言':揣著原始語料,
+	return render(request, '海外頁面/新語料.html', {
+		'語料': 原始語料表格,
+		'揣著語料':揣著原始語料,
 	})
 
 def 顯示全部語料(request, 想看的語言, 想看的類型='單詞'):

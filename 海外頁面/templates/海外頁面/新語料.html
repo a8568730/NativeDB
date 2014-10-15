@@ -1,0 +1,28 @@
+{% extends '海外頁面/後台框.html' %}
+{% block 內容 %}
+
+<div class="row">
+	
+	<div class="col-xs-6">
+	<p>目前的語言有：</p>
+	<ul class="list-group list-unstyled">
+		{% for gi2 in 揣著語料 %}
+		<li class="list-group-item"><a href="{% url '揣著語料的全部檔案'  gi2.pk  %}">{{ gi2 }}</a></li>
+		{% endfor %}
+	</ul>
+	</div>
+	
+	<div class="col-xs-6">
+		<form action="{% url '加原始語料表表格' %}" method="post">{% csrf_token %}
+		<table class="資料">
+		 {{ 語料.as_table }}
+		
+		<tr><td>
+			<input type="submit" value="確定" />
+ 		</td></tr>
+ 		</table>
+		</form>
+	</div>
+	
+</div>
+{% endblock %}

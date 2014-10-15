@@ -9,12 +9,14 @@ angular.module('app1',[])
 	                	 links: [{path:'加類型表表格', text:'新增類型'}]
 	                 },{
 	                	 head: '語料',
-	                	 links: [{path:'加原始語料表表格', text:'新增語料(地區，年齡，性別，ID)'},
-	                	         {path:'顯示原始語料表', text:'顯示所有原始語料'}]
-	                 },{
-	                	 head: '檔案',
-	                	 links: [{path:'上傳檔案', text:'上傳檔案'}]
+//	                	 links: [{path:'加原始語料表表格', text:'新增語料(地區，年齡，性別，ID)'},
+//	                	         {path:'顯示原始語料表', text:'顯示所有原始語料'}]
+	                	 links: [{path:'加原始語料表表格', text:'新增語料(地區，年齡，性別，ID)'}]
 	                 }
+//	                 ,{
+//	                	 head: '檔案',
+//	                	 links: [{path:'上傳檔案', text:'上傳檔案'}]
+//	                 }
 		];
 }])
 
