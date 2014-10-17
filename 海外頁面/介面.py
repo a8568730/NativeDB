@@ -180,8 +180,9 @@ def 揣著語料的全部檔案(request, 語料編號):
 			原始檔案.原始檔名 = request.FILES['原始檔'].name
 			原始檔案.save()
 	else:
-		上傳表格 = 上傳檔案表格(initial = {"原始檔名": "blahblah"})
-	
+		上傳表格 = 上傳檔案表格(initial = {"語料表": 原始語料表.objects.filter(pk=語料編號).first()})
+		上傳表格.fields['語料表'].widget.attrs['disabled'] = True
+		
 	揣著全部檔案 = 原始檔案表.objects.filter(語料表__pk=語料編號)
 	有xlsx檔 = False
 	xlsx檔名 = ''
