@@ -194,7 +194,12 @@ def 揣著語料的全部檔案(request, 語料編號):
 			錯誤資訊 = 內容json
 		else:
 			錯誤資訊 = None
-			
+	
+	wav和textgrid = a.揣出wav和textgrid檔()
+	wav和textgrid錯誤資訊 = a.是否一組wav和textgrid()
+# 	print(wav和textgrid)
+# 	print('錯誤資訊: {0}'.format(wav和textgrid錯誤資訊))
+	
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': a.揣出語料的所有檔案(),
 		'xlsx檔名': xlsx檔名,
@@ -202,7 +207,9 @@ def 揣著語料的全部檔案(request, 語料編號):
  		'內容json': 內容json,
  		'錯誤資訊': 錯誤資訊,
  		'上傳表格': 上傳表格,
- 		'語料編號': 語料編號
+ 		'語料編號': 語料編號, 
+ 		'wav和textgrid': wav和textgrid,
+ 		'wav和textgrid錯誤資訊': wav和textgrid錯誤資訊
 	})
 
 def 顯示xlsx的音(request,  xlsx檔名, 字數):
