@@ -16,10 +16,9 @@
 	{% endfor %}
 	
 
-	{% if 有xlsx檔 and 錯誤資訊%}
-		<p>{{ xlsx檔名 }}, {{ 字數 }}</p>
+	{% if 錯誤資訊 %}
 		{{ 錯誤資訊 }}
-	{% elif 有xlsx檔 %}	
+	{% else %}	
 		<p>{{ xlsx檔名 }}, {{ 字數 }}</p>
 		<br/>
 		<div class="row">
@@ -27,7 +26,7 @@
 		<table class="table table-striped">
 			<thead><tr><th></th><th>Num</th><th>Word</th><th>IPA</th><th>Note</th></tr></thead>
 			<tbody>
-				{% for 行  in 音json %}
+				{% for 行  in 內容json %}
 				<tr>
 					<td>{{ forloop.counter }}</td>
 					<td>{{ 行.Num }}</td>
@@ -40,8 +39,6 @@
 		</table>
 		</div>
 		<div class="col-xs-6"></div>
-	{% else %}
-	<p>此語料沒有xlsx檔，請補。</p>
 	{% endif %}
 	
 {% endblock %}

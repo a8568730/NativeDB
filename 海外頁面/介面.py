@@ -161,17 +161,9 @@ def 顯示原始語料表(request):
 		'揣著語料':揣著語料,
 	})
 
-def 揣字數(類型):
-	if(類型 == '單詞'):
-		return 1
-	if(類型 == '雙詞'):
-		return 2
-	if(類型 == '三字詞'):
-		return 3
-	if(類型 == '故事'):
-		return 10000
 	
 def 揣著語料的全部檔案(request, 語料編號):
+	a = 原始語料表.objects.filter(pk=語料編號).first()
 	if request.method == 'POST':
 		上傳表格 = 上傳檔案表格(request.POST, request.FILES)
 		if 上傳表格.is_valid():
@@ -180,35 +172,34 @@ def 揣著語料的全部檔案(request, 語料編號):
 			原始檔案.原始檔名 = request.FILES['原始檔'].name
 			原始檔案.save()
 	else:
-		上傳表格 = 上傳檔案表格(initial = {"語料表": 原始語料表.objects.filter(pk=語料編號).first()})
-		上傳表格.fields['語料表'].widget.attrs['disabled'] = True
+		上傳表格 = 上傳檔案表格(initial = {"語料表":a })
+		# fail:	上傳表格.fields['語料表'].widget.attrs['disabled'] = True
 		
-	揣著全部檔案 = 原始檔案表.objects.filter(語料表__pk=語料編號)
-	有xlsx檔 = False
-	xlsx檔名 = ''
-	字數 = -1
-	音json = ""
-	for 檔案 in 揣著全部檔案: 
-		if(檔案.副檔名() == 'xlsx'):
-			有xlsx檔 = True
-			xlsx檔名 = 檔案.原始檔名
-			字數 = 揣字數(檔案.語料表.類型表.類型)
-			xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
-			xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
-			音json = xlsx陣列轉json(xlsx陣列, int(字數))
-	if 有xlsx檔 and isinstance(xlsx陣列, str):
-		錯誤資訊 = xlsx陣列
-	elif 有xlsx檔 and isinstance(音json, str):
-		錯誤資訊 = 音json
-	else:
-		錯誤資訊 = None
-		
+	excel檔名陣列 = a.揣出excel檔()
+	xlsx檔名 = None
+	內容json = None
+	字數 = a.類型表.揣字數()
+	if len(excel檔名陣列) == 0:
+		錯誤資訊 = '此語料無excel檔，請補上傳'
+	elif len(excel檔名陣列) > 1:
+		錯誤資訊 = '此語料excel檔有{0}個，請刪掉多餘的'.format(len(excel檔名陣列))
+	else:	
+		xlsx檔名 = excel檔名陣列[0]
+		xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
+		xlsx內容陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
+		內容json = xlsx陣列轉json(xlsx內容陣列, int(字數))
+		if isinstance(xlsx內容陣列, str):
+			錯誤資訊 = xlsx內容陣列
+		elif isinstance(內容json, str):
+			錯誤資訊 = 內容json
+		else:
+			錯誤資訊 = None
+			
 	return render(request, '海外頁面/顯示全部檔案.html', {
-		'揣著語料': 揣著全部檔案,
-		'有xlsx檔': 有xlsx檔, 
+		'揣著語料': a.揣出語料的所有檔案(),
 		'xlsx檔名': xlsx檔名,
  		'字數': 字數,
- 		'音json': 音json,
+ 		'內容json': 內容json,
  		'錯誤資訊': 錯誤資訊,
  		'上傳表格': 上傳表格,
  		'語料編號': 語料編號
