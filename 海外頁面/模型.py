@@ -75,20 +75,20 @@ class 原始語料表(models.Model):
 		wav集合 = set(wav檔名陣列)
 		textgrid集合 = set(textgrid檔名陣列)
 		print(wav集合, textgrid集合)
-		錯誤資訊 = None
 		if len(wav集合) < len(wav檔名陣列):
-			錯誤資訊 = 'wav有檔名重複'
+			raise RuntimeError('wav有檔名重複')
 		elif len(textgrid集合) < len(textgrid檔名陣列):
-			錯誤資訊 = 'TextGrid有檔名重複'
+			raise RuntimeError('TextGrid有檔名重複')
 		else:
 			# 	只比對檔名，能被減掉的代表有一組wav和textgrid
+			#  檔名不一致
 			wav集合 = {w.replace('.wav', '') for w in wav集合}
 			textgrid集合 = {w.replace('.TextGrid', '') for w in textgrid集合}
 			有缺的wav集合 = {w + '.wav' for w in wav集合 - textgrid集合}
 			有缺的texgrid集合 = {w + '.TextGrid' for w in textgrid集合 - wav集合}
 			if len(有缺的wav集合) > 0 or len(有缺的texgrid集合) > 0:
-				錯誤資訊 = '缺wav檔的: {1}, \n缺TextGrid檔的: {0}'.format(','.join(有缺的wav集合), ','.join(有缺的texgrid集合))
-		return 	錯誤資訊	
+				raise RuntimeError('缺wav檔的: {1}, \n缺TextGrid檔的: {0}'.format(','.join(有缺的wav集合), ','.join(有缺的texgrid集合)))
+		return
 	
 class 原始檔案表(models.Model):
 	頭一擺翻譯時間 = models.DateField(auto_now_add=True)

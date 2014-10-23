@@ -28,6 +28,11 @@ from hai2gua7.settings import MEDIA_ROOT
 from 海外頁面.模型 import 原始檔案表
 from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
 from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
+from NativeDB_py.取出聲音位置 import 取出聲音位置
+from NativeDB_py.檢查輸入的檔案 import 檢查輸入
+from NativeDB_py.合併音節的位置 import 合併位置
+from NativeDB_py.檢查取出的位置大小 import 檢查位置大小
+from NativeDB_py.合併的音標比對excel import 音標比對excel
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -175,37 +180,44 @@ def 揣著語料的全部檔案(request, 語料編號):
 		上傳表格 = 上傳檔案表格(initial = {"語料表":a })
 		# fail:	上傳表格.fields['語料表'].widget.attrs['disabled'] = True
 		
+	# 	檢查EXCEL的數量，格式
 	excel檔名陣列 = a.揣出excel檔()
 	xlsx檔名 = None
 	內容json = None
 	字數 = a.類型表.揣字數()
 	if len(excel檔名陣列) == 0:
-		錯誤資訊 = '此語料無excel檔，請補上傳'
+		excel錯誤資訊 = '此語料無excel檔，請補上傳'
 	elif len(excel檔名陣列) > 1:
-		錯誤資訊 = '此語料excel檔有{0}個，請刪掉多餘的'.format(len(excel檔名陣列))
+		excel錯誤資訊 = '此語料excel檔有{0}個，請刪掉多餘的'.format(len(excel檔名陣列))
 	else:	
 		xlsx檔名 = excel檔名陣列[0]
 		xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
 		xlsx內容陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
 		內容json = xlsx陣列轉json(xlsx內容陣列, int(字數))
 		if isinstance(xlsx內容陣列, str):
-			錯誤資訊 = xlsx內容陣列
+			excel錯誤資訊 = xlsx內容陣列
 		elif isinstance(內容json, str):
-			錯誤資訊 = 內容json
+			excel錯誤資訊 = 內容json
 		else:
-			錯誤資訊 = None
+			excel錯誤資訊 = None
 	
 	wav和textgrid = a.揣出wav和textgrid檔()
-	wav和textgrid錯誤資訊 = a.是否一組wav和textgrid()
-# 	print(wav和textgrid)
-# 	print('錯誤資訊: {0}'.format(wav和textgrid錯誤資訊))
+	try:
+		# 	檢查是否有一組音檔與文字檔
+		# 比對textgrid的音標和excel的IPA是否相符
+		a.是否一組wav和textgrid()
+		textgrid檔名陣列 = a.揣出textgrid檔()
+		串聯音標json = 串聯多個文字檔的音標(textgrid檔名陣列)
+		textgrid比對EXCEL(串聯音標json, xlsx完整路徑檔名)
+	except Exception as 錯誤:
+		wav和textgrid錯誤資訊=錯誤
 	
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': a.揣出語料的所有檔案(),
 		'xlsx檔名': xlsx檔名,
  		'字數': 字數,
  		'內容json': 內容json,
- 		'錯誤資訊': 錯誤資訊,
+ 		'excel錯誤資訊': excel錯誤資訊,
  		'上傳表格': 上傳表格,
  		'語料編號': 語料編號, 
  		'wav和textgrid': wav和textgrid,
@@ -226,3 +238,24 @@ def 顯示xlsx的音(request,  xlsx檔名, 字數):
 # 		'xlsx陣列': xlsx陣列,
 # 	})
 	return HttpResponse(json.dumps(音json), content_type="application/json")
+
+# 因為可能有很多個wav和textgrid組，它們加起來才是EXCEL全部的IPA
+def 串聯多個文字檔的音標(textgrid檔名陣列):
+	串聯音標json = []
+	for 文字檔路徑 in  textgrid檔名陣列:
+		串聯音標json +=流程(文字檔路徑)
+	return 串聯音標json 
+
+def 流程(文字檔路徑):
+	資料 = 取出聲音位置(文字檔路徑)
+	檢查輸入字串 = 檢查輸入(聲音檔路徑, 文字檔路徑, 資料[-1][-1])
+	if(檢查輸入字串 != 'OK'):
+		raise RuntimeError(檢查輸入字串)
+	合併後的資料 = 合併位置(資料)
+	檢查大小字串 = 檢查位置大小(合併後的資料)
+	if(檢查大小字串 != 'OK'):
+		raise RuntimeError(檢查輸入字串)
+	return 合併後的資料
+
+def textgrid比對EXCEL(xlsx完整路徑檔名, 串聯音標json):
+	結果, 資訊 = 音標比對excel(xlsx完整路徑檔名, 串聯音標json)
