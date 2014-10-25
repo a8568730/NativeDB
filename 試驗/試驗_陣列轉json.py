@@ -36,7 +36,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Num','Word','xxx','Note'],
 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3']
 			]
-		答案 =  'col(1,2)應為IPA'
+		答案 =  '第1列第3個欄位應為IPA'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)	
@@ -48,7 +48,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
 				['_VT_002','(乖)','kʰa3','kʰa3']
 			]
-		答案 =  'col(2)的Num有誤'
+		答案 =  'row(3)的Num欄位有誤'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
@@ -80,7 +80,7 @@ class 基本元素試驗(unittest.TestCase):
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
  				['Zhang_VT_002','(乖)','kʰa3','kʰa3']
  			]
-		答案 =  'col(2)的字格式不符'
+		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
@@ -91,7 +91,7 @@ class 基本元素試驗(unittest.TestCase):
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
  				['Zhang_VT_002','','kʰa3','kʰa3']
  			]
-		答案 =  'col(2)的Word欄位空白'
+		答案 =  'row(3)的Word欄位空白'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
@@ -102,7 +102,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Zhang2_VT_001','(乖)巧$','kʰa3','kʰa3'],
 				['Zhang2_VT_002','(乖)巧','kʰa3','kʰa3']
 			]
-		答案 =  'col(1)含特殊符號'
+		答案 =  'row(2)的Word欄位含特殊符號'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
@@ -113,7 +113,7 @@ class 基本元素試驗(unittest.TestCase):
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
  				['Zhang_VT_002','(乖巧','kʰa3','kʰa3']
  			]
-		答案 =  'col(2)的字格式不符'
+		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)			
@@ -124,7 +124,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
 				['Zhang_VT_002','(乖)','kʰa3','kʰa3']
 			]
-		答案 =  'col(2)的字格式不符'
+		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)	
@@ -169,7 +169,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','(巧)','kʰa3','kʰa3']
 			]
-		答案 =  'col(1)的字格式不符'
+		答案 =  'row(2)的Word欄位格式不符'
 		結果 = xlsx陣列轉json(問題, 1)
 		self.assertEqual(答案, 結果)
 	
@@ -231,7 +231,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Zhang_VT_001','喔(乖)巧','kʰa3','kʰa3'],
 				['Zhang_VT_002','喔喔(乖)','kʰa3','kʰa3']
 			]
-		答案 =  'col(1)的字格式不符'
+		答案 =  'row(2)的Word欄位格式不符'
 		詞數 = 2
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
@@ -242,7 +242,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Zhang_VT_001','(喔)乖(巧)','kʰa3','kʰa3'],
 				['Zhang_VT_002','喔喔(乖)','kʰa3','kʰa3']
 			]
-		答案 =  'col(1)的字格式不符'
+		答案 =  'row(2)的Word欄位格式不符'
 		詞數 = 2
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)	
