@@ -39,7 +39,7 @@ def 音標比對excel(xlsx檔名, 合併音標):
 			不合格的字格.append(合併音標[索引])
 
 	if not len(不合格的表) == 0 or not len(不合格的字格) == 0:
-		return False, 'Excel 中沒有音檔的: {0}。TextGrid中沒有對應的IPA: {1}'.format(不合格的表, 不合格的字格)
-	else:
-		# 	3. 確認後，xlsx和textgrid的IPA應該一致
-		return True, 'xlsx和textgrid的IPA目前檢查一致～～'
+		raise RuntimeError( (不合格的表, 不合格的字格))
+	
+	# 	3. 確認後，xlsx和textgrid的IPA應該一致
+	# 	return 'xlsx和textgrid的IPA目前檢查一致～～'
