@@ -6,12 +6,15 @@ app1.config(function($interpolateProvider) {
 });
 
 app1.controller('DeleteController', ['$scope','FileService', function($scope, FileService){
-	var corpus = 2;
-	//得到檔案編號與檔名的list
-	$scope.files = FileService.GetFileList(corpus);
+	var corpus = 4;
+	
+	$scope.GetFiles = function(){ $scope.files = FileService.GetFileList(corpus); };
+	$scope.RemoveFiles = function(ID){ FileService.DeleteFile(ID, $scope.files);};
+	//初始網頁，得到檔案編號與檔名的list
+	$scope.GetFiles();
 }]);
 
-/*$scope不是service, 是Scope物件。不可放$scope在service*/
+/*筆記：$scope不是service, 是Scope物件。不可放$scope在service*/
 app1.service('FileService', function($http, $log){
 	this.GetFileList = function(corpus){
 		var list=[];
@@ -20,7 +23,7 @@ app1.service('FileService', function($http, $log){
 			method: 'GET',
 			url: '/語料的全部檔案json',
 			data: {},
-			params: {pk: 2}
+			params: {pk: corpus}
 		})
 		.success(function(data, status){
 			angular.forEach(data, function(line, key) {
@@ -30,9 +33,25 @@ app1.service('FileService', function($http, $log){
 		});
 		return list;	
 	};
-	this.DeleteFile = function(){
-		//delete the file
-		
-		//get new list
+	
+	this.DeleteFile = function(ID, files){
+		//1. delete the file
+		$http({
+			method: 'GET',
+			url: '/'+ ID + '/刪除一個檔案',
+			data: {},
+		}).success(function(){
+			//2. remove the item from file list
+			for(var i=0; i < files.length; i++){
+				if(ID == files[i][0]){
+					files.splice(i, 1);
+					break;
+				}	
+			}
+			console.log('delete done!');
+		}).error(function(){
+			console.log('failed to delete');
+		});	
 	};
+	
 });
