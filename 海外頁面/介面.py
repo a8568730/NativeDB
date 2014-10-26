@@ -266,3 +266,18 @@ def 流程(文字檔路徑):
 def textgrid比對EXCEL(xlsx完整路徑檔名, 串聯音標json):
 	結果, 資訊 = 音標比對excel(xlsx完整路徑檔名, 串聯音標json)
 	return 結果, 資訊 
+
+def 刪除一個檔案(request, 檔案編號):
+	錯誤 = ''
+	if request.method == 'GET':
+		檔案列 = 原始檔案表.objects.filter(pk=檔案編號).first()
+		if 檔案列 == None:
+			錯誤 = '此檔不存在'
+		else:
+			try:
+				os.remove(os.path.join(MEDIA_ROOT, 檔案列.原始檔.name))
+				檔案列.delete()
+			except:
+				錯誤 = '無法刪除此檔'
+				raise RuntimeError(錯誤)
+	return HttpResponse(錯誤, content_type="text/plain; charset=UTF-8")

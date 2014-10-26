@@ -15,6 +15,7 @@ from 海外頁面.介面 import 顯示原始語料表
 from 海外頁面.介面 import 揣著語料的全部檔案
 from 海外頁面.介面 import 顯示xlsx的音
 from 海外頁面.介面 import 後台
+from 海外頁面.介面 import 刪除一個檔案
 
 
 
@@ -46,6 +47,8 @@ urlpatterns = patterns('',
             'document_root': settings.MEDIA_ROOT,
         }),
 	url(r'^顯示xlsx的音/(?P<xlsx檔名>[^/]+)/(?P<字數>[^/]+)/*$', 顯示xlsx的音, name='顯示xlsx的音'),
+	
+	url('^(?P<檔案編號>\d+)/刪除一個檔案$', 刪除一個檔案, name='刪除一個檔案'),
 	
 	url(r'^.*$', 首頁, name='首頁')
 )
