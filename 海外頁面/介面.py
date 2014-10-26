@@ -281,3 +281,22 @@ def 刪除一個檔案(request, 檔案編號):
 				錯誤 = '無法刪除此檔'
 				raise RuntimeError(錯誤)
 	return HttpResponse(錯誤, content_type="text/plain; charset=UTF-8")
+
+def 測試批次刪除(request):
+# 	if request.method == 'GET':
+# 		pass
+# 	else:
+# 	
+	template = loader.get_template('海外頁面/測試批次刪除.html')
+	context = RequestContext(request, {})
+	return HttpResponse(template.render(context))	
+
+
+
+def 語料的全部檔案json(request):
+	語料編號 = request.GET['pk']
+	語料列 = 原始語料表.objects.filter(pk=語料編號).first()
+	檔案陣列 = []
+	for 檔案列 in 語料列.揣出語料的所有檔案():
+		檔案陣列.append([檔案列.pk, 檔案列.原始檔名])
+	return HttpResponse(json.dumps(檔案陣列), content_type="application/json")

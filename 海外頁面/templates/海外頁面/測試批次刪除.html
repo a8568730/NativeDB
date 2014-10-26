@@ -1,0 +1,16 @@
+<html>
+<head>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
+	{% block extrahead %}{% endblock %}
+	{% load staticfiles %}
+	<script src="{% static 'js/backend_delete.js' %}"></script>
+</head>
+<body ng-app="app1">
+	<div ng-controller="DeleteController">
+		<ul>
+			<li ng-repeat="file in files">{$ file[0] $}, {$ file[1] $}</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -16,6 +16,8 @@ from 海外頁面.介面 import 揣著語料的全部檔案
 from 海外頁面.介面 import 顯示xlsx的音
 from 海外頁面.介面 import 後台
 from 海外頁面.介面 import 刪除一個檔案
+from 海外頁面.介面 import 語料的全部檔案json
+from 海外頁面.介面 import 測試批次刪除
 
 
 
@@ -50,6 +52,8 @@ urlpatterns = patterns('',
 	
 	url('^(?P<檔案編號>\d+)/刪除一個檔案$', 刪除一個檔案, name='刪除一個檔案'),
 	
+	url('^測試批次刪除$', 測試批次刪除, name='測試批次刪除'),
+	url('^語料的全部檔案json$', 語料的全部檔案json, name='語料的全部檔案json'),
 	url(r'^.*$', 首頁, name='首頁')
 )
 

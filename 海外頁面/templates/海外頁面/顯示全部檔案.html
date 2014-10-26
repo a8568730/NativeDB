@@ -12,7 +12,7 @@
 <p>目前的語料有：</p>
 
 	{% for gi2 in 揣著語料 %}
-	{{ gi2 }}<br/>
+		{{ gi2.pk }}, {{ gi2.原始檔名 }} (<a href="">delete</a>)<br/>
 	{% endfor %}
 	
 
