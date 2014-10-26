@@ -22,37 +22,60 @@
 		<p>{{ xlsx檔名 }}, {{ 字數 }}</p>
 		<br/>
 		<div class="row">
-		<div class="col-xs-6">
-		<table class="table table-striped">
-			<thead><tr><th></th><th>Num</th><th>Word</th><th>IPA</th><th>Note</th></tr></thead>
-			<tbody>
-				{% for 行  in 內容json %}
-				<tr>
-					<td>{{ forloop.counter }}</td>
-					<td>{{ 行.Num }}</td>
-					<td>{{ 行.Word }}</td>
-					<td>{{ 行.IPA }}</td>
-					<td>{{ 行.Note }}</td>
-				</tr>
-				{% endfor %}
-			</tbody>
-		</table>
+			
+			<div class="col-xs-6">
+			<table class="table table-striped">
+				<thead><tr><th></th><th>Num</th><th>Word</th><th>IPA</th><th>Note</th></tr></thead>
+				<tbody>
+					{% for 行  in 內容json %}
+					<tr>
+						<td>{{ forloop.counter }}</td>
+						<td>{{ 行.Num }}</td>
+						<td>{{ 行.Word }}</td>
+						<td>{{ 行.IPA }}</td>
+						<td>{{ 行.Note }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			</div>
+			
+			<div class="col-xs-6">
+				{% if wav和textgrid|length > 0 %}
+					<p>wav和textgrid的檔案有:</p>
+					{% for 檔案 in wav和textgrid %}
+						{{檔案}}<br/>
+					{% endfor %}
+					<br/>
+					{% if wav和textgrid錯誤資訊 %}
+						{{ wav和textgrid錯誤資訊 | linebreaks }}<br/>
+					{% endif %}
+				{% else %}
+					<p>此語料無wav和textgrid檔，請補上傳 </p>	
+				{% endif %}
+				
+				<!-- <p>串聯音標json</p>
+				{% for 行 in 串聯音標json %}
+					{{ 行 }}
+				{% endfor %} -->
+				
+				<div class="row">
+					<div class="col-xs-6">
+						<p>textgrid和EXCEL比對結果：</p>
+							{% for 行 in 比對錯誤的表 %}
+								{{ 行 }} <br/>
+							{% endfor %}
+					</div>
+					<div class="col-xs-6">
+						<p>錯誤的textgrid音標：</p>
+							{% for 行 in 比對錯誤的字格 %}
+								{{ 行.0 }} <br/>
+							{% endfor %}
+					</div>
+				</div>
+			
+			</div>
 		</div>
-		<div class="col-xs-6"></div>
 	{% endif %}
-	
-	{% if wav和textgrid|length > 0 %}
-		<p>wav和textgrid的檔案有:</p>
-		{% for 檔案 in wav和textgrid %}
-			{{檔案}}<br/>
-		{% endfor %}
-		<br/>
-		{% if wav和textgrid錯誤資訊 %}
-			{{ wav和textgrid錯誤資訊 | linebreaks }}<br/>
-		{% endif %}
-	{% else %}
-		<p>此語料無wav和textgrid檔，請補上傳 </p>	
-	{% endif %}
-	
-	
+
 {% endblock %}

@@ -74,7 +74,6 @@ class 原始語料表(models.Model):
 		textgrid檔名陣列 = self.揣出textgrid檔()
 		wav集合 = set(wav檔名陣列)
 		textgrid集合 = set(textgrid檔名陣列)
-		print(wav集合, textgrid集合)
 		if len(wav集合) < len(wav檔名陣列):
 			raise RuntimeError('wav有檔名重複')
 		elif len(textgrid集合) < len(textgrid檔名陣列):

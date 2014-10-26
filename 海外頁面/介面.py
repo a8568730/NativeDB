@@ -33,6 +33,7 @@ from NativeDB_py.檢查輸入的檔案 import 檢查輸入
 from NativeDB_py.合併音節的位置 import 合併位置
 from NativeDB_py.檢查取出的位置大小 import 檢查位置大小
 from NativeDB_py.合併的音標比對excel import 音標比對excel
+from NativeDB_py.合併音標 import 合併音標
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -202,16 +203,23 @@ def 揣著語料的全部檔案(request, 語料編號):
 			excel錯誤資訊 = None
 	
 	wav和textgrid = a.揣出wav和textgrid檔()
+	比對錯誤的表 = None
+	比對錯誤的字格 = None
+	串聯音標json = None
 	try:
 		# 	檢查是否有一組音檔與文字檔
 		# 比對textgrid的音標和excel的IPA是否相符
-		a.是否一組wav和textgrid()
+		wav和textgrid錯誤資訊 = a.是否一組wav和textgrid()
 		textgrid檔名陣列 = a.揣出textgrid檔()
 		串聯音標json = 串聯多個文字檔的音標(textgrid檔名陣列)
-		textgrid比對EXCEL(串聯音標json, xlsx完整路徑檔名)
+		try:
+			textgrid比對EXCEL(xlsx完整路徑檔名, 串聯音標json)
+		except Exception as 錯誤:
+			print('lalalala{0}'.format(錯誤.args))
+			比對錯誤的表, 比對錯誤的字格 = 錯誤.args
 	except Exception as 錯誤:
-		wav和textgrid錯誤資訊=錯誤
-	
+		wav和textgrid錯誤資訊 = 錯誤 
+		
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': a.揣出語料的所有檔案(),
 		'xlsx檔名': xlsx檔名,
@@ -221,41 +229,40 @@ def 揣著語料的全部檔案(request, 語料編號):
  		'上傳表格': 上傳表格,
  		'語料編號': 語料編號, 
  		'wav和textgrid': wav和textgrid,
- 		'wav和textgrid錯誤資訊': wav和textgrid錯誤資訊
+ 		'wav和textgrid錯誤資訊': wav和textgrid錯誤資訊,
+ 		'串聯音標json':串聯音標json,
+		'比對錯誤的表':比對錯誤的表,
+		'比對錯誤的字格':比對錯誤的字格
 	})
 
 def 顯示xlsx的音(request,  xlsx檔名, 字數):
 	全部的音 = []
 	xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
-# 	全部的音.append(xlsx完整路徑檔名)
-	
-# 	字數 = 1  #目前先預設單詞=1, 事後再補模型
+	#目前先預設單詞=1, 事後再補模型
 	xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
-# 	全部的音.append(xlsx陣列)
 	音json = xlsx陣列轉json(xlsx陣列, int(字數))
-	print(音json)
-# 	return render(request, '海外頁面/顯示xlsx.html', {
-# 		'xlsx陣列': xlsx陣列,
-# 	})
 	return HttpResponse(json.dumps(音json), content_type="application/json")
 
 # 因為可能有很多個wav和textgrid組，它們加起來才是EXCEL全部的IPA
 def 串聯多個文字檔的音標(textgrid檔名陣列):
 	串聯音標json = []
-	for 文字檔路徑 in  textgrid檔名陣列:
-		串聯音標json +=流程(文字檔路徑)
+	for 文字檔 in  textgrid檔名陣列:
+		路徑 = os.path.join(MEDIA_ROOT, 文字檔)
+		串聯音標json +=流程(os.path.join(路徑))
 	return 串聯音標json 
 
 def 流程(文字檔路徑):
 	資料 = 取出聲音位置(文字檔路徑)
-	檢查輸入字串 = 檢查輸入(聲音檔路徑, 文字檔路徑, 資料[-1][-1])
-	if(檢查輸入字串 != 'OK'):
-		raise RuntimeError(檢查輸入字串)
-	合併後的資料 = 合併位置(資料)
-	檢查大小字串 = 檢查位置大小(合併後的資料)
+# 	檢查輸入字串 = 檢查輸入(聲音檔路徑, 文字檔路徑, 資料[-1][-1])
+# 	if(檢查輸入字串 != 'OK'):
+# 		raise RuntimeError(檢查輸入字串)
+	合併位置的資料 = 合併位置(資料)
+	檢查大小字串 = 檢查位置大小(合併位置的資料)
 	if(檢查大小字串 != 'OK'):
-		raise RuntimeError(檢查輸入字串)
-	return 合併後的資料
+		raise RuntimeError(檢查大小字串)
+	純音標與時區 = 合併音標(合併位置的資料)
+	return 純音標與時區
 
 def textgrid比對EXCEL(xlsx完整路徑檔名, 串聯音標json):
 	結果, 資訊 = 音標比對excel(xlsx完整路徑檔名, 串聯音標json)
+	return 結果, 資訊 
