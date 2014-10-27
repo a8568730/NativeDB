@@ -8,6 +8,7 @@
 </head>
 <body ng-app="app1">
 	<div ng-controller="DeleteController">
+		<p get-corpus data-corpus="{{ 語料編號 }}">{$ corpus $}</p>
 		<ul>
 			<li ng-repeat="file in files">{$ file[0] $}, {$ file[1] $} (<a ng-href="#" ng-click='RemoveFiles(file[0])'>delete</a>)</li>
 		</ul>

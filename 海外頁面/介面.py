@@ -282,13 +282,13 @@ def 刪除一個檔案(request, 檔案編號):
 				raise RuntimeError(錯誤)
 	return HttpResponse(錯誤, content_type="text/plain; charset=UTF-8")
 
-def 測試批次刪除(request):
+def 測試批次刪除(request, 語料編號):
 # 	if request.method == 'GET':
 # 		pass
 # 	else:
 # 	
 	template = loader.get_template('海外頁面/測試批次刪除.html')
-	context = RequestContext(request, {})
+	context = RequestContext(request, {'語料編號':語料編號})
 	return HttpResponse(template.render(context))	
 
 

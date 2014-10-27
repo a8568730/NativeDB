@@ -5,20 +5,31 @@ app1.config(function($interpolateProvider) {
 	$interpolateProvider.endSymbol('$}');
 });
 
+app1.directive('getCorpus', function() {
+	return function($scope, element, attrs) {
+		//		observe data-corpus
+	    attrs.$observe('corpus', function(value) {
+	    	console.log('$scope.corpus=' + value);
+	        $scope.corpus = value;
+	    });
+	}
+});
+
 app1.controller('DeleteController', ['$scope','FileService', function($scope, FileService){
-	var corpus = 4;
-	
-	$scope.GetFiles = function(){ $scope.files = FileService.GetFileList(corpus); };
+	//抓網址取出語料編號
+	$scope.GetFiles = function(corpus){ $scope.files = FileService.GetFileList(corpus); };
 	$scope.RemoveFiles = function(ID){ FileService.DeleteFile(ID, $scope.files);};
-	//初始網頁，得到檔案編號與檔名的list
-	$scope.GetFiles();
+
+	// 初始網頁，得到檔案編號與檔名的list
+	console.log('$scope.corpus=' + $scope.corpus);
+	$scope.GetFiles($scope.corpus);
 }]);
 
-/*筆記：$scope不是service, 是Scope物件。不可放$scope在service*/
 app1.service('FileService', function($http, $log){
+	// 筆記：$scope不是service, 是Scope物件。不可放$scope在service
 	this.GetFileList = function(corpus){
 		var list=[];
-		console.log(corpus);
+		console.log('GetFileList, corpus=' + corpus);
 		$http({
 			method: 'GET',
 			url: '/語料的全部檔案json',
