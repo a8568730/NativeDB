@@ -9,8 +9,8 @@ app1.directive('getCorpus', function() {
 	return function($scope, element, attrs) {
 		//		observe data-corpus
 	    attrs.$observe('corpus', function(value) {
-	    	console.log('$scope.corpus=' + value);
-	        $scope.corpus = value;
+	    	console.log('$scope.corpus.0=' + value);
+	        $scope.corpus = +value;
 	    });
 	}
 });
@@ -21,7 +21,7 @@ app1.controller('DeleteController', ['$scope','FileService', function($scope, Fi
 	$scope.RemoveFiles = function(ID){ FileService.DeleteFile(ID, $scope.files);};
 
 	// 初始網頁，得到檔案編號與檔名的list
-	console.log('$scope.corpus=' + $scope.corpus);
+	console.log('$scope.corpus1=' + $scope.corpus);
 	$scope.GetFiles($scope.corpus);
 }]);
 

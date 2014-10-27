@@ -18,6 +18,7 @@ from 海外頁面.介面 import 後台
 from 海外頁面.介面 import 刪除一個檔案
 from 海外頁面.介面 import 語料的全部檔案json
 from 海外頁面.介面 import 測試批次刪除
+from 海外頁面.介面 import 測試抓網址
 
 
 
@@ -53,6 +54,9 @@ urlpatterns = patterns('',
 	url('^(?P<檔案編號>\d+)/刪除一個檔案$', 刪除一個檔案, name='刪除一個檔案'),
 	
 	url('^(?P<語料編號>\d+)/測試批次刪除$', 測試批次刪除, name='測試批次刪除'),
+	
+	url('^測試抓網址/(?P<語料編號>[^/]+)/*$', 測試抓網址, name='測試抓網址'),
+	
 	url('^語料的全部檔案json$', 語料的全部檔案json, name='語料的全部檔案json'),
 	url(r'^.*$', 首頁, name='首頁')
 )

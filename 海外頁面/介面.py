@@ -300,3 +300,14 @@ def 語料的全部檔案json(request):
 	for 檔案列 in 語料列.揣出語料的所有檔案():
 		檔案陣列.append([檔案列.pk, 檔案列.原始檔名])
 	return HttpResponse(json.dumps(檔案陣列), content_type="application/json")
+
+
+
+def 測試抓網址(request, 語料編號):
+# 	if request.method == 'GET':
+# 		pass
+# 	else:
+# 	
+	template = loader.get_template('海外頁面/測試抓網址.html')
+	context = RequestContext(request, {'語料編號':語料編號})
+	return HttpResponse(template.render(context))

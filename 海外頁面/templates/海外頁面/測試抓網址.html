@@ -1,0 +1,19 @@
+<html>
+<head>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
+	{% load staticfiles %}
+	<script src="{% static 'js/geturl.js' %}"></script>
+</head>
+<body ng-app="app1">
+	<div ng-controller="UrlController">
+		$routeParams = {$ $routeParams $} <br/>
+		$location.path()={$ $location.path() $}<br/>
+		$scope.corpus = {$ corpus $}
+		<form ng-submit="go()">
+			<button type="submit">讀檔</button>
+		</form>
+		<p ng-repeat="file in files">{$ file[0] $}, {$ file[1] $}</p>
+	</div>
+</body>
+</html>

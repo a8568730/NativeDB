@@ -3,15 +3,16 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
 	{% block extrahead %}{% endblock %}
-	{% load staticfiles %}
-	<script src="{% static 'js/backend_delete.js' %}"></script>
+
 </head>
 <body ng-app="app1">
+	<p get-corpus data-corpus="{{ 語料編號 }}">{$ corpus $}</p>
 	<div ng-controller="DeleteController">
-		<p get-corpus data-corpus="{{ 語料編號 }}">{$ corpus $}</p>
 		<ul>
 			<li ng-repeat="file in files">{$ file[0] $}, {$ file[1] $} (<a ng-href="#" ng-click='RemoveFiles(file[0])'>delete</a>)</li>
 		</ul>
 	</div>
+	{% load staticfiles %}
+	<script src="{% static 'js/backend_delete.js' %}"></script>1
 </body>
 </html>
