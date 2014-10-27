@@ -6,8 +6,11 @@
 
 </head>
 <body ng-app="app1">
-	<p get-corpus data-corpus="{{ 語料編號 }}">{$ corpus $}</p>
 	<div ng-controller="DeleteController">
+		<p>$scope.$routeParams = {$  $routeParams $}, {$ value +1 $}</p>
+		<form ng-submit="go()">
+			<button type="submit">讀檔</button>
+		</form>
 		<ul>
 			<li ng-repeat="file in files">{$ file[0] $}, {$ file[1] $} (<a ng-href="#" ng-click='RemoveFiles(file[0])'>delete</a>)</li>
 		</ul>

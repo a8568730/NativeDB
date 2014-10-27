@@ -1,28 +1,34 @@
 var app1 = angular.module('app1',['ngRoute']);
 
-app1.config(function($interpolateProvider) {
-	$interpolateProvider.startSymbol('{$');
-	$interpolateProvider.endSymbol('$}');
-});
-
-app1.directive('getCorpus', function() {
-	return function($scope, element, attrs) {
-		//		observe data-corpus
-	    attrs.$observe('corpus', function(value) {
-	    	console.log('$scope.corpus.0=' + value);
-	        $scope.corpus = +value;
-	    });
-	}
-});
-
-app1.controller('DeleteController', ['$scope','FileService', function($scope, FileService){
-	//抓網址取出語料編號
+app1.controller('DeleteController', ['$scope','FileService', '$route', '$routeParams', '$location', 
+                                     function($scope, FileService, $route, $routeParams, $location){
+	
 	$scope.GetFiles = function(corpus){ $scope.files = FileService.GetFileList(corpus); };
-	$scope.RemoveFiles = function(ID){ FileService.DeleteFile(ID, $scope.files);};
+	$scope.RemoveFiles = function(ID){ console.log('file[0]=' + ID); FileService.DeleteFile(ID, $scope.files); };
 
-	// 初始網頁，得到檔案編號與檔名的list
-	console.log('$scope.corpus1=' + $scope.corpus);
-	$scope.GetFiles($scope.corpus);
+	//取得網址參數的語料編號
+	$scope.$route = $route;
+    $scope.$location = $location;
+    $scope.$routeParams = $routeParams;
+    $scope.value=1;
+	//請求檔案
+	$scope.go = function(){
+		console.log('go, $scope.corpus=' + $routeParams['corpus']);
+		$scope.GetFiles($routeParams['corpus']);
+	};
+}]);
+
+app1.config(['$routeProvider', '$locationProvider', '$interpolateProvider', 
+		function($routeProvider, $locationProvider, $interpolateProvider) {
+			$locationProvider.html5Mode(true);
+			$routeProvider
+    		.when('/:corpus/測試批次刪除', {
+				templateUrl: '../../templates/海外頁面/測試批次刪除.html',  
+				controller: 'DeleteController'
+    		});
+			
+		$interpolateProvider.startSymbol('{$');
+		$interpolateProvider.endSymbol('$}');	
 }]);
 
 app1.service('FileService', function($http, $log){
