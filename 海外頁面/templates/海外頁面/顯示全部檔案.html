@@ -21,10 +21,10 @@
 	<!-- {% for gi2 in 揣著語料 %}
 		{{ gi2.pk }}, {{ gi2.原始檔名 }} (<a href="">delete</a>)<br/>
 	{% endfor %}
--->	<!-- <iframe src="{% url '測試批次刪除' 語料編號 %}"></iframe>-->
+	-->
 	<div ng-controller="DeleteController">
 		<!-- 抓到網址內的語料編號參數 -->
-		<p>$scope.$routeParams = {$  $routeParams $}, {$ value +1 $}</p>
+		<!-- <p>$scope.$routeParams = {$  $routeParams $}, {$ value +1 $}</p> -->
 		<form ng-submit="go()">
 			<button type="submit">讀檔</button>
 		</form>

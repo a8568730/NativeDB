@@ -21,9 +21,10 @@ app1.controller('DeleteController', ['$scope','FileService', '$route', '$routePa
 app1.config(['$routeProvider', '$locationProvider', '$interpolateProvider', 
 		function($routeProvider, $locationProvider, $interpolateProvider) {
 			$locationProvider.html5Mode(true);
+			//http://127.0.0.1:8000/3/揣著語料的全部檔案
 			$routeProvider
-    		.when('/:corpus/測試批次刪除', {
-				templateUrl: '../../templates/海外頁面/測試批次刪除.html',  
+    		.when('/:corpus/揣著語料的全部檔案', {
+				templateUrl: '../../templates/海外頁面/顯示全部檔案.html',  
 				controller: 'DeleteController'
     		});
 			
