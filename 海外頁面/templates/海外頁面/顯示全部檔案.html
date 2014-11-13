@@ -1,4 +1,11 @@
 {% extends '海外頁面/後台框.html' %}
+
+{% load staticfiles %}
+{% block 函式庫 %}
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
+	<script src="{% static 'js/backend_delete.js' %}"></script>
+{%endblock %}
+
 {% block 內容 %}
 
 <form action="{% url '揣著語料的全部檔案' 語料編號 %}" enctype='multipart/form-data' method="post">{% csrf_token %}
@@ -14,7 +21,17 @@
 	<!-- {% for gi2 in 揣著語料 %}
 		{{ gi2.pk }}, {{ gi2.原始檔名 }} (<a href="">delete</a>)<br/>
 	{% endfor %}
--->	<iframe src="{% url '測試批次刪除' 語料編號 %}"></iframe>
+-->	<!-- <iframe src="{% url '測試批次刪除' 語料編號 %}"></iframe>-->
+	<div ng-controller="DeleteController">
+		<!-- 抓到網址內的語料編號參數 -->
+		<p>$scope.$routeParams = {$  $routeParams $}, {$ value +1 $}</p>
+		<form ng-submit="go()">
+			<button type="submit">讀檔</button>
+		</form>
+		<ul>
+			<li ng-repeat="file in files">{$ file[0] $}, {$ file[1] $} (<a ng-href="#" ng-click='RemoveFiles(file[0])'>delete</a>)</li>
+		</ul>
+	</div>
  
 	{% if excel錯誤資訊 %}
 		{{ excel錯誤資訊 }}
