@@ -244,7 +244,7 @@ def 顯示xlsx的音(request,  xlsx檔名, 字數):
 	音json = xlsx陣列轉json(xlsx陣列, int(字數))
 	return HttpResponse(json.dumps(音json), content_type="application/json")
 
-# 因為可能有很多個wav和textgrid組，它們加起來才是EXCEL全部的IPA
+# 可能有很多個wav和textgrid組，它們加起來才是EXCEL全部的IPA
 def 串聯多個文字檔的音標(textgrid檔名陣列):
 	串聯音標json = []
 	for 文字檔 in  textgrid檔名陣列:
@@ -252,6 +252,7 @@ def 串聯多個文字檔的音標(textgrid檔名陣列):
 		串聯音標json +=流程(os.path.join(路徑))
 	return 串聯音標json 
 
+# 找出一個Textgrid的IPA
 def 流程(文字檔路徑):
 	資料 = 取出聲音位置(文字檔路徑)
 # 	檢查輸入字串 = 檢查輸入(聲音檔路徑, 文字檔路徑, 資料[-1][-1])
@@ -264,10 +265,13 @@ def 流程(文字檔路徑):
 	純音標與時區 = 合併音標(合併位置的資料)
 	return 純音標與時區
 
+# Textgrid串聯的所有IPA，拿去比對EXCEL，
+# 揪出 1. 有EXCEL但沒有Textgrid(與wav)，或是 2. 有Textgrid但是沒出在EXCEL(EXCEL IPA有誤)
 def textgrid比對EXCEL(xlsx完整路徑檔名, 串聯音標json):
 	結果, 資訊 = 音標比對excel(xlsx完整路徑檔名, 串聯音標json)
 	return 結果, 資訊 
 
+# 刪單一檔功能
 def 刪除一個檔案(request, 檔案編號):
 	錯誤 = ''
 	if request.method == 'GET':
@@ -284,16 +288,17 @@ def 刪除一個檔案(request, 檔案編號):
 				raise RuntimeError(錯誤)
 	return HttpResponse(錯誤, content_type="text/plain; charset=UTF-8")
 
+# 測試angularjs可以抓到網址參數
+def 測試抓網址(request, 語料編號):
+	template = loader.get_template('海外頁面/測試抓網址.html')
+	context = RequestContext(request, {'語料編號':語料編號})
+	return HttpResponse(template.render(context))
+
+# 測試刪除檔案時網頁會直接跟著刪去一筆資料
 def 測試批次刪除(request, 語料編號):
-# 	if request.method == 'GET':
-# 		pass
-# 	else:
-# 	
 	template = loader.get_template('海外頁面/測試批次刪除.html')
 	context = RequestContext(request, {'語料編號':語料編號})
 	return HttpResponse(template.render(context))	
-
-
 
 def 語料的全部檔案json(request):
 	語料編號 = request.GET['pk']
@@ -302,14 +307,3 @@ def 語料的全部檔案json(request):
 	for 檔案列 in 語料列.揣出語料的所有檔案():
 		檔案陣列.append([檔案列.pk, 檔案列.原始檔名])
 	return HttpResponse(json.dumps(檔案陣列), content_type="application/json")
-
-
-
-def 測試抓網址(request, 語料編號):
-# 	if request.method == 'GET':
-# 		pass
-# 	else:
-# 	
-	template = loader.get_template('海外頁面/測試抓網址.html')
-	context = RequestContext(request, {'語料編號':語料編號})
-	return HttpResponse(template.render(context))
