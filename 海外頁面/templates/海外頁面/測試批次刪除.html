@@ -7,6 +7,7 @@
 </head>
 <body ng-app="app1">
 	<div ng-controller="DeleteController">
+		<!-- 抓到網址內的語料編號參數 -->
 		<p>$scope.$routeParams = {$  $routeParams $}, {$ value +1 $}</p>
 		<form ng-submit="go()">
 			<button type="submit">讀檔</button>
@@ -16,6 +17,6 @@
 		</ul>
 	</div>
 	{% load staticfiles %}
-	<script src="{% static 'js/backend_delete.js' %}"></script>1
+	<script src="{% static 'js/backend_delete.js' %}"></script>
 </body>
 </html>

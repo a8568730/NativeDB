@@ -11,10 +11,10 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     {% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'css/backend.css' %}"/>
-	<script src="{% static 'js/backend.js' %}"></script>
+	{% block 函式庫 %}{% endblock %}
 </head>
 <body ng-app="app1">
-	 <div class="container" ng-controller="BackendController">
+	 <div class="container">
     	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<h4 class="navbar-text navbar-left">
 				海外漢語方言資料庫&nbsp;&nbsp;

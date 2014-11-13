@@ -2,7 +2,7 @@ var app1 = angular.module('app1',['ngRoute']);
 
 app1.controller('DeleteController', ['$scope','FileService', '$route', '$routeParams', '$location', 
                                      function($scope, FileService, $route, $routeParams, $location){
-	
+	//在HTML呼叫的服務
 	$scope.GetFiles = function(corpus){ $scope.files = FileService.GetFileList(corpus); };
 	$scope.RemoveFiles = function(ID){ console.log('file[0]=' + ID); FileService.DeleteFile(ID, $scope.files); };
 

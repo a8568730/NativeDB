@@ -223,6 +223,7 @@ def 揣著語料的全部檔案(request, 語料編號):
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': a.揣出語料的所有檔案(),
 		'xlsx檔名': xlsx檔名,
+		'類型': a.類型表.類型,
  		'字數': 字數,
  		'內容json': 內容json,
  		'excel錯誤資訊': excel錯誤資訊,
@@ -275,6 +276,7 @@ def 刪除一個檔案(request, 檔案編號):
 			錯誤 = '此檔不存在'
 		else:
 			try:
+				#	刪除資料本體和資料庫的一筆檔案資料
 				os.remove(os.path.join(MEDIA_ROOT, 檔案列.原始檔.name))
 				檔案列.delete()
 			except:

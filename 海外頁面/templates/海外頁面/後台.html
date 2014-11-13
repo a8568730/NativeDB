@@ -1,7 +1,12 @@
 {% extends '海外頁面/後台框.html' %}
+
+{% load staticfiles %}
+{% block 函式庫 %}<script src="{% static 'js/backend.js' %}"></script>{% endblock %}
+	
 {% block 回首頁按鈕 %}<small>後台</small>{% endblock %}
 
 {% block 內容 %}
+<div ng-controller="BackendController">
     		<div class="panel panel-default" ng-repeat="panel in panels">
 			  <div class="panel-heading">{$ panel.head $}</div>
 			    <ul class="list-group">
@@ -10,4 +15,5 @@
 			    	</li>
 			    </ul>
 		</div>
+</div>
 {% endblock %}
