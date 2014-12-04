@@ -15,6 +15,7 @@ def xlsx陣列轉json(xlsx陣列, 字數):
 			return '第1列第' + str(索引+1) + '個欄位應為' + 預期欄位[索引]
 	
 # 	從第二行開始讀每一組資料
+	IPA集合 = set()
 	for 索引, 一組 in enumerate(xlsx陣列[1:]):
 		[完整編號, 字, 音標, 註記] = 一組
 		
@@ -62,6 +63,12 @@ def xlsx陣列轉json(xlsx陣列, 字數):
 		if(len(音標)==0):
 			return 'row(' + str(EXCEL的列編號) + ')的IPA欄位空白'
 		
+		# IPA 不可重覆
+		if 音標 not in IPA集合:
+			IPA集合.add(音標)
+		else:
+			return 'row(' + str(EXCEL的列編號) + ')的IPA欄位不應該和前面重複'
+			
 		寫出結果.append(
 				{預期欄位[0]: 編號字 + ("{0:0"+str(初始編號數字長度)+"d}").format(索引+1),
 				預期欄位[1]: 字, 

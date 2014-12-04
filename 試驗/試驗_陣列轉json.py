@@ -46,7 +46,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
-				['_VT_002','(乖)','kʰa3','kʰa3']
+				['_VT_002','(乖)','kʰa1','kʰa1']
 			]
 		答案 =  'row(3)的Num欄位有誤'
 		詞數 = 1
@@ -57,7 +57,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang2_VT_001','(乖)巧','kʰa3','kʰa3'],
-				['Zhang2_VT_002','(乖)巧','kʰa3','kʰa3']
+				['Zhang2_VT_002','(乖)巧', 'kʰa1','kʰa1']
 			]
 # 		答案 =  'OK'
 		答案 =  [{"Num":"Zhang2_VT_001",
@@ -66,8 +66,8 @@ class 基本元素試驗(unittest.TestCase):
 				"Note":"kʰa3"},
 				{"Num":"Zhang2_VT_002",
 				"Word":"(乖)巧",	
-				"IPA":"kʰa3",
-				"Note":"kʰa3"},
+				"IPA":"kʰa1",
+				"Note":"kʰa1"},
 			]
 		詞數 = 1
 		結果 = xlsx陣列轉json(問題, 詞數)
@@ -78,7 +78,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
  				['Num','Word','IPA','Note'],
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
- 				['Zhang_VT_002','(乖)','kʰa3','kʰa3']
+ 				['Zhang_VT_002','(乖)','kʰa1','kʰa1']
  			]
 		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
@@ -89,7 +89,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
  				['Num','Word','IPA','Note'],
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
- 				['Zhang_VT_002','','kʰa3','kʰa3']
+ 				['Zhang_VT_002','','kʰa1','kʰa1']
  			]
 		答案 =  'row(3)的Word欄位空白'
 		詞數 = 1
@@ -100,7 +100,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang2_VT_001','(乖)巧$','kʰa3','kʰa3'],
-				['Zhang2_VT_002','(乖)巧','kʰa3','kʰa3']
+				['Zhang2_VT_002','(乖)巧','kʰa1','kʰa1']
 			]
 		答案 =  'row(2)的Word欄位含特殊符號'
 		詞數 = 1
@@ -111,7 +111,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
  				['Num','Word','IPA','Note'],
  				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
- 				['Zhang_VT_002','(乖巧','kʰa3','kʰa3']
+ 				['Zhang_VT_002','(乖巧','kʰa1','kʰa1']
  			]
 		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
@@ -122,7 +122,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3'],
-				['Zhang_VT_002','(乖)','kʰa3','kʰa3']
+				['Zhang_VT_002','(乖)','kʰa1','kʰa1']
 			]
 		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
@@ -189,7 +189,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','乖巧','kʰa3','kʰa3'],
-				['Zhang_VT_002','喔喔','kʰa3','kʰa3']
+				['Zhang_VT_002','喔喔','kʰa1','kʰa1']
 			]
 # 		答案 =  'OK'
 		答案 =  [{"Num":"Zhang_VT_001",
@@ -198,8 +198,8 @@ class 基本元素試驗(unittest.TestCase):
 				"Note":"kʰa3"},
 				{"Num":"Zhang_VT_002",
 				"Word":"喔喔",	
-				"IPA":"kʰa3",
-				"Note":"kʰa3"},
+				"IPA":"kʰa1",
+				"Note":"kʰa1"},
 			]
 		詞數 = 2
 		結果 = xlsx陣列轉json(問題, 詞數)
@@ -209,7 +209,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','(喔)乖巧','kʰa3','kʰa3'],
-				['Zhang_VT_002','喔喔()','kʰa3','kʰa3']
+				['Zhang_VT_002','喔喔()','kʰa1','kʰa1']
 			]
 # 		答案 =  'OK'
 		答案 =  [{"Num":"Zhang_VT_001",
@@ -218,8 +218,8 @@ class 基本元素試驗(unittest.TestCase):
 				"Note":"kʰa3"},
 				{"Num":"Zhang_VT_002",
 				"Word":"喔喔()",	
-				"IPA":"kʰa3",
-				"Note":"kʰa3"},
+				"IPA":"kʰa1",
+				"Note":"kʰa1"},
 			]
 		詞數 = 2
 		結果 = xlsx陣列轉json(問題, 詞數)
@@ -229,7 +229,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','喔(乖)巧','kʰa3','kʰa3'],
-				['Zhang_VT_002','喔喔(乖)','kʰa3','kʰa3']
+				['Zhang_VT_002','喔喔(乖)','kʰa1','kʰa1']
 			]
 		答案 =  'row(2)的Word欄位格式不符'
 		詞數 = 2
@@ -240,7 +240,7 @@ class 基本元素試驗(unittest.TestCase):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','(喔)乖(巧)','kʰa3','kʰa3'],
-				['Zhang_VT_002','喔喔(乖)','kʰa3','kʰa3']
+				['Zhang_VT_002','喔喔(乖)','kʰa1','kʰa1']
 			]
 		答案 =  'row(2)的Word欄位格式不符'
 		詞數 = 2
@@ -250,6 +250,16 @@ class 基本元素試驗(unittest.TestCase):
 # IPA只有一個音
 # IPA格式有誤 (這能檢查嗎?)
 # 如果以後有三個音、四個音....??
-
+	def test_雙詞重複音(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','乖巧','kʰa3','kʰa3'],
+				['Zhang_VT_002','喔喔','kʰa3','kʰa3']
+			]
+		答案 =  'row(3)的IPA欄位不應該和前面重複'
+		詞數 = 2
+		結果 = xlsx陣列轉json(問題, 詞數)
+		self.assertEqual(答案, 結果)
+		
 if __name__=='__main__':
 	unittest.main()
