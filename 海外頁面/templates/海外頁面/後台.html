@@ -6,6 +6,7 @@
 {% block 回首頁按鈕 %}<small>後台</small>{% endblock %}
 
 {% block 內容 %}
+<div ng-app="app1">
 <div ng-controller="BackendController">
     		<div class="panel panel-default" ng-repeat="panel in panels">
 			  <div class="panel-heading">{$ panel.head $}</div>
@@ -15,5 +16,6 @@
 			    	</li>
 			    </ul>
 		</div>
+</div>
 </div>
 {% endblock %}

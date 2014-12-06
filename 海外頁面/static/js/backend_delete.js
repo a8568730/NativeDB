@@ -10,7 +10,7 @@ app1.controller('DeleteController', ['$scope','FileService', '$route', '$routePa
 	$scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
-    $scope.value=1;
+    
 	//請求檔案
 	$scope.go = function(){
 		console.log('go, $scope.corpus=' + $routeParams['corpus']);
