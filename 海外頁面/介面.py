@@ -34,6 +34,7 @@ from NativeDB_py.合併音節的位置 import 合併位置
 from NativeDB_py.檢查取出的位置大小 import 檢查位置大小
 from NativeDB_py.合併的音標比對excel import 音標比對excel
 from NativeDB_py.合併音標 import 合併音標
+from NativeDB_py.合併音標比對excel結果 import 檢查不合格的表與字格
 
 def 首頁(request):
 # 	output = ', '.join([p.title for p in latest_poll_list])
@@ -186,6 +187,7 @@ def 揣著語料的全部檔案(request, 語料編號):
 	xlsx檔名 = None
 	內容json = None
 	字數 = a.類型表.揣字數()
+	xlsx完整路徑檔名 = ''
 	if len(excel檔名陣列) == 0:
 		excel錯誤資訊 = '此語料無excel檔，請補上傳'
 	elif len(excel檔名陣列) > 1:
@@ -213,12 +215,15 @@ def 揣著語料的全部檔案(request, 語料編號):
 		textgrid檔名陣列 = a.揣出textgrid檔()
 		串聯音標json = 串聯多個文字檔的音標(textgrid檔名陣列)
 		try:
-			textgrid比對EXCEL(xlsx完整路徑檔名, 串聯音標json)
+			檢查不合格的表與字格(xlsx完整路徑檔名, 串聯音標json)
 		except Exception as 錯誤:
-			print('lalalala{0}'.format(錯誤.args))
+			# 錯誤一. 缺檔案
+			# 錯誤二. 比對
 			比對錯誤的表, 比對錯誤的字格 = 錯誤.args
+			#raise #debug用的
 	except Exception as 錯誤:
 		wav和textgrid錯誤資訊 = 錯誤 
+		#raise #debug用的
 		
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': a.揣出語料的所有檔案(),
@@ -265,11 +270,6 @@ def 流程(文字檔路徑):
 	純音標與時區 = 合併音標(合併位置的資料)
 	return 純音標與時區
 
-# Textgrid串聯的所有IPA，拿去比對EXCEL，
-# 揪出 1. 有EXCEL但沒有Textgrid(與wav)，或是 2. 有Textgrid但是沒出在EXCEL(EXCEL IPA有誤)
-def textgrid比對EXCEL(xlsx完整路徑檔名, 串聯音標json):
-	結果, 資訊 = 音標比對excel(xlsx完整路徑檔名, 串聯音標json)
-	return 結果, 資訊 
 
 # 刪單一檔功能
 def 刪除一個檔案(request, 檔案編號):

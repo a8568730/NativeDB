@@ -105,8 +105,8 @@ class 轉好的表(models.Model):
 	頭一擺翻譯時間 = models.DateField(auto_now_add=True)
 	上尾修改時間 = models.DateField(auto_now=True)
 	語料表 = models.ForeignKey('原始語料表', related_name='轉好的表')
-	漢字 = models.CharField(max_length=20000)
-	IPA = models.CharField(max_length=20000)
-	音檔 = models.CharField(max_length=100)
+	漢字 = models.CharField(max_length=20000) #從EXCEL
+	IPA = models.CharField(max_length=20000) #從EXCEL
+	音檔 = models.FileField() #從切割的音檔
 	def __str__(self):
 		return self.漢字 + ' ' + self.IPA + ' ' + self.音檔

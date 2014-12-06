@@ -20,11 +20,12 @@ def 音標比對excel(xlsx檔名, 合併音標):
 	不合格的字格 = []
 	
 	# 	4. 先找出excel的詞當中，有哪些的IPA不在textgrid裡
-	# 	順便紀錄合格的textgrid的索引
+	# 	順便紀錄合格的textgrid的索引，與合格的表的漢字和IPA
 	for 列 in excel音表:
 		if 列[2] in 對應表:
 			# 	合格，因為在textgrid有對應音檔
 			合格的字格.append(對應表.index(列[2]))
+			合格的表.append(列[1:3])
 		elif 列[3] == 'x':
 			# 	合格，因為有紀錄此詞本身無對應音檔			
 			pass
@@ -39,10 +40,4 @@ def 音標比對excel(xlsx檔名, 合併音標):
 		else:
 			不合格的字格.append(合併音標[索引])
 
-	if not len(不合格的表) == 0 or not len(不合格的字格) == 0:
-		print('找不到對應的textgrid的EXCEL字：有{0}個\n找不到對應的IPA的Textgrid：有{1}個\n'.format(len(不合格的表), len(不合格的字格)))
-		
-		raise RuntimeError(不合格的表, 不合格的字格)
-	
-	# 	6. 確認後，xlsx和textgrid的IPA應該一致
-	# 	return 'xlsx和textgrid的IPA目前檢查一致～～'
+	return 不合格的表, 不合格的字格, 合格的表
