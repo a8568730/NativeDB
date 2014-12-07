@@ -12,13 +12,13 @@ from 海外頁面.介面 import index初始顯示語言
 # from 海外頁面.介面 import 上傳檔案
 from hai2gua7 import settings
 from 海外頁面.介面 import 顯示原始語料表
-from 海外頁面.介面 import 揣著語料的全部檔案
-from 海外頁面.介面 import 顯示xlsx的音
 from 海外頁面.介面 import 後台
-from 海外頁面.介面 import 刪除一個檔案
-from 海外頁面.介面 import 語料的全部檔案json
-from 海外頁面.介面 import 測試批次刪除
-from 海外頁面.介面 import 測試抓網址
+from 海外頁面.介面揣語料檔案 import 揣著語料的全部檔案
+from 海外頁面.介面揣語料檔案 import 顯示xlsx的音
+from 海外頁面.介面揣語料檔案 import 刪除一個檔案
+from 海外頁面.介面揣語料檔案 import 語料的全部檔案json
+from 海外頁面.介面揣語料檔案 import 測試批次刪除
+from 海外頁面.介面揣語料檔案 import 測試抓網址
 
 
 
