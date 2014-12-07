@@ -16,6 +16,7 @@ from NativeDB_py.檢查取出的位置大小 import 檢查位置大小
 from NativeDB_py.合併的音標比對excel import 音標比對excel
 from NativeDB_py.合併音標 import 合併音標
 from NativeDB_py.合併音標比對excel結果 import 檢查不合格的表與字格
+from NativeDB_py.合併音標比對excel結果 import 輸出合格的表
 
 
 def 揣著語料的全部檔案(request, 語料編號):
@@ -169,3 +170,19 @@ def 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json):
 		比對錯誤的表, 比對錯誤的字格 = 錯誤.args
 		#raise #debug用的
 	return 比對錯誤的表, 比對錯誤的字格
+
+
+def 顯示合格的EXCEL與字格(request, 語料編號):
+	# 顯示出textgrid的音標和excel比對成功的漢字與拼音
+	此語料 = 原始語料表.objects.filter(pk=語料編號).first()
+	# 	檢查EXCEL的數量，格式
+	xlsx錯誤資訊, xlsx檔名, xlsx完整路徑檔名, 內容json = 檢查EXCEL的內頁數與格式(此語料)
+	字數 = 此語料.類型表.揣字數()
+	# 	檢查是否有一組音檔與文字檔
+	wav和textgrid錯誤資訊, wav和textgrid, 串聯音標json = 檢查音檔與字格(此語料)
+	#  檢查textgrid的音標和excel的IPA是否相符
+	合格的漢字與拼音 = 輸出合格的表(xlsx完整路徑檔名, 串聯音標json)
+	
+	return render(request, '海外頁面/顯示全部語料.html', {
+			'揣著語料':合格的漢字與拼音
+	})

@@ -34,7 +34,8 @@
 	{% if xlsx錯誤資訊 %}
 		{{ xlsx錯誤資訊 }}
 	{% else %}	
-		<p>{{ xlsx檔名 }}, {{類型}}(字數為{{ 字數 }})</p>
+		<p>{{ xlsx檔名 }}, {{類型}}(字數為{{ 字數 }})<br/>
+			<a href="{% url '顯示合格的EXCEL與字格' 語料編號 %}" target='_blank'>顯示合格的EXCEL與字格</a></p>
 		<br/>
 		<div class="row">
 			
