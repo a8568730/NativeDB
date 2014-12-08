@@ -187,7 +187,12 @@ def 顯示合格的EXCEL與字格(request, 語料編號):
 	# 	檢查是否有一組音檔與文字檔
 	wav和textgrid錯誤資訊, wav和textgrid, 串聯音標json = 檢查音檔與字格(此語料)
 	#  檢查textgrid的音標和excel的IPA是否相符
-	合格的漢字與拼音 = 輸出合格的表(xlsx完整路徑檔名, 串聯音標json)
+	啾啾砲 = list(itertools.chain.from_iterable(串聯音標json))
+	合格的漢字與拼音 = 輸出合格的表(xlsx完整路徑檔名, 啾啾砲)
+	
+	# 找出全部對應的字格檔名與時間
+	for a, b in zip(此語料.揣出textgrid檔(), 串聯音標json):
+		print('a={0}, b={1}'.format(a,b))
 	
 	return render(request, '海外頁面/顯示全部語料.html', {
 			'揣著語料':合格的漢字與拼音
