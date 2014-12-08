@@ -17,6 +17,7 @@ from NativeDB_py.合併的音標比對excel import 音標比對excel
 from NativeDB_py.合併音標 import 合併音標
 from NativeDB_py.合併音標比對excel結果 import 檢查不合格的表與字格
 from NativeDB_py.合併音標比對excel結果 import 輸出合格的表
+import itertools
 
 
 def 揣著語料的全部檔案(request, 語料編號):
@@ -38,8 +39,11 @@ def 揣著語料的全部檔案(request, 語料編號):
 	# 	檢查是否有一組音檔與文字檔
 	wav和textgrid錯誤資訊, wav和textgrid, 串聯音標json = 檢查音檔與字格(此語料)
 	#  檢查textgrid的音標和excel的IPA是否相符
-	比對錯誤的表, 比對錯誤的字格 = 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json)
-			
+	if 串聯音標json != None:
+		比對錯誤的表, 比對錯誤的字格 = 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json)
+	else:
+		比對錯誤的表, 比對錯誤的字格 = None, None
+				
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': 此語料.揣出語料的所有檔案(),
 		'語料編號': 語料編號, 
@@ -98,7 +102,7 @@ def 串聯多個文字檔的音標(textgrid檔名陣列):
 	串聯音標json = []
 	for 文字檔 in  textgrid檔名陣列:
 		路徑 = os.path.join(MEDIA_ROOT, 文字檔)
-		串聯音標json +=流程(os.path.join(路徑))
+		串聯音標json.append(流程(os.path.join(路徑)))
 	return 串聯音標json 
 
 def 流程(文字檔路徑):
@@ -162,11 +166,13 @@ def 檢查音檔與字格(此語料):
 
 def 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json):
 	# 比對textgrid的音標和excel的IPA是否相符
+	啾啾砲 = list(itertools.chain.from_iterable(串聯音標json))
 	try:
-		檢查不合格的表與字格(xlsx完整路徑檔名, 串聯音標json)
+		檢查不合格的表與字格(xlsx完整路徑檔名, 啾啾砲)
 	except Exception as 錯誤:
 		# 錯誤一. 缺檔案
 		# 錯誤二. 比對
+		print(錯誤.args)
 		比對錯誤的表, 比對錯誤的字格 = 錯誤.args
 		#raise #debug用的
 	return 比對錯誤的表, 比對錯誤的字格
