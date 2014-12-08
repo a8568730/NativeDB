@@ -59,7 +59,7 @@ class 原始語料表(models.Model):
 		return wav檔名陣列
 	def 揣出textgrid檔(self):
 		#	找法3. 此語料自己指回去的檔案們組成的檔案表
-		揣著全部檔案 = self.原始檔案表.filter(原始檔名__iendswith='TextGrid')	
+		揣著全部檔案 = self.原始檔案表.filter(原始檔名__iendswith='TextGrid').order_by('原始檔名')	
 		textgrid檔名陣列 = []
 		for 檔案 in 揣著全部檔案: 
 			textgrid檔名陣列.append(檔案.原始檔名)
