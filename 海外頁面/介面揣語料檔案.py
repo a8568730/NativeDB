@@ -191,9 +191,18 @@ def 顯示合格的EXCEL與字格(request, 語料編號):
 	合格的漢字與拼音 = 輸出合格的表(xlsx完整路徑檔名, 啾啾砲)
 	
 	# 找出全部對應的字格檔名與時間
-	for a, b in zip(此語料.揣出textgrid檔(), 串聯音標json):
-		print('a={0}, b={1}'.format(a,b))
+	合格的綜合陣列 = []
+	for 一個檔名, 一個檔的音標json in zip(此語料.揣出textgrid檔(), 串聯音標json):
+		# 		print('a={0}, b={1}'.format(a,b))
+		# 利用拼音，將檔名與時間，漢字合成一列
+		for 音標json in 一個檔的音標json: 
+			音標 = ''.join(音標json[0])
+			開頭時間 = 音標json[1]
+			結尾時間 = 音標json[2]
+			for 一個合格 in 合格的漢字與拼音:
+				if 音標 == 一個合格[1]:
+					合格的綜合陣列.append([一個合格, 一個檔名, 開頭時間, 結尾時間])
 	
 	return render(request, '海外頁面/顯示全部語料.html', {
-			'揣著語料':合格的漢字與拼音
+			'揣著語料':合格的綜合陣列
 	})
