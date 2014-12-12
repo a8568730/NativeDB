@@ -18,6 +18,7 @@ from NativeDB_py.合併音標 import 合併音標
 from NativeDB_py.合併音標比對excel結果 import 檢查不合格的表與字格
 from NativeDB_py.合併音標比對excel結果 import 輸出合格的表
 import itertools
+from 海外頁面.模型 import 轉好的表
 
 
 def 揣著語料的全部檔案(request, 語料編號):
@@ -202,7 +203,21 @@ def 顯示合格的EXCEL與字格(request, 語料編號):
 			for 一個合格 in 合格的漢字與拼音:
 				if 音標 == 一個合格[1]:
 					合格的綜合陣列.append([一個合格, 一個檔名, 開頭時間, 結尾時間])
+					切割音檔並建表()
 	
 	return render(request, '海外頁面/顯示全部語料.html', {
 			'揣著語料':合格的綜合陣列
 	})
+	
+def 切割音檔並建表(語料編號, 漢字, 拼音, 字格檔名, 開頭時間, 結尾時間):
+	#0. 判斷是否已切過
+	一個轉好表 = 轉好的表.objects.filter(語料表__pk=語料編號).filter(IPA=拼音).first()
+	#1. 若無，切割
+	try: 
+		被切割音檔名 =  os.path.splitext(字格檔名)[0] + '.wav'
+		音檔名 = 漢字 + os.path.splitext(字格檔名)[0]
+		音檔完整路徑 = os.path.join(MEDIA_ROOT, 音檔名) 
+		切割音檔(音檔完整路徑, )
+		#2. 存檔
+	except Exception as 錯誤:
+		pass 	
