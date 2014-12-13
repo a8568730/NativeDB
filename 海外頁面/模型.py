@@ -109,4 +109,4 @@ class 轉好的表(models.Model):
 	IPA = models.CharField(max_length=20000) #從EXCEL
 	音檔 = models.FileField() #從切割的音檔
 	def __str__(self):
-		return self.漢字 + ' ' + self.IPA + ' ' + self.音檔
+		return self.漢字 + ' ' + self.IPA + ' ' + str(self.音檔)
