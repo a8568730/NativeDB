@@ -20,7 +20,9 @@ from NativeDB_py.合併音標比對excel結果 import 輸出合格的表
 import itertools
 from 海外頁面.模型 import 轉好的表
 from NativeDB_py.照位置切割音檔 import 切割音檔
-from django.core.files.base import File
+from django.core.files.base import File, ContentFile
+import wave
+import io
 
 
 def 揣著語料的全部檔案(request, 語料編號):
@@ -33,7 +35,7 @@ def 揣著語料的全部檔案(request, 語料編號):
 			原始檔案.原始檔名 = request.FILES['原始檔'].name
 			原始檔案.save()
 	else:
-		上傳表格 = 上傳檔案表格(initial = {"語料表":此語料 })
+		上傳表格 = 上傳檔案表格(initial={"語料表":此語料 })
 		# fail:	上傳表格.fields['語料表'].widget.attrs['disabled'] = True
 		
 	# 	檢查EXCEL的數量，格式
@@ -49,7 +51,7 @@ def 揣著語料的全部檔案(request, 語料編號):
 				
 	return render(request, '海外頁面/顯示全部檔案.html', {
 		'揣著語料': 此語料.揣出語料的所有檔案(),
-		'語料編號': 語料編號, 
+		'語料編號': 語料編號,
  		'類型': 此語料.類型表.類型,
  		'上傳表格': 上傳表格,
  		'xlsx檔名': xlsx檔名,
@@ -72,7 +74,7 @@ def 刪除一個檔案(request, 檔案編號):
 			錯誤 = '此檔不存在'
 		else:
 			try:
-				#	刪除資料本體和資料庫的一筆檔案資料
+				# 	刪除資料本體和資料庫的一筆檔案資料
 				os.remove(os.path.join(MEDIA_ROOT, 檔案列.原始檔.name))
 				檔案列.delete()
 			except:
@@ -92,10 +94,10 @@ def 測試批次刪除(request, 語料編號):
 	context = RequestContext(request, {'語料編號':語料編號})
 	return HttpResponse(template.render(context))	
 
-def 顯示xlsx的音(request,  xlsx檔名, 字數):
+def 顯示xlsx的音(request, xlsx檔名, 字數):
 	全部的音 = []
 	xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
-	#目前先預設單詞=1, 事後再補模型
+	# 目前先預設單詞=1, 事後再補模型
 	xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
 	音json = xlsx陣列轉json(xlsx陣列, int(字數))
 	return HttpResponse(json.dumps(音json), content_type="application/json")
@@ -164,7 +166,7 @@ def 檢查音檔與字格(此語料):
 		串聯音標json = 串聯多個文字檔的音標(textgrid檔名陣列)
 	except Exception as 錯誤:
 		wav和textgrid錯誤資訊 = 錯誤 
-		#raise #debug用的
+		# raise #debug用的
 	return wav和textgrid錯誤資訊, wav和textgrid, 串聯音標json
 
 def 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json):
@@ -177,7 +179,7 @@ def 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json):
 		# 錯誤二. 比對
 		print(錯誤.args)
 		比對錯誤的表, 比對錯誤的字格 = 錯誤.args
-		#raise #debug用的
+		# raise #debug用的
 	return 比對錯誤的表, 比對錯誤的字格
 
 
@@ -212,21 +214,30 @@ def 顯示合格的EXCEL與字格(request, 語料編號):
 	})
 	
 def 切割音檔並建表(語料編號, 漢字, 拼音, 字格檔名, 開頭時間, 結尾時間):
-	#0. 判斷是否已切過
+	# 0. 判斷是否已切過
 	一個轉好表 = 轉好的表.objects.filter(語料表__pk=語料編號).filter(IPA=拼音).first()
-	#1. 若無，切割
-	if 一個轉好表 == None: 
+	# 1. 若無，切割
+	if 一個轉好表 == None or True: 
 		try: 
-			被切割音檔名 =  os.path.splitext(字格檔名)[0] + '.wav'
-			被切割音檔路徑 =  os.path.join(MEDIA_ROOT, 被切割音檔名)
+			被切割音檔名 = os.path.splitext(字格檔名)[0] + '.wav'
+			被切割音檔路徑 = os.path.join(MEDIA_ROOT, 被切割音檔名)
 			完成音檔名 = 漢字 + '_' + 被切割音檔名
 			完成音檔完整路徑 = os.path.join(MEDIA_ROOT, 完成音檔名)  
 			
-			origAudio = 切割音檔(被切割音檔路徑, 完成音檔完整路徑, 開頭時間, 結尾時間)
-			#2. 存檔
+			完成檔指標 = io.BytesIO()
+			切割音檔(被切割音檔路徑, 完成檔指標, 開頭時間, 結尾時間)
+			# 2. 加入資料庫
 			此語料表 = 原始語料表.objects.get(pk=語料編號)
-			欲存的表 = 轉好的表(語料表=此語料表, 漢字=漢字, IPA=拼音, 音檔=File(origAudio))
+# 			完成音檔 = wave.open(完成音檔完整路徑)
+			欲存的表 = 轉好的表(語料表=此語料表, 漢字=漢字, IPA=拼音)
 # 			if 欲存的表.is_valid():
-			欲存的表.save()
+			欲存的表.音檔.save(完成音檔名, File(完成檔指標), save=True)
+# 			print(type(欲存的表.音檔))
+# 			print(欲存的表.音檔.url)
+# 			print(欲存的表.音檔.delete())
+# 			欲存的表.音檔.save(完成音檔名,  ContentFile("esta sentencia está en español"))
+# 			欲存的表.save()
+			完成檔指標.close()
+# 			完成音檔.close()
 		except Exception as 錯誤:
-			raise RuntimeError(錯誤)
+			raise

@@ -1,13 +1,12 @@
 import wave
-import os
+import io
 
 #被切音檔路徑 MEDIA_ROOT/Penang1.wav
 #被切音檔路徑 MEDIA_ROOT/漢字_Penang1.wav
 
-def 切割音檔(被切音檔路徑, 完成音檔路徑, 開頭時間, 結尾時間):
+def 切割音檔(被切音檔路徑, 完成音檔指標, 開頭時間, 結尾時間):
 # 	合併後的資料，可能好幾組文字的切割時間區間
 # 	[(字1, '開頭', '結尾'), ...]
-	音檔原名 = 被切音檔路徑
 	
 	origAudio = wave.open(被切音檔路徑,'r')
 	frameRate = origAudio.getframerate()
@@ -33,9 +32,7 @@ def 切割音檔(被切音檔路徑, 完成音檔路徑, 開頭時間, 結尾時
 # 			輸出名 = 音檔原名 + '_chunk.wav' 
 # 		else:
 # 			輸出名 = 音檔原名 + '_chunk.wav'
-	輸出名 = 完成音檔路徑
-		
-	chunkAudio = wave.open(輸出名,'w')
+	chunkAudio = wave.open(完成音檔指標,'w')
 	chunkAudio.setnchannels(nChannels)
 	chunkAudio.setsampwidth(sampWidth)
 	chunkAudio.setframerate(frameRate)
@@ -43,5 +40,4 @@ def 切割音檔(被切音檔路徑, 完成音檔路徑, 開頭時間, 結尾時
 	
 	chunkAudio.close()
 	origAudio.close()
-
-	return origAudio
+	

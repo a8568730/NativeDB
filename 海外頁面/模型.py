@@ -4,6 +4,7 @@ from hai2gua7.settings import MEDIA_ROOT
 from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
 from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
 from itertools import chain
+from django.core.files.storage import FileSystemStorage
 
 # 決定資料庫有哪些表，各自有哪些欄位
 
@@ -107,6 +108,8 @@ class 轉好的表(models.Model):
 	語料表 = models.ForeignKey('原始語料表', related_name='轉好的表')
 	漢字 = models.CharField(max_length=20000) #從EXCEL
 	IPA = models.CharField(max_length=20000) #從EXCEL
-	音檔 = models.FileField() #從切割的音檔
+	音檔 = models.FileField(upload_to='切出的音檔') #從切割的音檔
+	# upload_to 是存到MEDIA的相對路徑，storage是主機根目錄的絕對路徑
+	# storage=FileSystemStorage(location=os.path.join(MEDIA_ROOT ,'sui2'))
 	def __str__(self):
 		return self.漢字 + ' ' + self.IPA + ' ' + str(self.音檔)
