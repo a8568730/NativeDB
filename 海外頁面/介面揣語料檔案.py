@@ -186,58 +186,49 @@ def 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json):
 def 顯示合格的EXCEL與字格(request, 語料編號):
 	# 顯示出textgrid的音標和excel比對成功的漢字與拼音
 	此語料 = 原始語料表.objects.filter(pk=語料編號).first()
-	# 	檢查EXCEL的數量，格式
-	xlsx錯誤資訊, xlsx檔名, xlsx完整路徑檔名, 內容json = 檢查EXCEL的內頁數與格式(此語料)
-	字數 = 此語料.類型表.揣字數()
-	# 	檢查是否有一組音檔與文字檔
-	wav和textgrid錯誤資訊, wav和textgrid, 串聯音標json = 檢查音檔與字格(此語料)
-	#  檢查textgrid的音標和excel的IPA是否相符
-	啾啾砲 = list(itertools.chain.from_iterable(串聯音標json))
-	合格的漢字與拼音 = 輸出合格的表(xlsx完整路徑檔名, 啾啾砲)
-	
-	# 找出全部對應的字格檔名與時間
-	合格的綜合陣列 = []
-	for 一個檔名, 一個檔的音標json in zip(此語料.揣出textgrid檔(), 串聯音標json):
-		# 		print('a={0}, b={1}'.format(a,b))
-		# 利用拼音，將檔名與時間，漢字合成一列
-		for 音標json in 一個檔的音標json: 
-			音標 = ''.join(音標json[0])
-			開頭時間 = 音標json[1]
-			結尾時間 = 音標json[2]
-			for 一個合格 in 合格的漢字與拼音:
-				if 音標 == 一個合格[1]:
-					合格的綜合陣列.append([一個合格, 一個檔名, 開頭時間, 結尾時間])
-					切割音檔並建表(語料編號, 一個合格[0], 一個合格[1], 一個檔名, 開頭時間, 結尾時間)
-	
-	return render(request, '海外頁面/顯示全部語料.html', {
+	try:
+		# 	檢查EXCEL的數量，格式
+		xlsx錯誤資訊, xlsx檔名, xlsx完整路徑檔名, 內容json = 檢查EXCEL的內頁數與格式(此語料)
+		字數 = 此語料.類型表.揣字數()
+		# 	是否有一組音檔與文字檔
+		wav和textgrid錯誤資訊, wav和textgrid, 串聯音標json = 檢查音檔與字格(此語料)
+		#  textgrid的音標和excel的IPA是否相符
+		啾啾砲 = list(itertools.chain.from_iterable(串聯音標json))
+		合格的漢字與拼音 = 輸出合格的表(xlsx完整路徑檔名, 啾啾砲)
+		
+# 		一個轉好表 = 轉好的表.objects.filter(語料表__pk=語料編號).count()
+		切割音檔數 = 此語料.轉好的表.count()
+		if 切割音檔數 != 0:
+			raise RuntimeError('表已經產生過了, 請殺掉檔案再重試')
+		# 若無建過表，則切割
+		# 找出全部對應的字格檔名與時間
+		合格的綜合陣列 = []
+		for 一個檔名, 一個檔的音標json in zip(此語料.揣出textgrid檔(), 串聯音標json):
+			# 利用拼音，將檔名與時間，漢字合成一列
+			for 音標json in 一個檔的音標json: 
+				音標 = ''.join(音標json[0])
+				開頭時間 = 音標json[1]
+				結尾時間 = 音標json[2]
+				for 一個合格 in 合格的漢字與拼音:
+					if 音標 == 一個合格[1]:
+						合格的綜合陣列.append([一個合格, 一個檔名, 開頭時間, 結尾時間])
+						切割音檔並建表(此語料, 一個合格[0], 一個合格[1], 一個檔名, 開頭時間, 結尾時間)
+		
+		return render(request, '海外頁面/顯示全部語料.html', {
 			'揣著語料':合格的綜合陣列
-	})
+		})
+	except Exception as 錯誤:
+		return HttpResponse(str(錯誤), content_type="application/json; charset=utf-8")
 	
-def 切割音檔並建表(語料編號, 漢字, 拼音, 字格檔名, 開頭時間, 結尾時間):
-	# 0. 判斷是否已切過
-	一個轉好表 = 轉好的表.objects.filter(語料表__pk=語料編號).filter(IPA=拼音).first()
-	# 1. 若無，切割
-	if 一個轉好表 == None or True: 
-		try: 
-			被切割音檔名 = os.path.splitext(字格檔名)[0] + '.wav'
-			被切割音檔路徑 = os.path.join(MEDIA_ROOT, 被切割音檔名)
-			完成音檔名 = 漢字 + '_' + 被切割音檔名
-			完成音檔完整路徑 = os.path.join(MEDIA_ROOT, 完成音檔名)  
-			
-			完成檔指標 = io.BytesIO()
-			切割音檔(被切割音檔路徑, 完成檔指標, 開頭時間, 結尾時間)
-			# 2. 加入資料庫
-			此語料表 = 原始語料表.objects.get(pk=語料編號)
-# 			完成音檔 = wave.open(完成音檔完整路徑)
-			欲存的表 = 轉好的表(語料表=此語料表, 漢字=漢字, IPA=拼音)
-# 			if 欲存的表.is_valid():
-			欲存的表.音檔.save(完成音檔名, File(完成檔指標), save=True)
-# 			print(type(欲存的表.音檔))
-# 			print(欲存的表.音檔.url)
-# 			print(欲存的表.音檔.delete())
-# 			欲存的表.音檔.save(完成音檔名,  ContentFile("esta sentencia está en español"))
-# 			欲存的表.save()
-			完成檔指標.close()
-# 			完成音檔.close()
-		except Exception as 錯誤:
-			raise
+def 切割音檔並建表(語料表, 漢字, 拼音, 字格檔名, 開頭時間, 結尾時間):
+	被切割音檔名 = os.path.splitext(字格檔名)[0] + '.wav'
+	被切割音檔路徑 = os.path.join(MEDIA_ROOT, 被切割音檔名)
+	完成音檔名 = 漢字 + '_' + 被切割音檔名
+	
+	# 1. 執行切割，存到MEDIA的子目錄
+	完成檔指標 = io.BytesIO()
+	切割音檔(被切割音檔路徑, 完成檔指標, 開頭時間, 結尾時間)
+	# 2. 加入資料庫
+	欲存的表 = 轉好的表(語料表=語料表, 漢字=漢字, IPA=拼音)
+	欲存的表.音檔.save(完成音檔名, File(完成檔指標), save=True)
+	完成檔指標.close()
