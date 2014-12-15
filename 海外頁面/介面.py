@@ -22,6 +22,7 @@ from django.shortcuts import render_to_response
 from django import forms
 from django.core.context_processors import csrf
 from django.utils.encoding import smart_str
+from 海外頁面.模型 import 轉好的表
 
 
 def 首頁(request):
@@ -131,7 +132,6 @@ def 顯示全部語料(request, 想看的語言, 想看的類型='單詞'):
 def index初始顯示語言(request, 想看的語言=None):
 	if 想看的語言 == None:
 		想看的語言 = 語言表.objects.order_by('pk').first().語言
-	print(想看的語言)			
 	return render(request, '海外頁面/index.html', {
 		'初始顯示語言':想看的語言,
 	})		
@@ -151,7 +151,6 @@ def index初始顯示語言(request, 想看的語言=None):
 
 def 顯示原始語料表(request):
 	揣著語料 = 原始語料表.objects.all()
-	print(揣著語料)
 	return render(request, '海外頁面/顯示原始語料表.html', {
 		'揣著語料':揣著語料,
 	})
