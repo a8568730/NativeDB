@@ -232,3 +232,14 @@ def 切割音檔並建表(語料表, 漢字, 拼音, 字格檔名, 開頭時間,
 	欲存的表 = 轉好的表(語料表=語料表, 漢字=漢字, IPA=拼音)
 	欲存的表.音檔.save(完成音檔名, File(完成檔指標), save=True)
 	完成檔指標.close()
+	
+def 刪除轉好的表(request, 語料編號):
+	刪除的音檔名稱陣列 = []
+	此語料表 = 原始語料表.objects.filter(pk=語料編號).first()
+	for 一列 in 此語料表.轉好的表.all():
+		# 刪除音檔, 並清除資料庫
+		刪除的音檔名稱陣列.append(一列.音檔.name)
+		一列.音檔.delete()
+		###此語料表.轉好的表.remove(一列)
+		一列.delete()
+	return HttpResponse(json.dumps(刪除的音檔名稱陣列, ensure_ascii=False), content_type="application/json; charset=utf-8")
