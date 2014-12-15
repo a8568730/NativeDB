@@ -82,7 +82,7 @@ def 語言表全部json(request):
 	全部語言=[]
 	for 揣著語言 in 語言表.objects.all():
 		全部語言.append(揣著語言.語言)
-	return HttpResponse(json.dumps(全部語言), content_type="application/json")
+	return HttpResponse(json.dumps(全部語言, ensure_ascii=False), content_type="application/json; charset=utf-8")
 
 
 def 加類型表表格(request):
