@@ -1,10 +1,10 @@
 var app = angular.module("app1",['ui.bootstrap', 'ngRoute']);
 
 /* 主頁 */
-//取得網址參數方法:  directive
+//取得網址的語言參數方法:  directive
 app.directive('getUrlLang', function() {
 	return function($scope, element, attrs) {
-		//	取得 data-lang 的值
+		//	取得 data-lang 的值為此網頁初次查看的語言
 	    attrs.$observe('lang', function(value) {
 	        $scope.lang = value;
 	    });
@@ -21,8 +21,13 @@ app.controller("indexController",["$scope", "$log", "$http", "$routeParams", "$r
 				// 取得網址的語言參數後，此語言的頁面顯示為true
 				var isactive;
 				for(var i=0; i<data.length; i++){
-					isactive = (data[i] == $scope.lang) ? true : false;
-					$scope.tabs.push({"lang":data[i], "active": isactive});
+					isactive = false;
+					if(data[i] == $scope.lang){
+						// 第一次讀資料
+						getCorpusData(data[i], i);
+						isactive = true;
+					}
+					$scope.tabs.push({"lang":data[i], "active": isactive, "contents":[]});
 					console.log({"lang":data[i], "active": isactive});
 				};
 				console.log($scope.tabs);
@@ -30,21 +35,28 @@ app.controller("indexController",["$scope", "$log", "$http", "$routeParams", "$r
 		});
 		
 		//	切換其他分頁時，改網址，並讀資料
-		$scope.refresh = function(somelang){
-			if(somelang !=  $scope.lang){
+		$scope.refresh = function(lang, tabindex){
+			if(lang !=  $scope.lang){
 				//	$window.location.href = '/index/' + somelang; //$location.path('/index/' + somelang);
-				$location.path(somelang);
-				$scope.lang = somelang;
-				$http({
-					method: 'GET',
-					url: somelang + '/顯示語言漢字相同的音檔',
-					data: {}
-				}).success(function(data, status){
-					console.log(data);
-				});
+				// 改網址
+				$location.path(lang);
+				$scope.lang = lang;
+				// 讀資料
+				getCorpusData(lang, tabindex);
 			}
 		};
-		// 讀入此語料的
+		
+		var getCorpusData = function(lang, tabindex){
+			// 讀一語言的資料
+			$http({
+				method: 'GET',
+				url: '/' + lang + '/顯示語言漢字相同的音檔',
+				data: {}
+			}).success(function(data, status){
+//				console.log(data);
+				$scope.tabs[tabindex].contents = data;
+			});
+		};
 }]);
 
 ////取得網址參數方法 2:	$routeParams

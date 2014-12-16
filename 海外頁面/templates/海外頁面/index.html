@@ -2,13 +2,19 @@
 {% block 標題 %}海外漢語方言資料庫{% endblock %}
 {% block 內容 %}
 
-<!-- { { 初始顯示語言 } } -->
 <p get-url-lang data-lang="{{ 初始顯示語言 }}" style="display:none;"></p>
+
 <div  ng-controller="indexController">
 	<tabset>
-		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="refresh( tab.lang )">
+		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="refresh( tab.lang, $index )">
 			<p>{$ $index $}</p>
-			{$ currentlang $}
+			<ul>
+				<li ng-repeat="content in tab.contents">
+					<p><a href="">{$ content[0] $} ({$ content[1] $})</a>  
+						  <a href="{$ content[2] $}">音檔</a>
+					</p>
+				</li>
+			</ul>
 		</tab>
 	</tabset>
 </div>
