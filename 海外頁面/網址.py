@@ -19,9 +19,10 @@ from 海外頁面.介面揣語料檔案 import 刪除一個檔案
 from 海外頁面.介面揣語料檔案 import 語料的全部檔案json
 from 海外頁面.介面揣語料檔案 import 測試批次刪除
 from 海外頁面.介面揣語料檔案 import 測試抓網址
-from 海外頁面.介面揣語料檔案 import 顯示合格的EXCEL與字格
+from 海外頁面.介面揣語料檔案 import 顯示合格的EXCEL與字格並建檔
 from 海外頁面.介面揣語料檔案 import 刪除轉好的表
 from 海外頁面.介面前臺 import 顯示語言漢字相同的音檔
+
 
 
 
@@ -60,7 +61,7 @@ urlpatterns = patterns('',
 	
 	url('^測試抓網址/(?P<語料編號>[^/]+)/*$', 測試抓網址, name='測試抓網址'),
 	
-	url('^(?P<語料編號>\d+)/顯示合格的EXCEL與字格$', 顯示合格的EXCEL與字格, name='顯示合格的EXCEL與字格'),
+	url('^(?P<語料編號>\d+)/顯示合格的EXCEL與字格並建檔', 顯示合格的EXCEL與字格並建檔, name='顯示合格的EXCEL與字格並建檔'),
 	
 	url('^語料的全部檔案json$', 語料的全部檔案json, name='語料的全部檔案json'),
 	

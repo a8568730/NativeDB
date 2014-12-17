@@ -183,7 +183,7 @@ def 檢查EXCEL與字格(xlsx完整路徑檔名, 串聯音標json):
 	return 比對錯誤的表, 比對錯誤的字格
 
 
-def 顯示合格的EXCEL與字格(request, 語料編號):
+def 顯示合格的EXCEL與字格並建檔(request, 語料編號):
 	# 顯示出textgrid的音標和excel比對成功的漢字與拼音
 	此語料 = 原始語料表.objects.filter(pk=語料編號).first()
 	try:
@@ -235,7 +235,7 @@ def 切割音檔並建表(語料表, 漢字, 拼音, 字格檔名, 開頭時間,
 	
 def 刪除轉好的表(request, 語料編號):
 	刪除的音檔名稱陣列 = []
-	此語料表 = 原始語料表.objects.filter(pk=語料編號).first()
+	此語料表 = 原始語料表.objects.get(pk=語料編號)
 	for 一列 in 此語料表.轉好的表.all():
 		# 刪除音檔, 並清除資料庫
 		刪除的音檔名稱陣列.append(一列.音檔.name)

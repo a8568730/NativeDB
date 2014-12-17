@@ -48,13 +48,15 @@ app.controller("indexController",["$scope", "$log", "$http", "$routeParams", "$r
 		
 		var getCorpusData = function(lang, tabindex){
 			// 讀一語言的資料
+			//	輸出格式 {	
+			//			MoT: [ [{word:字, IPA:音標, wavs:[音檔, 音檔]}] , 音檔數量] }
 			$http({
 				method: 'GET',
 				url: '/' + lang + '/顯示語言漢字相同的音檔',
 				data: {}
 			}).success(function(data, status){
-//				console.log(data);
-				$scope.tabs[tabindex].contents = data;
+				$scope.tabs[tabindex].types = data;
+				console.log(data);
 			});
 		};
 }]);

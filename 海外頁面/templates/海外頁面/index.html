@@ -9,10 +9,16 @@
 		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="refresh( tab.lang, $index )">
 			<p>{$ $index $}</p>
 			<ul>
-				<li ng-repeat="content in tab.contents">
-					<p><a href="">{$ content[0] $} ({$ content[1] $})</a>  
-						  <a href="{$ content[2] $}">音檔</a>
-					</p>
+				<li ng-repeat="(type, contents) in tab.types">
+					<!-- 單詞或雙詞，音檔數量 -->
+					<p>{$ type $}, {$ contents[1] $}</p>
+					<!-- 漢字，音檔們 -->
+					<ol>
+						<li ng-repeat="content in contents[0]">
+							{$ content.HanJi $}, {$ content.IPA $}, 
+							<a href="{$ wav $}" ng-repeat="wav in content.wavs">音檔&nbsp;</a>
+						</li>
+					</ol>
 				</li>
 			</ul>
 		</tab>
