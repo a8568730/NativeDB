@@ -5,9 +5,11 @@
 <p get-url-lang data-lang="{{ 初始顯示語言 }}" style="display:none;"></p>
 
 <div ng-controller="indexController" class="row">
-	<tabset class="col-xs-12">
+	<tabset class="col-xs-12" justified="true">
 		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="refresh( tab.lang, $index )">
 			
+			<br/>
+			<br/>
 			<div class="row">
 				<div class="col-xs-3 listgroup">
 					<a ng-repeat="(type, contents) in tab.types" class="list-group-item">{$ type $}<span class="badge">{$ contents[1] $}</span></a>
@@ -15,10 +17,10 @@
 				</div>
 				
 				<div class="col-xs-9">
-					<ul>
+					<ul style="list-style-type:none;">
 						<li ng-repeat="(type, contents) in tab.types">
 							<!-- 單詞或雙詞，音檔數量 -->
-							<p>{$ type $}, {$ contents[1] $}</p>
+							<p>{$ type $}</p>
 							<!-- 漢字，音檔們 -->
 							<ol>
 								<li ng-repeat="content in contents[0]">
@@ -26,11 +28,13 @@
 									<a href="{$ wav $}" ng-repeat="wav in content.wavs">音檔&nbsp;</a>
 								</li>
 							</ol>
+							<br/>
 						</li>
 					</ul>
 				</div>
 				
 			</div><!-- end class="row" -->
+			<!-- <div id="雙詞">lalalal</div> -->
 		</tab>
 		
 	</tabset>
