@@ -4,24 +4,35 @@
 
 <p get-url-lang data-lang="{{ 初始顯示語言 }}" style="display:none;"></p>
 
-<div  ng-controller="indexController">
-	<tabset>
+<div ng-controller="indexController" class="row">
+	<tabset class="col-xs-12">
 		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="refresh( tab.lang, $index )">
-			<p>{$ $index $}</p>
-			<ul>
-				<li ng-repeat="(type, contents) in tab.types">
-					<!-- 單詞或雙詞，音檔數量 -->
-					<p>{$ type $}, {$ contents[1] $}</p>
-					<!-- 漢字，音檔們 -->
-					<ol>
-						<li ng-repeat="content in contents[0]">
-							{$ content.HanJi $}, {$ content.IPA $}, 
-							<a href="{$ wav $}" ng-repeat="wav in content.wavs">音檔&nbsp;</a>
+			
+			<div class="row">
+				<div class="col-xs-3 listgroup">
+					<a ng-repeat="(type, contents) in tab.types" class="list-group-item">{$ type $}<span class="badge">{$ contents[1] $}</span></a>
+					
+				</div>
+				
+				<div class="col-xs-9">
+					<ul>
+						<li ng-repeat="(type, contents) in tab.types">
+							<!-- 單詞或雙詞，音檔數量 -->
+							<p>{$ type $}, {$ contents[1] $}</p>
+							<!-- 漢字，音檔們 -->
+							<ol>
+								<li ng-repeat="content in contents[0]">
+									{$ content.HanJi $}, {$ content.IPA $}, 
+									<a href="{$ wav $}" ng-repeat="wav in content.wavs">音檔&nbsp;</a>
+								</li>
+							</ol>
 						</li>
-					</ol>
-				</li>
-			</ul>
+					</ul>
+				</div>
+				
+			</div><!-- end class="row" -->
 		</tab>
+		
 	</tabset>
 </div>
 {% endblock %}

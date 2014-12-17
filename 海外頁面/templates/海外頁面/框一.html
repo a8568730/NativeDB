@@ -28,20 +28,14 @@
     </div>
     <div class="bar-stripe"></div>
     
-    	<div class="row">
-			<div class="col-md-3 listgroup">
-				<a href="#mono" class="list-group-item">Mono-phone<span class="badge">10</span></a>
-				<a href="#duo" class="list-group-item">Duo-phone<span class="badge">20</span></a>
-				<a href="#story" class="list-group-item">Story<span class="badge">1</span></a>
+    <!-- <div class="row">			
+		<div class="col-xs-12">
+			<div class="main">
+				{ % block 內容 % }海外漢語方言資料庫{ % endblock % }
 			</div>
-			
-			<div class="col-md-9">
-				<div class="main">
-					{% block 內容 %}海外漢語方言資料庫{% endblock %}
-				</div>
-			</div>
-    	</div>
-    
+		</div>
+    </div> -->
+    {% block 內容 %}海外漢語方言資料庫{% endblock %}
   </div>
 </body>
 
