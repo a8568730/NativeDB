@@ -1,7 +1,50 @@
 {% extends '海外頁面/框一.html' %}
 {% block 標題 %}海外漢語方言資料庫{% endblock %}
 {% block 內容 %}
-	<h3>媠媠&nbsp;[sui2sui2]</h3>
+<p get-url-params data-lang="{{ 顯示語言 }}" data-hanji="{{漢字}}" data-ipa="{{IPA}}"></p>
+
+<div ng-controller="detailController" class="row">
+	<tabset class="col-xs-12" justified="true">
+		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="redirectTo( tab.lang, $index )">
+			
+			<br/>
+			<br/>
+			<div class="row">
+				<div class="col-xs-3 listgroup">
+					<a ng-repeat="(type, contents) in tab.types" class="list-group-item">{$ type $}<span class="badge">{$ contents[1] $}</span></a>
+					
+				</div>
+				
+				<div class="col-xs-9">
+					<h3>媠媠&nbsp;[sui2sui2]</h3>
+					<table class="table table-hover">
+						<thead>
+						<tr>
+							<th>#</th>
+							<th>地區</th>
+							<th>年齡</th>
+							<th>性別</th>
+							<th>音檔</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr ng-repeat="content in contents">
+							<td>{$ $index $}</td>
+							<td>{$ content.locate $}</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				
+			</div><!-- end class="row" -->
+			<!-- <div id="雙詞">lalalal</div> -->
+		</tab>
+		
+	</tabset>
+</div>
+
+<!-- 
+<h3>媠媠&nbsp;[sui2sui2]</h3>
 	<table class="table table-hover">
 		<thead>
 		<tr>
@@ -28,5 +71,5 @@
 			<td>lala.mp3</td>
 		</tr>
 		</tbody>
-	</table>					
+	</table>			 -->
 {% endblock %}

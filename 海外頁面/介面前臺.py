@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from 海外頁面.模型 import 語言表
 import json
 from 海外頁面.模型 import 轉好的表
+from django.shortcuts import render
 
 def 顯示語言漢字相同的音檔(request, 語言名稱):
 	# 按照前台主頁的需要排序
@@ -43,7 +44,20 @@ def 顯示語言漢字相同的音檔(request, 語言名稱):
 	return HttpResponse(json.dumps(輸出, ensure_ascii=False), content_type='application/json; charset=utf-8')
 
 
-def 顯示同語言一漢字的所有音檔(request, 語言名稱, 漢字, IPA):
+def 細節頁顯示所有音檔(request, 語言名稱=None, 漢字=None, IPA=None):
+	if 語言名稱 == None:
+		一轉好 = 轉好的表.objects.first()
+		漢字 = 一轉好.漢字
+		IPA = 一轉好.IPA
+		語言名稱 = 一轉好.語料表.語言表.語言
+			
+	return render(request, '海外頁面/details.html', {
+		'顯示語言':語言名稱,
+		'顯示漢字': 漢字, 
+		'顯示IPA': IPA
+	})		
+
+def 輸出同語言一漢字的所有音檔(request, 語言名稱, 漢字, IPA):
 	# 來自同語言的一個字，可能是女生或男生的語料
 	# 輸出格式 {	
 	#		word:字, 
@@ -57,4 +71,6 @@ def 顯示同語言一漢字的所有音檔(request, 語言名稱, 漢字, IPA):
 		語料 = 一轉好.語料表
 		一組語料音檔 = {'locate': 語料.所在, 'age': 語料.年歲, 'sex': 語料.性別, 'wav': 一轉好.音檔.url} 
 		輸出['wavs'].append(一組語料音檔)
-	return HttpResponse(json.dumps(輸出, ensure_ascii=False), content_type='application/json; charset=utf-8')
+		
+# 	return HttpResponse(json.dumps(輸出, ensure_ascii=False), content_type='application/json; charset=utf-8')
+	return 輸出
