@@ -43,6 +43,18 @@ def 顯示語言漢字相同的音檔(request, 語言名稱):
 	return HttpResponse(json.dumps(輸出, ensure_ascii=False), content_type='application/json; charset=utf-8')
 
 
-def 顯示同語言一漢字的所有音檔(request, 語言名稱, 漢字):
-	輸出 = []
+def 顯示同語言一漢字的所有音檔(request, 語言名稱, 漢字, IPA):
+	# 來自同語言的一個字，可能是女生或男生的語料
+	# 輸出格式 {	
+	#		word:字, 
+	#		IPA:音標, 
+	#		wavs: [{locate: 所在, age: 年歲, sex: 性別, wav: 音檔], [locate: 所在, age: 年歲, sex: 性別, wav: 音檔]], 
+	# 	}
+	同語言漢字陣列 = 轉好的表.objects.filter(語料表__語言表__語言=語言名稱, 漢字=漢字, IPA=IPA)
+	輸出 =  {'HanJi':漢字, 'IPA': IPA, 'wavs':[]}
+		
+	for 一轉好 in 同語言漢字陣列:
+		語料 = 一轉好.語料表
+		一組語料音檔 = {'locate': 語料.所在, 'age': 語料.年歲, 'sex': 語料.性別, 'wav': 一轉好.音檔.url} 
+		輸出['wavs'].append(一組語料音檔)
 	return HttpResponse(json.dumps(輸出, ensure_ascii=False), content_type='application/json; charset=utf-8')
