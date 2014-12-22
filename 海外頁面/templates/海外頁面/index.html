@@ -1,5 +1,7 @@
 {% extends '海外頁面/框一.html' %}
 {% block 標題 %}海外漢語方言資料庫{% endblock %}
+{% block extrahead %}
+{% load staticfiles %}<script src="{% static 'js/index.js' %}"></script>{% endblock %}
 {% block 內容 %}
 
 <p get-url-lang data-lang="{{ 初始顯示語言 }}" style="display:none;"></p>
