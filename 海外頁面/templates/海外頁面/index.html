@@ -29,7 +29,7 @@
 								<li ng-repeat="content in contents[0]">
 								<!-- <a ng-href="/{$ lang $}/{$ content.HanJi $}/{$ content.IPA $}/顯示同語言一漢字的所有音檔"> -->
 									<a ng-href="/details/{$ lang $}/{$ content.HanJi $}/{$ content.IPA $}">{$ content.HanJi $}</a>, {$ content.IPA $}, 
-									<a href="{$ wav $}" ng-repeat="wav in content.wavs">音檔&nbsp;</a>
+									<a ng-href="{$ wav $}" ng-repeat="wav in content.wavs">音檔&nbsp;</a>
 								</li>
 							</ol>
 							<br/>

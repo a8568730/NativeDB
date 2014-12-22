@@ -62,7 +62,7 @@ def 輸出同語言一漢字的所有音檔(request, 語言名稱, 漢字, IPA):
 	# 輸出格式 {	
 	#		word:字, 
 	#		IPA:音標, 
-	#		wavs: [{locate: 所在, age: 年歲, sex: 性別, wav: 音檔], [locate: 所在, age: 年歲, sex: 性別, wav: 音檔]], 
+	#		wavs: [{locate: 所在, age: 年歲, sex: 性別, wav: 音檔}, {locate: 所在, age: 年歲, sex: 性別, wav: 音檔}], 
 	# 	}
 	同語言漢字陣列 = 轉好的表.objects.filter(語料表__語言表__語言=語言名稱, 漢字=漢字, IPA=IPA)
 	輸出 =  {'HanJi':漢字, 'IPA': IPA, 'wavs':[]}
@@ -72,5 +72,6 @@ def 輸出同語言一漢字的所有音檔(request, 語言名稱, 漢字, IPA):
 		一組語料音檔 = {'locate': 語料.所在, 'age': 語料.年歲, 'sex': 語料.性別, 'wav': 一轉好.音檔.url} 
 		輸出['wavs'].append(一組語料音檔)
 		
-# 	return HttpResponse(json.dumps(輸出, ensure_ascii=False), content_type='application/json; charset=utf-8')
-	return 輸出
+	print(json.dumps(輸出, ensure_ascii=False))	
+	return HttpResponse(json.dumps(輸出, ensure_ascii=False), content_type='application/json; charset=utf-8')
+	#return 輸出
