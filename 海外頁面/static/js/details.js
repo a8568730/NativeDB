@@ -56,6 +56,16 @@ app.controller("detailController",["$scope", "$log", "$http", "$routeParams", "$
 			});
 		};
 		
+		//播放<audio>標籤的音樂
+		$scope.play = function(id){
+            var activeSong = document.getElementById(id);
+            if (activeSong.paused){
+              activeSong.play();
+            }else{
+              activeSong.pause();
+            } 
+        };
+		
 		//	切換其他分頁時，改網址，並讀資料
 		$scope.redirectTo = function(lang, tabindex){
 //			if(lang !=  $scope.lang){
@@ -67,18 +77,4 @@ app.controller("detailController",["$scope", "$log", "$http", "$routeParams", "$
 //				//getCorpusData(lang, tabindex);
 //			}
 		};
-		
-//		var getCorpusData = function(lang, tabindex){
-//			// 讀一語言的資料
-//			//	輸出格式 {	
-//			//			MoT: [ [{word:字, IPA:音標, wavs:[音檔, 音檔]}] , 音檔數量] }
-//			$http({
-//				method: 'GET',
-//				url: '/' + lang + '/顯示語言漢字相同的音檔',
-//				data: {}
-//			}).success(function(data, status){
-//				$scope.tabs[tabindex].types = data;
-//				console.log(data);
-//			});
-//		};
 }]);

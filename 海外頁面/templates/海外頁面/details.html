@@ -1,9 +1,13 @@
 {% extends '海外頁面/框一.html' %}
 {% block 標題 %}海外漢語方言資料庫{% endblock %}
-{% block extrahead %}
-{% load staticfiles %}<script src="{% static 'js/details.js' %}"></script>{% endblock %}
-{% block 內容 %}
 
+{% block extrahead %}
+{% load staticfiles %}
+<script src="{% static 'js/details.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+{% endblock %}
+
+{% block 內容 %}
 <p get-url-params data-lang="{{ 顯示語言 }}" data-hanji="{{ 顯示漢字 }}" data-ipa="{{ 顯示IPA }}"></p>
  
  <div  ng-app="app1">
@@ -37,10 +41,11 @@
 							<td>{$ info.age $}</td>
 							<td>{$ info.sex $}</td>
 							<td><a ng-href="{$ info.wav $}">音檔</a>
-									<audio controls>
-	  									<source src="{$ info.wav $}" type="audio/wav">
+									<audio id="song">
+										<source src="{$ info.wav $}" type="audio/wav"/>
 										你的瀏覽器不支援html5的audio標籤
 									</audio>
+								    <div ng-click="play('song')" class="play-btn"></div>
 							</td>
 						</tr>
 						</tbody>
