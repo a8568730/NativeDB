@@ -45,7 +45,7 @@
 										<source src="{$ info.wav $}" type="audio/wav"/>
 										你的瀏覽器不支援html5的audio標籤
 									</audio>
-								    <div ng-click="play('song')" class="play-btn"></div>
+								    <div ng-click="play('song')" ng-class="{'pause-btn play-btn': clicked, 'pause-btn': !clicked}"></div>
 							</td>
 						</tr>
 						</tbody>

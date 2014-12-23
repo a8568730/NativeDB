@@ -57,15 +57,23 @@ app.controller("detailController",["$scope", "$log", "$http", "$routeParams", "$
 		};
 		
 		//播放<audio>標籤的音樂
+		$scope.clicked = false;
 		$scope.play = function(id){
             var activeSong = document.getElementById(id);
             if (activeSong.paused){
-              activeSong.play();
+            	$scope.clicked = true;
+            	activeSong.play();
             }else{
-              activeSong.pause();
+            	$scope.clicked = false;
+            	activeSong.pause();
             } 
+            activeSong.addEventListener('ended', function(){
+            	$scope.$apply( function() {
+            		$scope.clicked = false;
+                });
+            });
         };
-		
+        
 		//	切換其他分頁時，改網址，並讀資料
 		$scope.redirectTo = function(lang, tabindex){
 //			if(lang !=  $scope.lang){

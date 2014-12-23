@@ -1,4 +1,4 @@
-.play-btn {
+.pause-btn {
   display:inline-block;
   margin-left:6px;
   width:10px;
@@ -8,9 +8,12 @@
   box-shadow:0px 0px 0px 3px #888;  
 }
 
+.pause-btn.play-btn {
+	background:red;
+}
 
 @media screen and (max-width:767px){
-	.play-btn {
+	.pause-btn {
 		margin:2px;
 	}
 }
