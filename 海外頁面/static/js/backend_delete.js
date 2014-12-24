@@ -11,9 +11,11 @@ app1.controller('DeleteController', ['$scope','FileService', '$route', '$routePa
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
     
-	//請求檔案
+	//請求此語料的所有檔案名稱清單
+   $scope.showfiles = false;
 	$scope.go = function(){
 		console.log('go, $scope.corpus=' + $routeParams['corpus']);
+		$scope.showfiles = true;
 		$scope.GetFiles($routeParams['corpus']);
 	};
 }]);

@@ -16,18 +16,21 @@
 </form>
 
 <hr/>	
-<p>目前的語料有：</p>
+
 	<!-- ng-app 必須和 ng-controller 同一個檔案，can't be in 後台框.html -->
 	<div ng-app="app1">
 		<div ng-controller="DeleteController">
 			<!-- 抓到網址內的語料編號參數 -->
 			<!-- <p>$scope.$routeParams = {$  $routeParams $}, {$ value +1 $}</p> -->
 			<form ng-submit="go()">
-				<button type="submit">讀檔</button>
+				<button type="submit">顯示所有檔案</button>
 			</form>
-			<ul>
-				<li ng-repeat="file in files">{$ file[0] $}, {$ file[1] $} (<a ng-href="#" ng-click='RemoveFiles(file[0])'>delete</a>)</li>
-			</ul>
+			<div ng-if="showfiles">
+				<p>目前的檔案有：</p>
+				<ul>
+					<li ng-repeat="file in files">{$ file[0] $}, {$ file[1] $} (<a ng-href="#" ng-click='RemoveFiles(file[0])'>delete</a>)</li>
+				</ul>
+			</div>
 		</div>
  	</div>
  	
