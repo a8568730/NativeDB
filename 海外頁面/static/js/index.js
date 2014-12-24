@@ -37,9 +37,8 @@ app.controller("indexController",["$scope", "$log", "$http", "$routeParams", "$r
 		//	切換其他分頁時，改網址，並讀資料
 		$scope.refresh = function(lang, tabindex){
 			if(lang !=  $scope.lang){
-				//	$window.location.href = '/index/' + somelang; //$location.path('/index/' + somelang);
 				// 改網址
-				$location.path(lang);
+				$window.location.href = '/index/' + lang;
 				$scope.lang = lang;
 				// 讀資料
 				getCorpusData(lang, tabindex);

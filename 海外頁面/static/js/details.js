@@ -76,8 +76,11 @@ app.controller("detailController",["$scope", "$log", "$http", "$routeParams", "$
         
 		//	切換其他分頁時，改網址，並讀資料
 		$scope.redirectTo = function(lang, tabindex){
-//			if(lang !=  $scope.lang){
-//				//	$window.location.href = '/index/' + somelang; //$location.path('/index/' + somelang);
+			//$window.location.href = '/index/' + lang; 
+			//$location.path('/index/' + lang);
+			if(lang!=$scope.lang){
+				$window.location.href = '/index/' + lang;
+			}
 //				// 改網址
 //				$location.path(lang);
 //				$scope.lang = lang;

@@ -10,7 +10,7 @@
 {% block 內容 %}
 <p get-url-params data-lang="{{ 顯示語言 }}" data-hanji="{{ 顯示漢字 }}" data-ipa="{{ 顯示IPA }}"></p>
  
- <div  ng-app="app1">
+ 
 <div ng-controller="detailController" class="row">
 	<tabset class="col-xs-12" justified="true">
 		<tab ng-repeat="tab in tabs" heading="{$ tab.lang $}" active="tab.active" select="redirectTo( tab.lang, $index )">
