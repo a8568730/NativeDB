@@ -281,5 +281,17 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)	
 		
+	def test_單詞Note應為8(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','(喔)巧(乖)','kʰa3','8']
+			]
+		答案 = [{"Num":"Zhang_VT_001",
+				"Word":"(喔)巧(乖)",	
+				"IPA":"kʰa3",
+				"Note":"8"}]
+		結果 = xlsx陣列轉json(問題, 1)
+		self.assertEqual(答案, 結果)
+			
 if __name__=='__main__':
 	unittest.main()

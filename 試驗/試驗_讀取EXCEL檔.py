@@ -23,5 +23,15 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = 把EXCEL讀進來(試驗檔名)
 		self.assertEqual(結果, 答案)
 
+	def test_單音Note應為8沒有小數點(self):
+		試驗檔名  = os.path.join(self.檔案所在 ,'numberbook5.xlsx')
+		答案 = [
+					['Num','Word','IPA','Note'],
+					['Rd067','鸡婆','kue1po2','8'],
+					['Rd068','鸡公','kue1kan1','8.2']
+		]
+		結果 = 把EXCEL讀進來(試驗檔名)
+		self.assertEqual(結果, 答案)
+			
 if __name__=='__main__':
 	unittest.main()
