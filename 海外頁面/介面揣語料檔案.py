@@ -204,7 +204,7 @@ def 顯示合格的EXCEL與字格並建檔(request, 語料編號):
 		# 找出全部對應的字格檔名與時間
 		合格的綜合陣列 = []
 		for 一個檔名, 一個檔的音標json in zip(此語料.揣出textgrid檔(), 串聯音標json):
-			# 利用拼音，將檔名與時間，漢字合成一列
+			# 利用一個拼音，將一份檔名與一段時間，一個漢字合成一列
 			for 音標json in 一個檔的音標json: 
 				音標 = ''.join(音標json[0])
 				開頭時間 = 音標json[1]
@@ -221,6 +221,7 @@ def 顯示合格的EXCEL與字格並建檔(request, 語料編號):
 		return HttpResponse(str(錯誤), content_type="application/json; charset=utf-8")
 	
 def 切割音檔並建表(語料表, 漢字, 拼音, 字格檔名, 開頭時間, 結尾時間):
+	# 切割一份字格中的一個漢字產生一個音檔
 	被切割音檔名 = os.path.splitext(字格檔名)[0] + '.wav'
 	被切割音檔路徑 = os.path.join(MEDIA_ROOT, 被切割音檔名)
 	完成音檔名 = 漢字 + '_' + 被切割音檔名
