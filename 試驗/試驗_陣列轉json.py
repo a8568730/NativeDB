@@ -268,17 +268,36 @@ class 基本元素試驗(unittest.TestCase):
 				['Zhang_VT_003','喔喔','kʰi3','kʰi3']
 			]
 		答案 =   [{"Num":"Zhang_VT_001",
-				"Word":"(喔)乖巧",	
+				"Word":"乖巧",	
 				"IPA":"kʰa3",
 				"Note":"kʰa3"},
 				{"Num":"Zhang_VT_003",
-				"Word":"喔喔()",	
-				"IPA":"kʰi1",
-				"Note":"kʰi1"},
+				"Word":"喔喔",	
+				"IPA":"kʰi3",
+				"Note":"kʰi3"},
 			]
 		詞數 = 2
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)	
 		
+		def test_雙詞跳行_含多餘字(self):
+			問題 = [
+					['Num','Word','IPA','Note'],
+					['Zhang_VT_001','(喔)乖巧','kʰa3','kʰa3'],
+					['Zhang_VT_003','喔喔()','kʰi3','kʰi3']
+				]
+			答案 =   [{"Num":"Zhang_VT_001",
+					"Word":"(喔)乖巧",	
+					"IPA":"kʰa3",
+					"Note":"kʰa3"},
+					{"Num":"Zhang_VT_003",
+					"Word":"喔喔()",	
+					"IPA":"kʰi3",
+					"Note":"kʰi3"},
+				]
+			詞數 = 2
+			結果 = xlsx陣列轉json(問題, 詞數)
+			self.assertEqual(答案, 結果)	
+
 if __name__=='__main__':
 	unittest.main()

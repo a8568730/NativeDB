@@ -1,23 +1,24 @@
 import unittest
+import os
 from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
 
 
 class 基本元素試驗(unittest.TestCase):
 	def setUp(self):
-		pass
+		self.檔案所在 = os.path.join(os.path.dirname(__file__),'..','NativeDB_py')
 	def tearDown(self):
 		pass
 	def test_基本short(self):
-		問題 = '../NativeDB_py/numberbook2.xlsx'
+		試驗檔名  = os.path.join(self.檔案所在 ,'numberbook2.xlsx')
 		答案 = [
 					['Num','Word','IPA','Note'],
 					['Zhang_VT_001','(乖)巧'	, 'kʰa3','kʰa3']
 				]
-		結果 = 把EXCEL讀進來(問題)
+		結果 = 把EXCEL讀進來(試驗檔名)
 		self.assertEqual(答案, 結果)
 	
 	def test_基本long(self):
-		問題 = '../NativeDB_py/numberbook.xlsx'
+		試驗檔名  = os.path.join(self.檔案所在 ,'numberbook.xlsx')
 		答案 = [		
 					['Num', 'Word', 'IPA', 'Note'],
 					['Zhang_VT_001', '(乖)巧', 'kʰa3', 'kʰa3'],
@@ -30,7 +31,7 @@ class 基本元素試驗(unittest.TestCase):
 					['Zhang_VT_008', '(臭)殕(發霉)', 'pʰu3', 'pʰu3'],
 					['Zhang_VT_009', '(監)督', 'tok7', 'tok7']
 				]
-		結果 = 把EXCEL讀進來(問題)
+		結果 = 把EXCEL讀進來(試驗檔名)
 		self.assertEqual(答案, 結果)
 		
 if __name__=='__main__':
