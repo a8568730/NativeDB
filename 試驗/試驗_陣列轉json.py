@@ -206,6 +206,7 @@ class 基本元素試驗(unittest.TestCase):
 		self.assertEqual(答案, 結果)
 		
 	def test_雙詞格式左和右(self):
+		# 考慮到學姐可能需要顯示括號外的字，所以不去掉
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','(喔)乖巧','kʰa3','kʰa3'],
@@ -261,13 +262,13 @@ class 基本元素試驗(unittest.TestCase):
 		結果 = xlsx陣列轉json(問題, 詞數)
 		self.assertEqual(答案, 結果)
 		
-	def test_雙詞跳行(self):
+	def test_雙詞跳行紀錄原始編號(self):
 		問題 = [
 				['Num','Word','IPA','Note'],
 				['Zhang_VT_001','乖巧','kʰa3','kʰa3'],
 				['Zhang_VT_003','喔喔','kʰi3','kʰi3']
 			]
-		答案 =   [{"Num":"Zhang_VT_001",
+		答案 = [{"Num":"Zhang_VT_001",
 				"Word":"乖巧",	
 				"IPA":"kʰa3",
 				"Note":"kʰa3"},
@@ -298,6 +299,18 @@ class 基本元素試驗(unittest.TestCase):
 			詞數 = 2
 			結果 = xlsx陣列轉json(問題, 詞數)
 			self.assertEqual(答案, 結果)	
+
+	def test_單詞Note應為8(self):
+		問題 = [
+				['Num','Word','IPA','Note'],
+				['Zhang_VT_001','(喔)巧(乖)','kʰa3','8']
+			]
+		答案 = [{"Num":"Zhang_VT_001",
+				"Word":"(喔)巧(乖)",	
+				"IPA":"kʰa3",
+				"Note":"8"}]
+		結果 = xlsx陣列轉json(問題, 1)
+		self.assertEqual(答案, 結果)
 
 if __name__=='__main__':
 	unittest.main()
