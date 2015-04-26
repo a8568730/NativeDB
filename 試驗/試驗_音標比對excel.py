@@ -4,7 +4,7 @@ from NativeDB_py.合併的音標比對excel import 音標比對excel
 
 class 基本元素試驗(unittest.TestCase):
 	def test_比對_雙語(self):
-		檔案 = os.path.join(os.path.dirname(__file__),'..','NativeDB_py', 'Penang_DiT_M_M01.xlsx')
+		檔案 = os.path.join(os.path.dirname(__file__),'試驗資料', 'Penang_DiT_M_M01.xlsx')
 		問題 = [(['keʔ9', ' piaʔ7'], '14.740574729819627', '15.075353933741027'),
 							(['hu2', ' kut7'], '18.77385414161029', '19.26625697137455'),
 							(['put7', ' si2'], '28.815642190509244', '29.271843682035016'),

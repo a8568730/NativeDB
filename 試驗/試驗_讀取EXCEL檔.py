@@ -4,7 +4,7 @@ from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
 
 class 基本元素試驗(unittest.TestCase):
 	def setUp(self):
-		self.檔案所在 = os.path.join(os.path.dirname(__file__),'..','NativeDB_py')
+		self.檔案所在 = os.path.join(os.path.dirname(__file__),'試驗資料')
 	def tearDown(self):
 		pass
 	

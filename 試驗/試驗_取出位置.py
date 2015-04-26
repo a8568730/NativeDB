@@ -5,7 +5,7 @@ import os
 
 class 基本元素試驗(unittest.TestCase):
 	def setUp(self):
-		self.檔案所在 = os.path.join(os.path.dirname(__file__),'..','NativeDB_py', 'textgrid')
+		self.檔案所在 = os.path.join(os.path.dirname(__file__),'試驗資料', 'textgrid')
 	def tearDown(self):
 		pass
 	
