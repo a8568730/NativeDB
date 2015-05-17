@@ -1,5 +1,5 @@
 from NativeDB_py.讀取Excel檔 import 讀取Excel檔
-from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
+from NativeDB_py.檢查Excel檔格式與內容 import 檢查Excel檔格式與內容
 from NativeDB_py.寫出json檔 import 寫出json檔
 import json
 
@@ -20,7 +20,7 @@ if isinstance(xlsx陣列, str):
 	print(xlsx陣列)
 	
 elif(len(xlsx陣列) != 0):
-	json陣列 = xlsx陣列轉json(xlsx陣列, 1)
+	json陣列 = 檢查Excel檔格式與內容(xlsx陣列, 1)
 	if(type(json陣列[0]) is dict):
 		print('success', json陣列)
 		寫出json檔(json陣列, excel檔名)

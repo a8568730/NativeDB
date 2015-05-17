@@ -1,6 +1,6 @@
 import re
 
-def xlsx陣列轉json(xlsx陣列, 字數):
+def 檢查Excel檔格式與內容(xlsx陣列, 字數):
 	寫出結果 = []
 
 # 	是否剛好有四個欄位

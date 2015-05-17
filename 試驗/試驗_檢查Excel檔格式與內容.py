@@ -1,5 +1,5 @@
 import unittest
-from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json 
+from NativeDB_py.檢查Excel檔格式與內容 import 檢查Excel檔格式與內容 
 
 class 基本元素試驗(unittest.TestCase):
 	def setUp(self):
@@ -18,7 +18,7 @@ class 基本元素試驗(unittest.TestCase):
 				"IPA":"kʰa3",
 				"Note":"kʰa3"}]
 # 		答案 = 'OK'
-		結果 = xlsx陣列轉json(問題, 1)
+		結果 = 檢查Excel檔格式與內容(問題, 1)
 		self.assertEqual(答案, 結果)
 		
 	def test_欄位不到四個(self):
@@ -28,7 +28,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  'xlsx檔要四個欄位: Num, Word, IPA, Note'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 
 	def test_欄位打錯字(self):
@@ -38,7 +38,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  '第1列第3個欄位應為IPA'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)	
 		
 # 	Num欄位
@@ -50,7 +50,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  'row(3)的Num欄位有誤'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 			
 	def test_單詞編號內含數字(self):
@@ -70,7 +70,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Note":"kʰa1"},
 			]
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 		
 # 	Word欄位			
@@ -82,7 +82,7 @@ class 基本元素試驗(unittest.TestCase):
  			]
 		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 
 	def test_單詞空字串(self):
@@ -93,7 +93,7 @@ class 基本元素試驗(unittest.TestCase):
  			]
 		答案 =  'row(3)的Word欄位空白'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 
 	def test_單詞字有特殊符號(self):
@@ -104,7 +104,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  'row(2)的Word欄位含特殊符號'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 		
 	def test_單詞少一個括號(self):
@@ -115,7 +115,7 @@ class 基本元素試驗(unittest.TestCase):
  			]
 		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)			
 	
 	def test_單詞只有括號內有字(self):
@@ -126,7 +126,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  'row(3)的Word欄位格式不符'
 		詞數 = 1
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)	
 		
 	
@@ -136,7 +136,7 @@ class 基本元素試驗(unittest.TestCase):
 # 				['Zhang_VT_001','(乖)巧','kʰa3','kʰa3']
 # 			]
 # 		答案 =  'OK'
-# 		結果 = xlsx陣列轉json(問題, 1)
+# 		結果 = 檢查Excel檔格式與內容(問題, 1)
 # 		self.assertEqual(答案, 結果)
 # 	
 	def test_單詞格式左(self):
@@ -149,7 +149,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Word":"巧(乖)",	
 				"IPA":"kʰa3",
 				"Note":"kʰa3"}]
-		結果 = xlsx陣列轉json(問題, 1)
+		結果 = 檢查Excel檔格式與內容(問題, 1)
 		self.assertEqual(答案, 結果)
 	
 	def test_單詞格式純(self):
@@ -161,7 +161,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Word":"巧",	
 				"IPA":"kʰa3",
 				"Note":"kʰa3"}]
-		結果 = xlsx陣列轉json(問題, 1)
+		結果 = 檢查Excel檔格式與內容(問題, 1)
 		self.assertEqual(答案, 結果)
 	
 	def test_單詞格式X(self):
@@ -170,7 +170,7 @@ class 基本元素試驗(unittest.TestCase):
 				['Zhang_VT_001','(巧)','kʰa3','kʰa3']
 			]
 		答案 =  'row(2)的Word欄位格式不符'
-		結果 = xlsx陣列轉json(問題, 1)
+		結果 = 檢查Excel檔格式與內容(問題, 1)
 		self.assertEqual(答案, 結果)
 	
 	def test_單詞格式兩邊(self):
@@ -182,7 +182,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Word":"(喔)巧(乖)",	
 				"IPA":"kʰa3",
 				"Note":"kʰa3"}]
-		結果 = xlsx陣列轉json(問題, 1)
+		結果 = 檢查Excel檔格式與內容(問題, 1)
 		self.assertEqual(答案, 結果)
 # 		
 	def test_雙詞格式純(self):
@@ -202,7 +202,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Note":"kʰa1"},
 			]
 		詞數 = 2
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 		
 	def test_雙詞格式左和右(self):
@@ -223,7 +223,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Note":"kʰa1"},
 			]
 		詞數 = 2
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 	
 	def test_雙詞格式X(self):
@@ -234,7 +234,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  'row(2)的Word欄位格式不符'
 		詞數 = 2
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 		
 	def test_雙詞格式X2(self):
@@ -245,7 +245,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  'row(2)的Word欄位格式不符'
 		詞數 = 2
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)	
 # 	只有一個字
 # IPA只有一個音
@@ -259,7 +259,7 @@ class 基本元素試驗(unittest.TestCase):
 			]
 		答案 =  'row(3)的IPA欄位不應該和前面重複'
 		詞數 = 2
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)
 		
 	def test_雙詞跳行紀錄原始編號(self):
@@ -278,7 +278,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Note":"kʰi3"},
 			]
 		詞數 = 2
-		結果 = xlsx陣列轉json(問題, 詞數)
+		結果 = 檢查Excel檔格式與內容(問題, 詞數)
 		self.assertEqual(答案, 結果)	
 		
 		def test_雙詞跳行_含多餘字(self):
@@ -297,7 +297,7 @@ class 基本元素試驗(unittest.TestCase):
 					"Note":"kʰi3"},
 				]
 			詞數 = 2
-			結果 = xlsx陣列轉json(問題, 詞數)
+			結果 = 檢查Excel檔格式與內容(問題, 詞數)
 			self.assertEqual(答案, 結果)	
 
 	def test_單詞Note應為8(self):
@@ -309,7 +309,7 @@ class 基本元素試驗(unittest.TestCase):
 				"Word":"(喔)巧(乖)",	
 				"IPA":"kʰa3",
 				"Note":"8"}]
-		結果 = xlsx陣列轉json(問題, 1)
+		結果 = 檢查Excel檔格式與內容(問題, 1)
 		self.assertEqual(答案, 結果)
 
 if __name__=='__main__':
