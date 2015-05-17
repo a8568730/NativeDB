@@ -1,6 +1,6 @@
 
 import unittest
-from NativeDB_py.合併音節的位置 import 合併位置
+from NativeDB_py.合併TextGrid的CVC時間 import 合併TextGrid的CVC時間
 
 class 基本元素試驗(unittest.TestCase):
 	def setUp(self):
@@ -16,7 +16,7 @@ class 基本元素試驗(unittest.TestCase):
 		("XXX", '2.02', '3.38')
 		]
 		答案 = [(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'], '1.7946093688657765','2.02')]
-		結果 = 合併位置(問題)
+		結果 = 合併TextGrid的CVC時間(問題)
 		self.assertEqual(結果, 答案)
 		
 	def test_合併xxx(self):
@@ -27,7 +27,7 @@ class 基本元素試驗(unittest.TestCase):
 		("XXX", '2.02', '3.38')
 		]
 		答案 = [(['C1-(to)ʔ(8)-1'], '1.9583977521184779','2.02')]
-		結果 = 合併位置(問題)
+		結果 = 合併TextGrid的CVC時間(問題)
 		self.assertEqual(結果, 答案)
 	
 	def test_合併多(self):
@@ -48,7 +48,7 @@ class 基本元素試驗(unittest.TestCase):
 		答案 = [(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'], '1.7946093688657765','2.02'),
 				(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'], '4.38','7.7'),
 				(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'], '18.38','20.2')]
-		結果 = 合併位置(問題)
+		結果 = 合併TextGrid的CVC時間(問題)
 		self.assertEqual(結果, 答案)
 	
 	def test_合併_中間有xxx(self):
@@ -64,7 +64,7 @@ class 基本元素試驗(unittest.TestCase):
 		]
 		答案 = [(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1','C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'],
 				'1.7946093688657765','7.7')]
-		結果 = 合併位置(問題)
+		結果 = 合併TextGrid的CVC時間(問題)
 		self.assertEqual(結果, 答案)
 	
 	
@@ -82,7 +82,7 @@ class 基本元素試驗(unittest.TestCase):
 		]
 		答案 = [(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1','C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'],
 				'1.7946093688657765','7.7')]
-		結果 = 合併位置(問題)
+		結果 = 合併TextGrid的CVC時間(問題)
 		self.assertEqual(結果, 答案)
 		
 	
@@ -102,7 +102,7 @@ class 基本元素試驗(unittest.TestCase):
 		]
 		答案 = [(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'],'1.7946093688657765','2.02'),
 			(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'],'4.38','7.7')]
-		結果 = 合併位置(問題)
+		結果 = 合併TextGrid的CVC時間(問題)
 		self.assertEqual(結果, 答案)
 		
 	def test_合併開頭沒有XXX(self):
@@ -112,7 +112,7 @@ class 基本元素試驗(unittest.TestCase):
 		("XXX", '2.02', '3.38')
 		]
 		答案 = [(['C1-t(oʔ8)-1','V1-(t)o(ʔ8)-1','C1-(to)ʔ(8)-1'], '1.7946093688657765','2.02')]
-		結果 = 合併位置(問題)
+		結果 = 合併TextGrid的CVC時間(問題)
 		self.assertEqual(結果, 答案)
 	
 		
