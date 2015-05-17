@@ -14,7 +14,7 @@ from NativeDB_py.檢查TextGrid和Wav名稱和總長度 import 檢查TextGrid和
 from NativeDB_py.合併TextGrid的CVC時間 import 合併TextGrid的CVC時間
 from NativeDB_py.檢查TextGrid合併CVC後的時間 import 檢查TextGrid合併CVC後的時間
 from NativeDB_py.合併的音標比對excel import 音標比對excel
-from NativeDB_py.合併音標 import 合併音標
+from NativeDB_py.合併TextGrid的CVC音標 import 合併TextGrid的CVC音標
 from NativeDB_py.合併音標比對excel結果 import 檢查不合格的表與字格
 from NativeDB_py.合併音標比對excel結果 import 輸出合格的表
 import itertools
@@ -120,7 +120,7 @@ def 流程(文字檔路徑):
 	檢查大小字串 = 檢查TextGrid合併CVC後的時間(合併TextGrid的CVC時間的資料)
 	if(檢查大小字串 != 'OK'):
 		raise RuntimeError(檢查大小字串)
-	純音標與時區 = 合併音標(合併TextGrid的CVC時間的資料)
+	純音標與時區 = 合併TextGrid的CVC音標(合併TextGrid的CVC時間的資料)
 	return 純音標與時區
 
 def 語料的全部檔案json(request):

@@ -1,5 +1,5 @@
 import unittest
-from NativeDB_py.合併音標 import 合併音標
+from NativeDB_py.合併TextGrid的CVC音標 import 合併TextGrid的CVC音標
 
 class 基本元素試驗(unittest.TestCase):
 	def setUp(self):
@@ -10,19 +10,19 @@ class 基本元素試驗(unittest.TestCase):
 	def test_合併_直(self):
 		問題 = [(['C1-t(it8)-1', 'V1-(t)i(t8)-1', 'C1-(ti)t(8)-1'], '1.5664501247984202', '1.87')]
 		答案 = [(['tit8'], '1.5664501247984202', '1.87')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 		
 	def test_合併_桌1(self):
 		問題 = [(['C1-t(oʔ8)-1', 'V1-(t)o(ʔ8)-1', 'C1-(to)ʔ(8)-1'], '1.7946093688657765', '2.02')]
 		答案 = [(['toʔ8'], '1.7946093688657765', '2.02')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 		
 	def test_桌2(self):
 		問題 = [(['C1-(to)ʔ(8)-1'], '1.9583977521184779', '2.02')]
 		答案 = [(['toʔ8'], '1.9583977521184779', '2.02')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 	
 	def test_桌3(self):
@@ -32,7 +32,7 @@ class 基本元素試驗(unittest.TestCase):
 		答案 = [(['toʔ8'], '1.7946093688657765', '2.02'),
 				(['toʔ8'], '4.38', '7.7'),
 				(['toʔ8'], '18.38', '20.2')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 	
 	def test_合併_桌桌(self):
@@ -40,7 +40,7 @@ class 基本元素試驗(unittest.TestCase):
 				'1.7946093688657765', '7.7')]
 		答案 = [(['toʔ8','toʔ8'],
 				'1.7946093688657765', '7.7')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 	
 	
@@ -49,7 +49,7 @@ class 基本元素試驗(unittest.TestCase):
 				'1.7946093688657765', '7.7')]
 		答案 = [(['ke1','po2'],
 				'1.7946093688657765', '7.7')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 		
 	
@@ -58,19 +58,19 @@ class 基本元素試驗(unittest.TestCase):
 			(['C1-k(au1)-1', 'V1-(k)au(1)-1', 'C2-p(o3)-1','V2-(p)o(3)-1'], '4.38', '7.7')]
 		答案 = [(['ki5','tsia3'], '1.7946093688657765', '2.02'),
 			(['kau1', 'po3'], '4.38', '7.7')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 		
 	def test_合併_以前(self):
 		問題 = [(['V1-i(4)-1', 'C2-ts(iŋ2)-1', 'V2-(ts)iŋ2-1'], '1.7946093688657765', '2.02')]
 		答案 = [(['i4', 'tsiŋ2'], '1.7946093688657765', '2.02')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 	
 	def test_合併_茶(self):
 		問題 = [(['C1-t(e6)-1', 'V1-(t)e(6)-1'], '1.5664501247984202', '1.87')]
 		答案 = [(['te6'], '1.5664501247984202', '1.87')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 		
 	def test_合併_茶_茶(self):
@@ -78,7 +78,7 @@ class 基本元素試驗(unittest.TestCase):
 					(['C1-t(e6)-1', 'V1-(t)e(6)-1'], '1.87', '1.92')]
 		答案 = [(['te6'], '1.5664501247984202', '1.87'), 
 					(['te6'], '1.87', '1.92')]
-		結果 = 合併音標(問題)
+		結果 = 合併TextGrid的CVC音標(問題)
 		self.assertEqual(答案, 結果)
 				
 if __name__ == '__main__':
