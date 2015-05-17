@@ -1,7 +1,7 @@
 from NativeDB_py.讀取TextGrid檔 import 讀取TextGrid檔
+from NativeDB_py.檢查TextGrid和Wav名稱和總長度 import 檢查TextGrid和Wav名稱和總長度
 from NativeDB_py.合併音節的位置 import 合併位置
 from NativeDB_py.照位置切割音檔 import 切割音檔
-from NativeDB_py.檢查輸入的檔案 import 檢查輸入
 from NativeDB_py.檢查取出的位置大小 import 檢查位置大小
 
 # 	單詞：
@@ -14,7 +14,7 @@ from NativeDB_py.檢查取出的位置大小 import 檢查位置大小
 
 資料 = 讀取TextGrid檔(文字檔路徑)
 
-檢查輸入字串 = 檢查輸入(聲音檔路徑, 文字檔路徑, 資料[-1][-1])
+檢查輸入字串 = 檢查TextGrid和Wav名稱和總長度(聲音檔路徑, 文字檔路徑, 資料[-1][-1])
 
 if(檢查輸入字串 == 'OK'):
 	#合併出每一個詞的頭尾時間

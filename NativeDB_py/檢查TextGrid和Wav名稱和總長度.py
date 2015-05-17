@@ -4,7 +4,7 @@
 import os
 import wave
 
-def 檢查輸入(音檔完整路徑, 文字格完整路徑, 文字檔秒數):
+def 檢查TextGrid和Wav名稱和總長度(音檔完整路徑, 文字格完整路徑, 文字檔秒數):
 	
 # 	檢查檔名, 會先去掉副檔名
 	音檔名 =  os.path.basename(os.path.splitext(音檔完整路徑)[0])
