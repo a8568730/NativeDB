@@ -80,13 +80,19 @@
 				
 				<div class="row">
 					<div class="col-xs-6">
-						<p>textgrid和EXCEL比對結果：</p>
+						<p class="text-danger">
+							<strong>！</strong>
+							EXCEL有此音標，<br/>但此音標的textgrid尚未上傳：
+						</p>
 							{% for 行 in 比對錯誤的表 %}
 								{{ 行 }} <br/>
 							{% endfor %}
 					</div>
 					<div class="col-xs-6">
-						<p>錯誤的textgrid音標：</p>
+						<p class="text-danger">
+							<strong>！</strong>
+							textgrid有此音標，<br/>但EXCEL沒有此音標：
+						</p>
 							{% for 行 in 比對錯誤的字格 %}
 								{{ 行.0 }} <br/>
 							{% endfor %}
