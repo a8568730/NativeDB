@@ -5,9 +5,6 @@ angular.module('app1',[])
 	                	 head: '語言',
 	                	 links: [{path:'加語言表表格', text:'新增語言'}]
 	                 },{
-	                	 head: '類型',
-	                	 links: [{path:'加類型表表格', text:'新增類型'}]
-	                 },{
 	                	 head: '語料',
 //	                	 links: [{path:'加原始語料表表格', text:'新增語料(地區，年齡，性別，ID)'},
 //	                	         {path:'顯示原始語料表', text:'顯示所有原始語料'}]
