@@ -1,7 +1,7 @@
 from django.db import models
 import os
 from hai2gua7.settings import MEDIA_ROOT
-from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
+from NativeDB_py.讀取Excel檔 import 讀取Excel檔
 from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
 from itertools import chain
 from django.core.files.storage import FileSystemStorage

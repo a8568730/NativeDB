@@ -1,7 +1,7 @@
 import xlrd
 import math
 
-def 把EXCEL讀進來(xlsx檔名):
+def 讀取Excel檔(xlsx檔名):
 	mybook = xlrd.open_workbook(xlsx檔名)
 	
 	寫出結果 = []

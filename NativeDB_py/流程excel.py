@@ -1,4 +1,4 @@
-from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
+from NativeDB_py.讀取Excel檔 import 讀取Excel檔
 from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
 from NativeDB_py.寫出json檔 import 寫出json檔
 import json
@@ -13,7 +13,7 @@ import json
 
 
 excel檔名 = 'numberbook2.xlsx'
-xlsx陣列 = 把EXCEL讀進來(excel檔名)
+xlsx陣列 = 讀取Excel檔(excel檔名)
 
 # 輸出sheet超過一頁的錯誤訊息
 if isinstance(xlsx陣列, str):

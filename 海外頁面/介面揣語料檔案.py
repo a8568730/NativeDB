@@ -7,7 +7,7 @@ from hai2gua7.settings import MEDIA_ROOT
 from 海外頁面.模型 import 原始檔案表
 from os.path import os
 import json
-from NativeDB_py.讀取EXCEL檔 import 把EXCEL讀進來
+from NativeDB_py.讀取Excel檔 import 讀取Excel檔
 from NativeDB_py.把xlsx的陣列轉成json import xlsx陣列轉json
 from NativeDB_py.讀取TextGrid檔 import 讀取TextGrid檔
 from NativeDB_py.檢查TextGrid和Wav名稱和總長度 import 檢查TextGrid和Wav名稱和總長度
@@ -98,7 +98,7 @@ def 顯示xlsx的音(request, xlsx檔名, 字數):
 	全部的音 = []
 	xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
 	# 目前先預設單詞=1, 事後再補模型
-	xlsx陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
+	xlsx陣列 = 讀取Excel檔(xlsx完整路徑檔名)
 	音json = xlsx陣列轉json(xlsx陣列, int(字數))
 	return HttpResponse(json.dumps(音json), content_type="application/json")
 
@@ -144,7 +144,7 @@ def 檢查EXCEL的內頁數與格式(此語料):
 	else:	
 		xlsx檔名 = xlsx檔名陣列[0]
 		xlsx完整路徑檔名 = os.path.join(MEDIA_ROOT, xlsx檔名)
-		xlsx內容陣列 = 把EXCEL讀進來(xlsx完整路徑檔名)
+		xlsx內容陣列 = 讀取Excel檔(xlsx完整路徑檔名)
 		內容json = xlsx陣列轉json(xlsx內容陣列, int(字數))
 		if isinstance(xlsx內容陣列, str):
 			xlsx錯誤資訊 = xlsx內容陣列
