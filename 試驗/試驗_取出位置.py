@@ -1,6 +1,6 @@
 
 import unittest
-from NativeDB_py.取出聲音位置 import 取出聲音位置
+from NativeDB_py.讀取TextGrid檔 import 讀取TextGrid檔
 import os
 
 class 基本元素試驗(unittest.TestCase):
@@ -17,7 +17,7 @@ class 基本元素試驗(unittest.TestCase):
 		("C1-(to)ʔ(8)-1", '1.9583977521184779', '2.02'),
 		("XXX", '2.02', '3.38')
 		]
-		結果 = 取出聲音位置(試驗檔名)
+		結果 = 讀取TextGrid檔(試驗檔名)
 		self.assertEqual(結果, 答案)
 	
 	def test_textgrid(self):
@@ -26,7 +26,7 @@ class 基本元素試驗(unittest.TestCase):
 		("V2-( ts)io(ʔ8)-1", '1545.8649050790789', '1546.0228333313567'),
 		("XXX", '1546.0228333313567', '1549.502375')
 		]
-		結果 = 取出聲音位置(試驗檔名)
+		結果 = 讀取TextGrid檔(試驗檔名)
 		self.assertEqual(結果, 答案)
 
 if __name__=='__main__':

@@ -1,5 +1,7 @@
 
-def 取出聲音位置(檔名):
+## 讀取TextGrid檔，取出音標的聲音位置
+
+def 讀取TextGrid檔(檔名):
 	切割檔 = open(檔名, encoding="utf-8")
 	資料 = 切割檔.readlines()
 	切割檔.close()
