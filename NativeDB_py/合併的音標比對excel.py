@@ -1,6 +1,6 @@
 from NativeDB_py.讀取Excel檔 import 讀取Excel檔
 # import xlrd
-# 先做完合併音節的位置.py
+# 先做完合併TextGrid的CVC音標.py
 def 音標比對excel(xlsx檔名, 合併音標):
 	excel音表 = 讀取Excel檔(xlsx檔名)
 	# 1. 移掉表頭列 0th row = ['Num', 'Word', 'IPA', 'Note']
