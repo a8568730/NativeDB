@@ -1,0 +1,80 @@
+/* Styles go here */
+html, body,
+div, ul, form,
+span, p, a{
+  margin: 0; padding: 0;
+}
+ul {
+  list-style-type: none;
+}
+
+html, body {
+  height:100%;
+}
+
+/*首頁中間*/
+.jumbotron {
+  padding: 150px 0 20px;
+  background: none;
+}
+
+.jumbotron .container {
+  width: 100%;
+}
+
+/*首頁中間的主要標題*/
+.headtitle {
+  padding: 10px 50px;
+  color: #222;
+  font-weight: bold;
+  border-bottom: 20px solid #333;
+  box-shadow: 0px 5px 0px 3px #ED5A0B, 0px 5px 0px 5px #333;
+  text-align: center;
+}
+
+.headtitle small {
+  font-size: .55em;
+}
+
+/*首頁中間的語種*/
+#lang {
+  width: 50%;
+  margin:10px auto 0;
+}
+
+#lang div {
+	float: right;
+}
+
+#lang div > a {
+  text-decoration: none;
+  display: inline-block;
+  width: 30px;
+  margin-right: 15px;
+  padding:50px 30px 0 30px;
+  background: none;
+  border: 1px solid #ccc;
+  color: #777;
+  font-size: 1.8em;
+  border-color: transparent transparent #ccc #ccc;
+  box-shadow: -1px 1px 4px #ddd;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#lang div > a:hover {
+  border-color: transparent transparent #ED5A0B #ED5A0B;
+  color: #ED5A0B;
+  box-shadow: -1px 1px 5px rgba(237,90,11,0.4);
+} 
+
+/*首頁的下方版權聲明*/
+.footer {
+  clear: right;
+  width: 100%;
+  margin: auto;
+  color: #bcbcbc;
+  text-align: center;
+}

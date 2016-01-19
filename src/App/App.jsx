@@ -4,11 +4,11 @@ import Router from 'react-router'
 
 class App extends React.Component {
 
-  constructor() {
+  constructor () {
     super()
   }
 
-  render() {
+  render () {
     return (
     <div className='app background'>
           <header className='app header'>
