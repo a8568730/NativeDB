@@ -24,10 +24,9 @@ class 首頁 extends React.Component {
   render () {
     var _json = ['妥妥語', '豬豬語']
 
-    var _link = _json.map((v, i) => <a href='#' key={i}>{v}</a>)
+    var _link = _json.map((v, i) => <a href={'/' + v} key={i}>{v}</a>)
 
     return (
-    <div>
          <Jumbotron>
 
           <Grid className='container'>
@@ -42,14 +41,6 @@ class 首頁 extends React.Component {
             </Row>
             </Grid>
         </Jumbotron>
-
-        <Row className='footer'>
-          <Col md={12} >
-            <p>copyright&copy;學姊</p>
-            <p>all the records preserved by the owner</p>
-          </Col>
-        </Row>
-    </div>
     )
   }
 }
