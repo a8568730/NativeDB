@@ -5,7 +5,7 @@ import superagent from 'superagent-bluebird-promise'
 import Debug from 'debug'
 
 import { Col, Row } from 'react-bootstrap'
-import '../../static/css/index.css'
+import '../../static/css/語言.css'
 
 var debug = Debug('nativeDB:語言')
 
@@ -30,6 +30,7 @@ class 語言 extends React.Component {
 
     return (
     <div>
+    	<div class="bar-stripe"></div>
 		{_gigian}
     </div>
     )

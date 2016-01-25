@@ -5,7 +5,7 @@ import superagent from 'superagent-bluebird-promise'
 import Debug from 'debug'
 
 import { Jumbotron, Grid, Col, Row } from 'react-bootstrap'
-import '../../static/css/first.css'
+import '../../static/css/首頁.css'
 
 var debug = Debug('nativeDB:首頁')
 
