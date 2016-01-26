@@ -4,7 +4,7 @@ import Transmit from 'react-transmit'
 import superagent from 'superagent-bluebird-promise'
 import Debug from 'debug'
 
-import { Col, Row } from 'react-bootstrap'
+import {Navbar, ButtonToolbar, Button, Nav, NavItem, Grid, Col, Row } from 'react-bootstrap'
 import '../../static/css/語言.css'
 
 var debug = Debug('nativeDB:語言')
@@ -21,18 +21,32 @@ class 語言 extends React.Component {
     super(props)
     this.state = {}
   }
+
+  handleSelect () {
+  	console.log('sui2')
+  }
+
   render () {
     var _json = ['妥妥語', '豬豬語']
 
-    var _link = _json.map((v, i) => <a href='#' key={i}>{v}</a>)
+    var allGigian = _json.map((v, i) => <NavItem eventKey={v} href={'/' + v}>{v}</NavItem>)
 
-	var _gigian = this.props.params.gigian
+	var gigian = this.props.params.gigian
 
     return (
-    <div>
-    	<div class="bar-stripe"></div>
-		{_gigian}
-    </div>
+    <Grid>
+	     <Navbar>
+		    <Navbar.Header>
+		      <Navbar.Brand>
+		        <p>海外漢語方言資料庫   Database of Chinese languages in Singapore and Malaysia</p>
+		      </Navbar.Brand>
+		    </Navbar.Header>
+	     </Navbar>
+		<div className="bar-stripe"></div>
+		<Nav bsStyle="tabs" activeKey={gigian} onSelect={this.handleSelect}>
+			{allGigian}
+		</Nav>
+    </Grid>
     )
   }
 }
