@@ -24,7 +24,7 @@ class 首頁 extends React.Component {
   render () {
     var _json = ['妥妥語', '豬豬語']
 
-    var _link = _json.map((v, i) => <a href={'/' + v} key={i}>{v}</a>)
+    var _link = _json.map((v, i) => <Link to={'/' + v} key={i}>{v}</Link>)
 
     return (
          <Jumbotron>

@@ -4,7 +4,14 @@ import Transmit from 'react-transmit'
 import superagent from 'superagent-bluebird-promise'
 import Debug from 'debug'
 
-import {Navbar, ButtonToolbar, Button, Nav, NavItem, Grid, Col, Row, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { ButtonToolbar, Button, 
+    Navbar, Nav, NavItem, 
+    Grid, Col, Row, 
+    ListGroup, ListGroupItem, Badge } from 'react-bootstrap'
+
+import { LinkContainer } from 'react-router-bootstrap'
+
+
 import '../../static/css/語言.css'
 
 var debug = Debug('nativeDB:語言')
@@ -16,7 +23,17 @@ class 語言 extends React.Component
     //
     state = {
       lang:  ['妥妥語', '豬豬語'],
-      word: ['單詞','雙詞','故事']
+      word: [{'name': '單詞', 
+                    'count': 20,
+                    'list': ['妥', '豬']
+                  },{'name': '雙詞', 
+                    'count': 2,
+                    'list': ['妥妥', '豬豬']
+                  },{
+                    'name': '故事', 
+                    'count': 1,
+                    'list': ['sui2 sui2 sui2']
+                  }]
     };
 
   componentWillMount () { this.props.setQueryParams(this.props) }
@@ -30,10 +47,9 @@ class 語言 extends React.Component
   }
 
   render () {
-    var allGigian = this.state.lang.map((v, i) => <NavItem eventKey={v} key={v}  href={'/' + v}>{v}</NavItem>);
-    var allSuShing = this.state.word.map((v, i) => <ListGroupItem key={v}  href={'#' + v}>{v}</ListGroupItem>);
-
-	var gigian = this.props.params.gigian
+    let gigian = this.props.params.gigian;
+    let allGigian = this.state.lang.map((v, i) => <LinkContainer to={'/' + v} key={v}><NavItem eventKey={v} key={v} >{v}</NavItem></LinkContainer>);
+    let allSuShing = this.state.word.map((v, i) => <ListGroupItem key={v.name}  href={'#' + v.name}>{v.name} <Badge>{v.count}</Badge></ListGroupItem>);
 
     return (
     <Grid>
@@ -61,6 +77,7 @@ class 語言 extends React.Component
 
           <Col xs={9}>
             <ul style={{listStyleType:"none"}}>
+
             </ul>
           </Col>
         </Row>
