@@ -46,11 +46,40 @@ class 語言 extends React.Component
     super(props)
   }
 
-  render () {
+  renderGigianNav () {
     let gigian = this.props.params.gigian;
     let allGigian = this.state.lang.map((v, i) => <LinkContainer to={'/' + v} key={v}><NavItem eventKey={v} key={v} >{v}</NavItem></LinkContainer>);
-    let allSuShing = this.state.word.map((v, i) => <ListGroupItem key={v.name}  href={'#' + v.name}>{v.name} <Badge>{v.count}</Badge></ListGroupItem>);
+    
+    return (
+        <Nav bsStyle="tabs" activeKey={gigian}>
+        {allGigian}
+        </Nav>
+      )
+  }
 
+  renderSuShing () {
+    let allSuShing = this.state.word.map((v, i) => <ListGroupItem key={v.name}  href={'#' + v.name}>{v.name} <Badge>{v.count}</Badge></ListGroupItem>);
+    return (
+        <ListGroup>
+          {allSuShing}
+        </ListGroup>
+      )
+  }
+
+  renderJi () {
+    let arr = [];
+    this.state.word.forEach(v => {
+      let list = v.list.map(word => <li>{word}</li>);
+      let sushingBlock = <li><ol>list</ol></li>;
+    })
+    return (
+        <ul style={{listStyleType:"none"}}>
+        {}
+        </ul>
+      )
+  }
+
+  render () {
     return (
     <Grid>
 	     <Navbar>
@@ -61,24 +90,18 @@ class 語言 extends React.Component
 		    </Navbar.Header>
 	     </Navbar>
 		<div className="bar-stripe"></div>
-		<Nav bsStyle="tabs" activeKey={gigian}>
-			{allGigian}
-		</Nav>
 
+		{this.renderGigianNav()}
         <br/>
         <br/>
 
         <Row>
           <Col xs={3}>
-             <ListGroup>
-             {allSuShing}
-            </ListGroup>
+             {this.renderSuShing()}
           </Col>
 
           <Col xs={9}>
-            <ul style={{listStyleType:"none"}}>
-
-            </ul>
+            {this.renderJi()}
           </Col>
         </Row>
     </Grid>
